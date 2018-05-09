@@ -1,0 +1,204 @@
+.standard-devider {
+	position:relative;
+	/* Devider SVG */
+
+	svg.devider {
+	  position: absolute;
+		top:-30px;
+	}
+	.devider path {
+		stroke-width: 2;
+	}
+
+
+}
+
+/* Big Triangle Devider*/
+
+/* sage */
+svg.sage {
+	background:$white;
+}
+
+.sage path {
+	fill: $mint;
+	stroke: $mint;
+}
+
+/* sage */
+svg.sage-transparent {
+	background:transparent;
+	z-index:1;
+	top:0px!important
+
+}
+
+.sage-transparent path {
+	fill: $mint;
+	stroke: $mint;
+}
+
+.sage-transparent + section {
+	z-index:-1;
+}
+/* white */
+svg.white {
+	background:$mint;
+}
+
+.white path {
+	fill: #fff;
+	stroke: #fff;
+}
+
+
+/* white to green */
+svg.white-green {
+	background:$dingley;
+}
+
+.white-green path {
+	fill: $white;
+	stroke: $white;
+}
+
+/* green to white */
+svg.green-white {
+	background:$white;
+}
+
+.green-white path {
+	fill: $dingley;
+	stroke: $dingley;
+}
+
+
+/* green to white */
+svg.green-grey {
+	$texture-top-background: darken($white, 1%);
+	$texture-bottom-background:  $white;
+	@include texture(180deg, $texture-top-background, $texture-bottom-background, 67, 1);
+}
+
+.green-grey path {
+	fill: $dingley;
+	stroke: $dingley;
+}
+
+
+/* white to grey */
+svg.white-grey {
+	$texture-top-background: darken($white, 1%);
+	$texture-bottom-background:  $white;
+	@include texture(180deg, $texture-top-background, $texture-bottom-background, 67, 1);
+}
+
+.white-grey path {
+	fill: $white;
+	stroke: $white;
+}
+
+
+/* grey to white */
+svg.grey-white {
+	background:$white;
+}
+
+.grey-white path {
+	$texture-top-background: darken($white, 1%);
+	$texture-bottom-background:  $white;
+
+	fill: url(https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/textures/diagonal-noise.png), linear-gradient(180deg, #fff, #fcfcfc), center no-repeat #fff scroll;;
+	stroke:none;
+}
+
+/* sage to grey */
+svg.mint-grey {
+	$texture-top-background: darken($white, 1%);
+	$texture-bottom-background:  $white;
+	@include texture(180deg, $texture-top-background, $texture-bottom-background, 67, 1);
+		top:0px!important
+
+}
+
+.mint-grey path {
+	fill: $mint;
+	stroke: $mint;
+}
+
+/* transparent */
+svg.transparent {
+	background:transparent;
+
+}
+
+
+.transparent path {
+	fill: $white;
+	stroke: $white;
+}
+
+/* transparent - white */
+
+svg.transparent-white {
+	background:transparent;
+	top:0px!important
+}
+
+
+.transparent-white path {
+	fill: $white;
+	stroke: $white;
+}
+
+
+.transparent-mint path {
+	fill: $mint;
+	stroke: $mint;
+}
+
+/* transparent - mint */
+svg.transparent-mint {
+	background:transparent;
+		top:0px!important
+
+}
+
+
+
+
+/* transparent - mint */
+svg.transparent-white {
+	background:transparent;
+}
+
+
+.transparent-mint path {
+	fill: $mint;
+	stroke: $mint;
+}/* transparent - white - green */
+svg.transparent-green {
+	background:transparent;
+}
+
+
+.transparent-green path {
+	fill: $dingley;
+	stroke: $dingley;
+}
+
+/* transparent - white - left */
+.complex-devider {
+	position:relative;
+	height:30px;
+	margin-top:-30px;
+	//z-index:1;
+	svg {
+		position:absolute;
+		top:0;
+	}
+}
+
+
+
+

@@ -1,0 +1,40 @@
+
+.venues {
+	flex-direction: row;
+	flex-wrap:wrap;
+	padding: 4em 10%;
+	&:nth-child(2){
+		$texture-top-background: $white;
+  	$texture-bottom-background: darken($white, 2%);
+  	@include texture(180deg, $texture-top-background, $texture-bottom-background, 67, 0);
+	}
+
+	header {
+		flex-basis: calc(100%);
+		h1 {
+			&:before, &:after {
+	      border-top: 0px solid $base-font-color;
+	      
+	    }
+		}
+
+	}
+	a {
+		text-align: center;
+		opacity:.7;
+		.logo {
+			height:80px;
+			@include media($medium-screen){
+				height:140px;
+			}
+			padding:$base-spacing;
+			@include transition(all 0.25s linear);
+
+		}
+		&:hover{
+			
+			opacity:1;
+		}
+	}
+
+}

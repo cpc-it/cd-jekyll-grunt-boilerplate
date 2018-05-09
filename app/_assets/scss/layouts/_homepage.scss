@@ -1,0 +1,190 @@
+
+#home-venues {
+	//background: $dingley url(#{$image-path}/homepage-img/venues-bg.png) repeat 0 0;
+	background-color:$dingley;
+  margin: 0;
+  text-align: center;
+  h1 {
+  	color:$white;
+  	@include media($large-screen){
+	  	font-size:96px;
+	  }
+  }
+
+  .button {
+  	margin:1em;
+  }
+}
+
+#restaurant-venues {
+		//background: $dingley url(#{$image-path}/homepage-img/venues-bg.png) repeat 0 0;
+	background-color:$dingley;
+  margin: 0;
+  text-align: center;
+  padding-top:150px;
+  h1 {
+  	color:$white;
+  	@include media($large-screen){
+	  	font-size:96px;
+
+	  }
+  }
+
+  .button {
+  	margin:1em;
+  }
+}
+
+#home-stats {
+	background:$white;
+
+	.stats {
+		max-width:800px;
+		margin:$base-spacing auto;
+		overflow: hidden;
+
+		@include media(max-width 600px){
+			ul {
+				li {
+					width:50%;
+					float:left;
+					span.number {
+						font-size:1.5em;
+					}
+					&:last-child{
+						width:100%;
+					}
+
+				}
+			}
+		
+		}
+		@include media(min-width 700px){
+			ul {
+				li {
+					min-height:250px;
+					span.number {
+						font-size: 46px!important
+					}
+				}
+			}
+		}
+		@include media($large-screen) {
+			max-width:1000px;
+			font-size:$large-font-size;
+
+			ul {
+				li {
+					min-height:250px;
+					span.number {
+						font-size: 68px!important
+					}
+				}
+			}
+		}
+		
+	}
+	
+	button {
+		margin-top:3em;
+	}
+}
+
+#home-feedback {
+	background: url(#{$image-path}/homepage-img/dining-team.jpg);
+	background-size:cover;
+	background-position: center;
+	.hero-content {
+    vertical-align: bottom;
+    h2 {
+    	background:$dingley;
+  		width:100%;
+  		padding:$small-spacing;
+  		margin-bottom:-.5em;
+  		color: $white;
+    }
+	}
+}
+
+#the-dish {
+	color: $white;
+	$texture-top-background: $black;
+	$texture-bottom-background:lighten($black,10%);
+	@include texture(180deg, $texture-top-background, $texture-bottom-background, 67, 1);
+	border-top:solid 1px $black;
+	border-bottom:solid 1px lighten($black,10%);
+	#mc_embed_signup_scroll {
+		background:#fff
+	}
+}
+
+
+#error {
+	position:relative;
+	.sad-face {
+		height:52px;
+		display:block;
+		width:100%;
+		position:absolute;
+		bottom:0;
+		left:0;
+		right:0;
+		background-image: url(#{$image-path}/icons/crying-emoji-face-KS8xJS-clipart.png);
+		background-size: 52px 52px;
+		z-index: 20;
+	}
+	
+	.hero-content{
+		text-align: center;
+		color: $white;
+		margin-top:120px;
+		#search-container {
+			#results-container {
+				li {
+					a {
+						color:#fff;
+						&:hover {
+							opacity:.6;
+						}
+					}
+				}
+			}
+		}
+	}
+	$texture-top-background: lighten($tamarillo, 3%);
+	$texture-bottom-background: darken($tamarillo, 3%);
+	@include texture(180deg, $texture-top-background, $texture-bottom-background, 67, 1);
+
+}
+
+
+
+
+
+.venue-backgrounds {
+	$texture-top-background: $dingley;
+  	$texture-bottom-background: darken($dingley, 1%);
+  	@include texture(180deg, $texture-top-background, $texture-bottom-background, 67, 1);
+
+	
+	a {
+		text-align: center;
+		opacity:.7;
+		.logo {
+			height:80px;
+			opacity:.4;
+			filter: grayscale(100%);
+			@include media($medium-screen){
+				height:140px;
+			}
+			padding:$base-spacing;
+			@include transition(all 0.25s linear);
+
+		}
+		&:hover{
+			
+			opacity:1;
+		}
+	}
+
+}

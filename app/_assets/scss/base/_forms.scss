@@ -1,0 +1,191 @@
+fieldset {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+
+  border: solid 4px $parsley;
+  padding: 0em 1em 1em 1em;
+  margin: 1em 0em;
+
+  .fieldset_description {
+    color: $white;
+    padding: 1em;
+    margin-left: -1em;
+    margin-right: -1em;
+    background: $dingley;
+  }
+}
+
+legend {
+  font-weight: 600;
+  margin-top: $small-spacing / 2;
+  margin-bottom: $small-spacing / 2;
+  font-size: $h3-font-size;
+
+  position: relative;
+  left: -.25em;
+  padding: 0 .25em;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: $small-spacing / 2;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+}
+
+select {
+	height:2.6em;
+}
+#{$all-text-inputs} {
+  appearance: none;
+  background-color: $base-background-color;
+  border: $base-border;
+  border-radius: $base-border-radius;
+  box-shadow: $form-box-shadow;
+  box-sizing: border-box;
+  margin-bottom: $small-spacing;
+  padding: $base-spacing / 3;
+  transition: border-color $base-duration $base-timing;
+  width: 100%;
+
+  &:hover {
+    border-color: shade($base-border-color, 20%);
+  }
+
+  &:focus {
+    border-color: $action-color;
+    box-shadow: $form-box-shadow-focus;
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: shade($base-background-color, 5%);
+    cursor: not-allowed;
+
+    &:hover {
+      border: $base-border;
+    }
+  }
+
+  &::placeholder {
+    color: tint($base-font-color, 40%);
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+  margin-right: $small-spacing / 2;
+
+}
+
+[type="file"] {
+  margin-bottom: $small-spacing;
+  width: 100%;
+}
+
+select {
+  margin-bottom: $small-spacing;
+  width: 100%;
+}
+
+
+
+
+
+.label_input_grouping {
+  label {
+    font-weight: 300;
+    padding-left: 5px;
+    input[type="checkbox"] {
+      position: relative;
+      left: -5px;
+    }
+  }
+
+  &.label_grouping_middle {
+    input,label {
+      display: inline;
+      vertical-align: middle;
+    }
+  }
+}
+
+
+.input_grouping_wrap {
+  p {
+    margin: .75em 0;
+  }
+  @include outer-container;
+  >* { @include span-columns(6); }
+  &.three {
+		>* {
+			@include span-columns(4); 
+		}
+	}
+}
+
+
+.table_centerer {
+
+  display: block;
+  >* {
+    display: block;
+    width: auto;
+  }
+
+  @include media ($medium-screen) {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    >* {
+      width: .5%;
+      display: table-cell;
+      vertical-align: middle;
+
+      .align-top & {vertical-align: top;}
+      .align-middle & {vertical-align: middle;}
+      .align-bottom & {vertical-align: bottom;}
+    }
+  }
+
+
+}
+
+
+
+.space_fieldset_children {
+  fieldset > div + div {
+    padding-top: 2em;
+    margin-top: 2em;
+    border-top: 1px solid $light-gray;
+  }
+  fieldset > div {
+    > div + div {
+      margin-top: 1em;
+    }
+    &.column_grid {
+	    > div {
+	      margin-top: 0;
+	    }	
+    }
+  }
+}
+
+
+
+
+

@@ -1,0 +1,15 @@
+.testimonial {
+	background:url("#{$image-path}/textures/dark-wood-texture.jpg");
+	background-size: contain;
+	color: $white;
+	display:flex;
+
+	img {
+		height:120px;
+	}
+	blockquote {
+		@include outer-container;
+		padding-left:$gutter;
+		padding-right:$gutter;
+	}
+}

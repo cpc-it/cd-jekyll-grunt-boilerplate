@@ -1,0 +1,201 @@
+body {
+}
+.printed_footer {
+	display: none;
+
+	margin-top: 1em;
+
+	padding: 1em 0;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+
+	img {
+		max-width: 100px;
+		width: 100px;
+	}
+
+	.footer-logo {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.wrapper {
+		position: relative;
+		width: 100%;
+		text-align: left;
+		padding-left: 125px;
+	}
+	.contact {
+		@include outer-container;
+		>* {
+			@include span-columns(4);
+		}
+	}
+	.copyright {
+		p {
+			margin-bottom: 0;
+		}
+	}
+}
+
+@media print {
+
+
+	.wrapper,header.primary #headerContent {
+		width: 100%;
+		max-width:100%;
+		margin: 0;
+		float: none;
+	}
+	header.primary #headerTop #cplogo {
+		margin: 0;
+	}
+
+	h1 {font-size: 1.5em;}
+	h2 {font-size: 1.4em;}
+	h3 {font-size: 1.3em;}
+	h4 {font-size: 1.2em;}
+	h5 {font-size: 1.1em;}
+	h6 {font-size: 1.0em;}
+	h1,h2,h3,h4,h5,h6,p,ul {
+		margin-bottom: .25em;
+	}
+
+	table,td,tr,p,li {
+		font-size: .75em;
+	}
+
+	.venue-header {
+		margin: .5em 0;
+	}
+
+	header {
+		margin-bottom: .5em;
+	}
+
+	.printed_footer {
+		display: block;
+		* {
+			-webkit-print-color-adjust:exact;
+		}
+
+		&+* {
+			display: none;
+		}
+	}
+
+	/* kept separate form the list to make it easier to find */
+	.hide_when_printing {
+		display: none!important;
+	}
+
+	.nav-bar,.backtotop,.breadcrumbs,.subpage-nav,#footer-social,#footer-connect,
+	.full_circle_theta_block,.venue_information_block,.top-nav,.responsiveVideoWrapper {
+		display: none;
+		border: 0!important;
+	}
+
+
+	#footer-connect .hero-content .mailchimp-module {
+		display: none;
+		*, .dish-logo {
+			-webkit-print-color-adjust:exact;
+		}
+	}
+
+	#footer {
+		-webkit-print-color-adjust:exact;
+	}
+
+	#footer-connect {
+		h2,h3 {
+			font-size: 1em!important;
+		}
+		.facebook-module {
+			width: 45%!important;
+			float: left!important;
+		}
+		.instagram-module {
+			width: 45%!important;
+			float: right!important;
+		}
+		.facebook-module,.instagram-module {
+			>a {display: none;}
+		}
+	}
+
+	.hero {
+		padding: 1em 0em;
+	}
+
+	.slick-slider img {
+		width:100%;
+	}
+
+	.column_grid {
+		&.three > div {
+			width:30%;
+			float:left;
+			padding:2%;
+		}
+		&.two > div {
+			width:45%;
+			float:left;
+			padding:2%;
+		}
+		img {
+			width:100%;
+			max-width:100%;
+		}
+
+	}
+	main {
+		img {
+			max-width:50%;
+			padding:1% 0%;
+			text-align:left;
+		}
+	}
+	h1 {
+		+ img,
+		+ a > img {
+			max-width:100%;
+
+		}
+	}
+	.dietary_restrictions, .religious-beliefs, .sustainability, .jobs, .staff-catering, .staff-dining {
+		img {
+				margin-left:0px!important;
+				padding:1% 1% 1% 0!important;
+		}
+	}
+
+	.hours {
+
+		.fa {
+			font-size:25px!important;
+			width:10%!important;
+			float:left!important;
+			margin:0!important;
+			text-align: left!important;
+		}
+
+		h5, ul {
+			width:90%!important;
+			float:left!important;
+			margin:0!important;
+
+		}
+		ul {
+			margin-top:10px!important;
+		}
+		h5 {
+			margin-left:10%!important;
+			margin-top:10px!important;
+		}
+	
+	}
+
+}
+

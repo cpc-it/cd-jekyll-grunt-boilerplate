@@ -1,0 +1,291 @@
+table {
+  border-collapse: collapse;
+  margin: $small-spacing 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+th {
+  border-bottom: 1px solid shade($base-border-color, 25%);
+  font-weight: 400;
+  padding: $small-spacing;
+  text-align: left;
+  font-family: $heading-font-family;
+  letter-spacing: $letter-spacing;
+}
+
+td {
+  border-bottom: $base-border;
+  padding: $small-spacing 0;
+}
+
+tr,
+td,
+th {
+  vertical-align: middle;
+}
+
+table {
+	border: $table-border;
+	border-left:0;
+	border-collapse: separate;
+	/* why?
+	border-left: 0;
+	*/
+	border-radius: $base-border-radius;
+	border-spacing: 0;
+	width: 100%;
+	font-size:$small-font-size;
+	tbody {
+		background-color: $table-background;
+
+		tr:hover > td{
+		  	background-color: $table-hover-background;
+		  	color:$base-font-color;
+		}
+		
+		tr:nth-child(even) {
+		  	background-color: $table-stripe-background;
+		  	&:hover > td {
+		    	background-color: $table-stripe-background-hover;
+		 	}
+		}
+	}
+
+	thead:first-of-type {
+		tr:first-child > th:first-child {
+		  	border-top-left-radius: $base-border-radius;
+		}
+
+		tr:first-child > th:last-child {
+		  	border-top-right-radius: $base-border-radius;
+		}
+	}
+
+	tbody:last-child {
+		tr:last-child > td:first-child {
+		  	border-bottom-left-radius: $base-border-radius;
+		}
+
+		tr:last-child > td:last-child {
+		  	border-bottom-right-radius: $base-border-radius;
+		}
+	}
+
+	thead {
+		th {
+			background-color: $table-header-background;
+			border-bottom: 0;
+			border-left: 1px solid $table-border-color;
+			padding: $table-header-padding;
+			text-align: left;
+			color:$white;
+			&:first-child {
+				border-left: 0;
+			}
+		}
+	}
+
+	tbody {
+		background-color: $table-background;
+		th {
+			background-color:$parsley;
+			color:$white;
+			span {
+				display:none;
+				@include media($medium-screen){
+					display:inline-block;
+				}
+			}
+			
+		}
+		tr {
+			&.disclaimer {
+				background:$light-gray;
+			}
+		}
+		td {
+			border-bottom: 0;
+			border-left: 1px solid $table-border-color;
+			border-top: 1px solid $table-border-color;
+			padding: $table-padding;
+
+			/* Not sure why Bitters has this . . . removing
+			&:first-child {
+				border-left: 0;
+			}
+			*/
+			.menu-item-title {
+				font-weight: $heavy-font-weight;
+			}
+			button {
+				display: inline-block;
+				font-size: 0.7em;
+				line-height: $base-line-height;
+				margin-bottom: 0.3em;
+				margin-right: 0.5em;
+				outline: none;
+				padding: 0.3em 1em;
+				width: 100%;
+
+				@include media($medium-screen) {
+					margin-bottom: 0;
+					width: auto;
+				}
+		 	}
+		}
+	}
+	caption {
+		text-align: left;
+		color: lighten($base-font-color,30%);
+		font-style: italic;
+	}
+}
+
+.scroll-table {
+	width:100%;
+	overflow-y:scroll;
+	display:block;
+	table {
+		min-width:900px;
+		
+	}
+}
+
+/* Hours Table /aboutus/hours */
+table.hours-table {
+	font-size:.7em;
+	.short {
+	    width:5em;
+	    padding:.5em;
+	    @include media($large-screen) {
+	    	width:10em;
+	    }
+	}
+	&.contact-list {
+		td {
+			
+			&:nth-child(2), &:last-child {
+				font-size:$large-font-size;
+			}
+
+
+
+
+		}
+
+	}
+	thead {
+		th{
+			font-size: $large-font-size;
+			text-align: left;
+			background-color:$black;
+		}
+	}
+	&.thead-basic thead th {
+		font-size: $base-font-size;
+		text-align: left;
+	}
+
+	tbody {
+
+		tr {
+			&.even {
+				background-color: $table-background;
+
+			}
+			&.odd {
+				background-color: $table-stripe-background;
+			}
+			th {
+				padding:2px;
+				text-align: center;
+				background-color:$parsley;
+				color:$white;
+				@include media($medium-screen){
+					padding:1em;
+					text-align: left;
+				}
+			}
+			td {
+				height:6em;
+				padding:2px;
+								text-align: center;
+
+				@include media($medium-screen){
+					padding:1em;
+									text-align: left;
+
+				}
+				
+				&:first-child {
+					img {
+						max-height:4em;
+						max-width:100%;
+						&.small {
+							width:30%;
+							float:right;
+						}
+
+					}
+					span {
+						display:none;
+						@include media($medium-screen){
+							display:inline-block;
+						}
+					}
+
+				}
+
+
+
+			}
+		}
+	}
+	&.venue {
+		margin-top:0px;
+		tr {
+			th:first-child{
+				text-align: left;
+			}
+			th:last-child {
+				text-align: right;
+			}
+		}
+		tr {
+			td {
+				font-size:1.3em;
+			}
+		}
+
+	}
+}
+
+.hidden-table-header {
+	opacity: 0;
+	font-size: 1px;
+}
+
+.tables.deals {
+	p {
+		
+		font-size: $small-font-size;
+		line-height: 10px;
+		@include media($small-screen) {
+			font-size: $base-font-size;
+		}
+	}
+	h4 {
+		text-align: center;
+
+		img {
+			max-height:40px;
+			max-width:60px;
+			@include media($small-screen) {
+				max-height:80px;
+				max-width:120px;
+			}
+		}
+	}
+}
+

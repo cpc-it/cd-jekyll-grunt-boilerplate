@@ -1,0 +1,74 @@
+
+/* STATS */
+.stats {
+	text-align:center;
+
+	ul {
+		color: $base-font-color;
+		padding: 0;
+		display: inline;
+		float: left;
+		list-style: none;
+		position: relative;
+		float: left; display: block;
+		left: 50%;
+		li {
+			position: relative;
+			float: left;
+			display: block;
+			right: 50%;
+			padding:0 1em;
+			@include media($medium-screen) {
+				width:33.3333%;
+			}	
+			@include media($medium-screen) {
+				border-right: 1px solid transparentize($base-font-color, 0.8);
+			}
+		
+
+			&:first-child {
+			  padding-left: 0;
+			}
+
+			&:last-child {
+			  border-right: 0;
+			}
+			span.number {
+				font-size:$stats-font-size;
+				color: $dingley;
+				font-weight: $heavy-font-weight;
+			}
+		}
+	}
+	
+  	span {
+		display: block;
+	}
+
+
+}
+
+
+.number-incrementer {
+
+	.number {
+		opacity: 0;
+		@include transition(all .5s ease-in-out);
+		&.active {
+			opacity:1;
+		}
+	}
+
+	.show-plus {
+		&:after {
+			content: '+';
+		}
+	}
+
+	.show-percentage {
+		&:after {
+			content: '%';
+		}
+	}
+	
+}

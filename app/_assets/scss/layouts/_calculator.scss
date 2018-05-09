@@ -1,0 +1,565 @@
+﻿/*RESET WIDTHS*/
+#calculator_wrapper{
+	min-width: 1200px;
+	width:100%;
+	padding: 120px 3%;
+    overflow: auto;
+	#content {
+		padding: 0;
+		margin: 1em 0 0 0;
+		width: 100%;
+		float: none;
+	}
+	.calculator_sidebar {
+		width: 21%;
+		float:right;
+		@include media(medium) {
+	        display: block;
+	    }
+	    @include media(small) {
+	        display: block;
+	    }
+	    #nutritionLegend, #chooseWell {
+			p {
+				font-size: 1em;
+			}
+		}
+		#nutritionLegend {
+			ul {
+				list-style-type: none;
+
+				li {
+					position:relative;
+					margin-left:20px;
+					img {
+						position:absolute;
+						margin-left:-30px;
+						width:25px;
+						height:25px;
+					}
+				}
+			}
+		}
+	}
+	.calculator_sidebar img {
+		margin: 0;
+		box-shadow: 0 0 0 #fff;
+		-moz-box-shadow: 0 0 0 #fff;
+		-webkit-box-shadow: 0 0 0 #fff;
+		border: 0;
+		height: 16px;
+		width: auto;
+	}
+
+	#calculator {
+		width:75%;
+		float:left;
+
+	}
+
+	/*Plate Styling*/
+	ul#plateList{
+		margin-top: 10px;
+	}
+	li.plateItem {
+	   line-height: 20px;
+	   cursor: default;
+	}
+
+	li.plateItem img {
+	   display: inline-block;
+	   float: right;
+	   height: 18px;
+	   width: 18px;
+	}
+
+	li.plateItem:hover{
+	   background-color: #eeeeee;
+	}
+
+	button.addToPlate {
+	   height: 25px;
+	   width: 25px;
+	   text-align: center;
+	   line-height: 25px;
+	   padding: 0;   
+	   background-color: #dff4ff;
+	   border: 1px solid #c2e1ef;
+	   color: #336699;   
+	   cursor: pointer;
+	   outline: none;
+	}
+
+	button.addToPlate:hover{
+		background-color:#C1EAFF;
+	}
+
+	li.plateItem img {
+	   cursor: pointer;
+	}
+
+	.lookAtMe {
+		background-image: url("#{$image-path}/icons/error.png");
+		background-repeat:no-repeat;
+		background-position: top left;
+		padding-left: 20px;
+		font-weight:bolder;
+		color:#CC244C;
+		display: inline-block;
+	}
+
+	/* Ranges styling */
+	div#options ul {
+		padding-top:5px;
+	}
+
+	div#options li {
+	   line-height: 20px;
+	   padding-left: 5px;
+	}
+
+	div#options li label {
+		cursor: pointer;
+		width: 115px;
+		text-align: right;
+		display: inline-block;
+	}
+
+	div#rangePrefs {
+	   padding-top:5px;
+	   line-height: 24px;
+	}
+
+	div#rangePrefs label {
+	   width: 95px;
+	   display: inline-block;
+	   text-align: right;
+	   margin-right: 5px;
+	}
+
+	div#rangePrefs select {
+	   width: 80px;
+	}
+
+	/*FORMAT PRINT BUTTON*/
+	a#printSummary {
+		font-size:12px;
+	}
+
+	/*FORMAT RESET BUTTON*/
+	span.headerReset{
+		float: right;
+		font-size: 10px;
+		cursor: pointer;
+		background-image: url("#{$image-path}/icons/arrow_refresh.png");
+		background-repeat: no-repeat;
+		background-position: left top;
+		padding-left: 20px;
+		height:16px;
+		line-height:16px;
+		text-transform: uppercase;
+	}
+	span.headerResetPlate{
+		float: right;
+		font-size: 10px;
+		cursor: pointer;
+		background-image: url("#{$image-path}/icons/basket_remove.png");
+		background-repeat: no-repeat;
+		background-position: left top;
+		padding-left: 20px;
+		height:16px;
+		line-height:16px;
+		text-transform: uppercase;
+	}
+
+	/*FORMAT SPECIAL HEADERS*/
+	h2.smallH2{
+		text-transform:none!important;
+		letter-spacing:0px!important;
+	}
+
+	/*FORMAT LOADING NOTIFICATION*/
+	#tableLoading {
+		clear:both;
+	}
+	#tableLoading img{
+		margin: 0;
+	}
+
+	/*FORMAT TABLE*/
+	#table {
+		margin-top: 20px;
+	}
+	#table img {
+		text-align:center !important;
+	}
+
+	#table button img {
+		margin-top:3px
+	}
+	span.toggleArrow {
+		display: inline-block;
+		height: 12px;
+		width: 12px;
+		background-image:	url('#{$image-path}/icons/bullet_arrow_down.png');
+		background-repeat:no-repeat;
+		background-repeat: no-repeat;
+		background-position: 0;
+	}
+	table.dataTable thead th {
+	   font-size:14px;
+	   height:125px;
+	   vertical-align:bottom;
+	   outline: none;
+	   padding-bottom: 20px;
+	}
+	table.dataTable thead th.sorting,
+	table.dataTable thead th.sorting_asc,
+	table.dataTable thead th.sorting_desc {
+	   cursor: pointer;
+	}
+	table.dataTable thead th.sorting:hover,
+	table.dataTable thead th.sorting_asc:hover,
+	table.dataTable thead th.sorting_desc:hover {
+	   background-color: #3D722B;
+	}
+
+
+	table.dataTable tr td {
+		text-align: center;
+	}
+
+	span.menuItemTitle {
+		text-align:left;
+		font-weight: bold;
+		float:left;
+
+	}
+
+	span.itemLocation {
+		text-align:left;
+		float: left;
+	}
+
+
+	span.itemIngredients {
+		text-align: left;
+		float: left;
+		padding: 1px;
+		clear:both;
+	}
+	span.itemIngredients:hover {
+		background-color: #D1D3E9;
+		cursor: pointer;
+	}
+
+	table.dataTable thead th span {
+	   display:block;
+	   white-space:nowrap;
+	   overflow:visible;
+	   width:35px;
+	   -webkit-transform:rotate(270deg);
+	   transform:rotate(270deg);
+	   -ms-transform:rotate(270deg);
+	   -o-transform:rotate(270deg);
+	   -moz-transform:rotate(270deg);
+	   margin-bottom: 10px;
+	}
+
+	table.dataTable td, th {
+		padding: 0;
+	}
+
+	td.itemInfo {
+		padding: 7px!important;
+	}
+	th.itemInfo {
+		padding: 0 0 23px 5px!important;
+	}
+	.sorting {
+	   background:url(#{$image-path}/datatables/images/sort_both.png) no-repeat bottom center #29551a;
+	}
+
+	.sorting_asc {
+	   background:url(#{$image-path}/datatables/images/sort_asc.png) no-repeat bottom center #29551a;
+	}
+
+	.sorting_desc {
+	   background:url(#{$image-path}/datatables/images/sort_desc.png) no-repeat bottom center #29551a;
+	}
+
+	.sorting_asc_disabled {
+	   background:url(#{$image-path}/datatables/images/sort_asc_disabled.png) no-repeat bottom center #29551a;
+	}
+
+	.sorting_desc_disabled {
+	   background:url(#{$image-path}/datatables/images/sort_desc_disabled.png) no-repeat bottom center #29551a;
+	}
+
+	td.highlighted {
+	   background-color: #E2E4FF;
+	}
+
+	tr.highlighted {
+	   background-color: #E2E4FF;
+	}
+
+	table.dataTable tbody tr td {
+	   font-size:12px;
+	}
+
+	div#table_wrapper {
+	   width:100%!important;
+	   float:left;
+	   clear:none;
+	   margin: 0 0 40px 0px;
+	}
+
+	.dataTables_length {
+		float: left;
+	}
+	.dataTables_filter {
+		float: right;
+		text-align: right;
+	}
+	
+	#content {
+		border: 0px;
+		width: 100%;
+
+	}
+	.contentBox {
+	    background-color: #f9f6ef;
+	    border: 1px solid #d1cfc7;
+	    padding: 2%;
+	    margin-bottom: 1em;
+	    float: left;
+	    width: 100%;
+	    font-size:$small-font-size;
+	    position:relative;
+	    .close {
+	    	position:absolute;
+	    	line-height:0px;
+	    	top:1%;
+	    	right:0%;
+	    	font-size: $large-font-size;
+	    }
+	}
+
+	/* Data Info */
+	.dataTables_info {
+		font-size:$small-font-size;
+		float:left;
+		margin-left:1%;
+	}
+	/* Pagination */
+	.dataTables_paginate {
+		float: right;
+		text-align: right;
+		font-size:$small-font-size;
+
+	}
+
+	.itemInfo.sorting_asc, .itemInfo.sorting_desc {
+		font-weight:$heavy-font-weight;
+		text-align: center;
+		background-color:$white;
+		img {
+			padding:1em;
+			max-height:100px;
+		}
+		&:hover {
+			background:$white!important;
+		}
+	}
+
+	/* Two button pagination - previous / next */
+	.paginate_disabled_previous,
+	.paginate_enabled_previous,
+	.paginate_disabled_next,
+	.paginate_enabled_next {
+		height: 19px;
+		float: left;
+		cursor: pointer;
+		*cursor: hand;
+		color: #111 !important;
+	}
+	.paginate_disabled_previous:hover,
+	.paginate_enabled_previous:hover,
+	.paginate_disabled_next:hover,
+	.paginate_enabled_next:hover {
+		text-decoration: none !important;
+	}
+	.paginate_disabled_previous:active,
+	.paginate_enabled_previous:active,
+	.paginate_disabled_next:active,
+	.paginate_enabled_next:active {
+		outline: none;
+	}
+
+	.paginate_disabled_previous,
+	.paginate_disabled_next {
+		color: #666 !important;
+	}
+	.paginate_disabled_previous,
+	.paginate_enabled_previous {
+		padding-left: 23px;
+	}
+	.paginate_disabled_next,
+	.paginate_enabled_next {
+		padding-right: 23px;
+		margin-left: 10px;
+	}
+
+	.paginate_enabled_previous { background: url('#{$image-path}/datatables/images/back_enabled.png') no-repeat top left; }
+	.paginate_enabled_previous:hover { background: url('#{$image-path}/datatables/images/back_enabled_hover.png') no-repeat top left; }
+	.paginate_disabled_previous { background: url('#{$image-path}/datatables/images/back_disabled.png') no-repeat top left; }
+
+	.paginate_enabled_next { background: url('#{$image-path}/datatables/images/forward_enabled.png') no-repeat top right; }
+	.paginate_enabled_next:hover { background: url('#{$image-path}/datatables/images/forward_enabled_hover.png') no-repeat top right; }
+	.paginate_disabled_next { background: url('#{$image-path}/datatables/images/forward_disabled.png') no-repeat top right; }
+
+	#table_length,#table_filter {
+		* {
+			display: inline-block;
+			width: auto;
+			font-size: 13px;
+			font-weight: 500;
+		}
+	}
+
+	table tr {
+	    background-color: #fefcf7;
+	}
+	table tr:nth-child(even) {
+	    background-color: #f9f6ef;
+	}
+
+	.calculator_sidebar h2 {
+	    font-size: 24px;
+	    margin: 0;
+	    padding: 6px 0 8px;
+	    letter-spacing: 2pt;
+	    text-transform: uppercase;
+	    color: #665d52;
+	    border-top: 1px solid #bab8af;
+	    background: url(#{$image-path}/images_css/content/thinthickgrey.gif) bottom left repeat-x;
+	}
+
+	ul#plateList {
+	    margin-top: 10px;
+	}
+	.calculator_sidebar ul {
+	    margin-bottom: 30px;
+	    list-style-type: none;
+	    border-bottom: none;
+	}
+
+	table.dataTable thead th {
+	    font-weight: 200;
+	    margin: 0;
+	    letter-spacing: 1px;
+	    text-transform: uppercase;
+	    color: #fff;
+	    background-color: $parsley;
+		span {
+			font-weight: 700;
+		    letter-spacing: 1px;
+		    text-transform: uppercase;
+		    color: #fff;
+		}
+	}
+
+	table td, table th {
+	    line-height: 18px;
+	    padding: 4px 5px;
+	    text-align: left;
+	}
+
+	table {
+		width:100%!important;	    
+		border-collapse: initial;
+	    margin: 0;
+	    table-layout: initial;
+	}
+
+	div#rangePrefs select {
+		display:inline-block;
+	    font-size: 12px;
+	}
+
+	div#options li label, div#rangePrefs label {
+		font-size: 14px;
+	}
+
+
+	table.dataTable thead th {
+		height: 150px;
+	}
+
+}
+
+
+.calculator_sidebar {
+
+	h2 {
+		position: relative;
+	}
+	table td, label, select,ul li a {
+		font-size: 13px;
+		font-weight: 400;
+	}
+	ul li a {
+	    display: block;
+	    padding: 6px 6px 5px 5px;
+	    text-decoration: none;
+	    color: #323232;
+	    border-bottom: 1px dotted #bab8af;
+	    &:hover {
+	    	background-color: #f9f6ef;
+	    }
+	}
+	h2 a, h2 a:link {
+		margin: 1.25rem 0 .6875rem;
+		font-size: 14px;
+	    text-decoration: none;
+	    letter-spacing: 2pt;
+	}
+
+	#resetRestaurant {
+		position: absolute;
+		right: 0px;
+		top: 7px;
+	}
+}
+
+
+// FOR Class it up
+
+#calculator_wrapper {
+	main.standard-info {
+		ul {
+			margin-bottom: $base-spacing;
+		}
+		@include media($large-screen) {
+			@include span-columns(8);
+			@include shift(2);
+		}
+
+	}	
+}
+
+
+table.webnutrition {
+	span.menuItemTitle {
+		font-weight: bold;
+
+	}
+	span.ingredients, span.allergens {
+		text-align: left!important;
+		float:left;
+		padding:7px!important;
+	}
+
+}
+

@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/* CSS Document (charset statement must appear first)*/
+
+/*========================================================================
+Cal Poly Template Custom Web Stylesheet - print.css for printing pages
+
+Using version 5.1.0 
+=========================================================================*/
+
+#rightCol,
+#accessibilityNav,
+#audienceNav,
+#myCalPolyNav,
+#utilityNav,
+#cp,
+#footer,
+#mobileIcons {display:none}
+
+#mainCol,
+#breadcrumb{width:100%}
+
+h1,
+h2,
+p{color:#000}
+a:link,
+a:visited{color:#2e562c}
+
+
+

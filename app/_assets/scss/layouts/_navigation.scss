@@ -1,0 +1,357 @@
+
+.subpage-navigation{
+	font-size:$small-font-size;
+	padding-top: 2em;
+	h2 {
+		font-size:$base-font-size;
+		position:relative;
+		color:$parsley;
+		text-transform: uppercase;
+		font-weight:$heavy-font-weight;
+		transition: all $base-duration $base-timing;
+		a {
+			color:$parsley;
+			transition: all $base-duration $base-timing;
+			&:hover {
+				color:$dingley;
+			}
+		}		
+		&:after {
+		    content: "\f101"; 
+		    font-family: FontAwesome;
+		    margin-left:$small-spacing;
+		    transition: all $base-duration $base-timing;
+
+		 }
+		 &:hover {
+		 	&:after {
+			    margin-left:5px;
+				color:$dingley;
+			}
+
+		 }
+	}
+
+	ul {
+		margin-bottom:1em;
+		li {
+			a {
+				color:$dark-gray;
+				transition: all $base-duration $base-timing;
+				&:hover {
+					padding-left:$small-spacing;
+					color:$dingley;
+				}
+			}
+			
+		}
+	}
+
+	ul {
+		> li {
+			line-height: 1.75em;
+			> ul > li {
+				line-height: 1.25em;
+			}
+		}
+	}
+}
+.subpage-nav {
+	font-size:$small-font-size;
+	border-top:solid 4px $parsley;
+	padding-top:1em;
+	padding-top:140px;
+	@include media ($large-screen) {
+		border-top:none;
+		padding-left:2.3em;
+	}
+
+	h2 {
+		font-size:$base-font-size;
+		position:relative;
+		color:$parsley;
+		text-transform: uppercase;
+		font-weight:$heavy-font-weight;
+		transition: all $base-duration $base-timing;
+		a {
+			color:$parsley;
+			transition: all $base-duration $base-timing;
+			&:hover {
+				color:$dingley;
+			}
+		}		
+		&:after {
+		    content: "\f101"; 
+		    font-family: FontAwesome;
+		    margin-left:$small-spacing;
+		    transition: all $base-duration $base-timing;
+
+		 }
+		 &:hover {
+		 	&:after {
+			    margin-left:5px;
+				color:$dingley;
+			}
+
+		 }
+	}
+
+	ul {
+		margin-bottom:$base-spacing;
+		li {
+			a {
+				color:$dark-gray;
+				transition: all $base-duration $base-timing;
+				&:hover {
+					padding-left:$small-spacing;
+					color:$dingley;
+				}
+			}
+			
+		}
+	}
+
+	.subpage-nav-position{
+		
+			position: fixed;
+
+	}
+}
+
+
+.subpage-collapser .subpage-nav {
+	margin-top: 5px;
+	padding-top: 0;
+}
+
+.nav-content {
+	ul{
+		li {
+			padding:.5em $small-spacing;
+			line-height:1.3em;
+			a {
+				color:$dark-gray;
+
+			}
+		}
+	}
+	hr {
+		border-bottom: 1px solid $dark-gray;
+		clear: both;
+	}
+}
+#cpUl-primary{
+	transition: all $base-duration $base-timing;
+	@include media ($large-screen) {
+		font-size:1.1em;
+
+	}
+	li {
+		a {
+			&.expand {
+				&:after {
+					padding-right: 0.5rem;
+					padding-left: 0.5rem;
+					content: "\f101";
+					font-family: "FontAwesome";
+					font-size:$small-font-size;
+					transition: all $base-duration $base-timing;
+				}
+				&:hover {
+				 	&:after {
+					    margin-left:5px;
+					}
+
+				 }
+			}
+		}
+
+		&.current {
+			> a {
+				color:$dingley;
+				font-weight:bold;
+				&.expand {
+					&:after {
+						// Triangle goes here! 
+					    -webkit-transform: rotate(180deg);
+					    -moz-transform: rotate(180deg);
+					    transform: rotate(180deg);
+					    color:$mustard;
+					 }
+
+				}
+			}
+		}
+
+		.sliding-panel-subnav {
+			ul {
+
+				li {
+					&.is-expanded {
+						> a {
+							color:$dingley;
+							font-weight:bold;
+							
+						}
+					}
+				}
+
+				ul {
+					margin:$small-spacing 0 $base-spacing;
+					font-size:$small-font-size;
+					li {
+						padding:4px 0px;
+						
+					}
+				}
+			}
+			.open {
+				> li {
+					ul {
+						li {
+							a {
+								&:hover {
+									color:$dingley;
+									&:after {
+										display:inline-block;
+										width:20px;
+									}
+								}
+							}
+
+						}
+					}
+				}
+				
+
+			}
+			.accordion {  
+			  	> li  {
+				  	> a {
+					    &:after {
+							padding-right: 0.5rem;
+							padding-left: 0.5rem;
+							content: "\f101";
+							font-family: "FontAwesome";
+							font-size:$small-font-size;
+							transition: all $base-duration $base-timing;
+						}
+						&:hover {
+						 	&:after {
+						 		transition: all $base-duration $base-timing;
+							    margin-left:5px;
+							}
+						}
+					}
+					&.is-expanded {
+						> a {
+							&:after {
+								// Triangle goes here! 
+							    -webkit-transform: rotate(90deg);
+							    -moz-transform: rotate(90deg);
+							    transform: rotate(90deg);
+							    color:$mustard;
+							}
+						}
+						ul.submenu {
+							a {
+								&:after {
+									padding-right: 0.5rem;
+									padding-left: 0.5rem;
+									content: "\f101";
+									font-family: "FontAwesome";
+									font-size:$small-font-size;
+									transition: all $base-duration $base-timing;
+									display:none;
+								}
+								&:hover {
+									color:$dingley;
+									&:after {
+										display:inline-block;
+										width:20px;
+										padding-bottom: 0;
+									    padding-top: 0;
+									    margin: 0;
+									    line-height: 0;
+									}
+								}
+							}
+						}
+					}
+					
+			 	}
+
+				ul.submenu {
+				    display: none;
+				}
+				
+			}
+
+		}
+		&.small {
+			font-size:$small-font-size;
+			padding-top:.25em;
+			padding-bottom:0;
+			width:100%;
+			float:left;
+			@include media ($medium-screen) {
+				width:50%;
+			}
+			&.leading {
+				padding-bottom:2em;
+			}
+		}
+		&.logo {
+			font-family: $heading-font-family;
+			a {
+				width:100%;
+				cursor: pointer;
+
+				img {
+					width:45%;
+					float:left;
+					margin-right:5%;
+				}
+				span{
+					margin-top:10px;
+					float:left;
+				}
+			}
+			hr {
+				padding-top:1.5em;
+			}
+		
+		}
+		&.logo-two {
+			font-family: $heading-font-family;
+			width:100%;
+			a {
+				float:left;
+				width:100%;
+				cursor: pointer;
+
+				img {
+					width:60%;
+					float:left;
+					margin-right:5%;
+				}
+				span {
+					display:block;
+					width:100%;
+					float:left;
+					margin-bottom:$base-spacing;
+				}
+			}
+
+			
+		}
+		
+	}
+	
+
+	
+}
+
+.arrow-left {
+  
+}

@@ -1,0 +1,240 @@
+#{$all-buttons}, .button, button {
+	padding: 1em 1.25em;
+	margin:.5em;
+	display: inline-block;
+	position: relative;
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 1;
+	vertical-align: middle;
+	cursor: pointer;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	text-decoration: none !important;
+	text-align: center;
+	border: 2px solid transparent;
+	-webkit-transition: .2s all ease-in-out;
+	transition: .2s all ease-in-out;
+	background: $dingley;
+	color: $white;
+	@include media($medium-screen) {
+		white-space: nowrap;
+	}
+
+	&:hover,
+	&:focus {
+		border-color:$dingley;
+		color: $dingley;	
+		background: transparent;
+
+	}
+	&:disabled, &.button-disabled {
+		cursor: not-allowed;
+		opacity: 0.5;
+		
+	}
+
+
+	&.button-inverse {
+	  	background-color: $white;
+	  	color:$dingley;
+	  	&:hover,
+		&:focus {
+	  		background-color: $dingley;
+			color: $white;
+			border-color:$white;
+
+		}
+		
+	}
+
+	&.button-parsley {
+	  	background: $parsley;
+		color: $white;
+	  	&:hover,
+		&:focus {
+			border-color:$parsley;
+			color: $parsley;	
+			background: $white;
+
+		}
+	}
+
+	&.button-warning {
+	  	background: $warning;
+		color: $white;
+	  	&:hover,
+		&:focus {
+			border-color:$warning;
+			color: $warning;	
+		}
+	}
+
+	&.button-danger {
+	  	background: $danger;
+		color: $white;
+	  	&:hover,
+		&:focus {
+			border-color:$danger;
+			color: $danger;	
+		}
+	}
+
+  	&.button-small {
+  		font-size:$small-font-size;
+  	}
+  	&.button-large {
+  		@include media($large-screen) {
+			font-size:1.25em;
+			@include padding (1em);
+		}
+  		
+  	}	
+
+}
+@include media($large-screen){
+	.button + .button {
+		margin-left: $base-spacing;
+	}
+}
+
+.backtotop {
+	text-align: right;
+	font-size:$small-font-size;
+	a {
+		color:lighten($sage,10%);
+		&:hover {
+			color:$sage;
+		}
+	}	
+}
+
+.special-hour-buttons {
+
+	.button {
+		color:$sage;
+		span {
+			color:#fff;
+			font-weight:bold;
+		}
+		&:hover {
+			span {
+				color:$parsley;
+			}
+		}
+
+		&.button.next {
+
+			@include media($medium-screen) {
+				float:right;
+			}
+		
+			
+
+		}
+	}
+	
+}
+
+.bouncing-scroll {
+
+	.container {
+	  position: relative;
+	  width: 24px;
+	  height: 24px;
+	  margin:auto;
+	}
+
+	.chevron {
+	  position: absolute;
+	  width: 28px;
+	  height: 8px;
+	  opacity: 0;
+	  transform: scale3d(0.5, 0.5, 0.5);
+	  animation: move 3s ease-out infinite;
+	}
+
+	.chevron:first-child {
+	  animation: move 3s ease-out 1s infinite;
+	}
+
+	.chevron:nth-child(2) {
+	  animation: move 3s ease-out 2s infinite;
+	}
+
+	.chevron:before,
+	.chevron:after {
+	  content: ' ';
+	  position: absolute;
+	  top: 0;
+	  height: 100%;
+	  width: 51%;
+	  background: $dingley;
+	}
+
+	.chevron:before {
+	  left: 0;
+	  transform: skew(0deg, 30deg);
+	}
+
+	.chevron:after {
+	  right: 0;
+	  width: 50%;
+	  transform: skew(0deg, -30deg);
+	}
+
+	@keyframes move {
+	  25% {
+	    opacity: 1;
+
+	  }
+	  33% {
+	    opacity: 1;
+	    transform: translateY(30px);
+	  }
+	  67% {
+	    opacity: 1;
+	    transform: translateY(40px);
+	  }
+	  100% {
+	    opacity: 0;
+	    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+	  }
+	}
+
+	.text {
+		margin-top: 45px;
+	  display: block;
+	  color: $dingley;
+	  text-transform: uppercase;
+	  white-space: nowrap;
+	  font-family: Lato, sans-serif;
+    text-transform: uppercase;
+    font-size:16px;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.0375em;
+	  opacity: .25;
+	  animation: pulse 2s linear alternate infinite;
+	}
+
+	@keyframes pulse {
+	  to {
+	    opacity: 1;
+	  }
+	}
+}
+
+
+.button-transparent-gold {
+	background:transparent;
+	border:solid 3px $cpgold-light;
+	text-shadow:none;
+	&:hover {
+		background-color: rgba(255,255,255,1);
+		color:$black;
+		border:solid 3px $cpgold-light;
+
+	}
+}

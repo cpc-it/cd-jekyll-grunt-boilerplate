@@ -1,0 +1,184 @@
+html {
+  box-sizing: border-box;
+}
+
+
+
+html,
+body {
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.wrapper {
+	@include outer-container;
+	padding-left:$gutter;
+	padding-right:$gutter;
+	max-width:$max-width;
+
+	main {
+		padding-top:140px;
+
+		ul {
+			margin-bottom: $base-spacing;
+		}
+		@include media($large-screen) {
+			@include span-columns(8);
+			@include shift(2);
+		}
+
+
+	}	
+
+
+	&.two-column {
+		main {
+			@include media($large-screen) {
+				@include span-columns(9);
+				@include shift(0);
+			}
+		}
+	}
+
+	&.full {
+		main {
+			@include media($large-screen) {
+				@include span-columns(12);
+				@include shift(0);
+			}
+		}
+	}
+
+	.subpage-nav {
+		@include media ($large-screen) {
+			@include span-columns(3);	
+			min-height: 700px;
+			margin-top:140px;
+		}
+	}
+	
+	/* First image, header, full width*/
+	.breadcrumbs-nav + img {
+		width:100%;
+	}
+
+	/* Space above buttons on backpage */
+	.button + h2 {
+		margin-top:$small-spacing;
+	}
+
+	&.bios {
+		h2, h3, p {
+			@include media($large-screen) {
+				margin-left: 270px;
+			}
+		}
+		.avatar.left {
+			@include media($large-screen) {
+				margin-left:-270px!important;
+			}
+		}
+	}
+
+}
+section.wrapper {
+	padding-top: 4em;
+	padding-bottom: 4em;
+}
+.large-wrapper {
+	@include outer-container;
+	padding-left:$gutter;
+	padding-right:$gutter;
+	@media screen and (min-width: 2000px) {
+		@include outer-container(2000px);
+	}
+}
+
+.article-entry {
+	@include outer-container;
+
+	img {
+		display: block;
+		margin-bottom:1em
+	}
+	@include media($medium-screen) {
+		img {
+			@include span-columns(5);
+			font-size:$h2-font-size;
+		}
+		div {
+			@include span-columns(7);
+			@include omega();
+			margin-bottom:.75em;
+			min-height:200px;
+		}
+	}
+}
+
+
+.centered_content {
+		@include media($large-screen) {
+			width:70%;
+			margin-left:15%;
+			text-align: center;
+			margin-bottom:3em;
+
+		}
+
+	.column_grid {
+		text-align: left
+	}
+}
+
+/* Phase 5 = Section based layout */
+
+section.page-content {
+	@include outer-container;
+	padding-left:$gutter;
+	padding-right:$gutter;
+	padding:4em 0;
+	display:flex;
+}
+
+/* twocolumn split */
+section.twocolumn-split {
+	
+	
+	.title {
+		border-bottom: solid 1px $black;
+		text-transform: uppercase;
+   		letter-spacing: 0.15em;
+   		text-align: center;
+   		@include media($large-screen) {
+   			text-align: left;
+   		}
+	}
+	@include media($large-screen) {
+		flex-direction:row;
+		div {
+			text-align: left;
+			min-width:30%;
+			max-width:50%;
+			&:first-child {
+				img {
+					float:right;
+					margin-right:6%;
+				}
+			}
+			.button {
+				margin-left:0;
+			}
+		}
+	}
+}
+
+// Helpers
+.hide {
+    display:none;
+}
+

@@ -1,0 +1,77 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<header> 
+	<div class="top-nav">
+
+
+      <ul>
+        <li>
+          <a id="skip" href="#topH1" title="skip to content">Skip to Content</a>
+        </li>
+      
+        <li>
+          <a id="helpLink" href="http://www.calpoly.edu/help.html" title="help">?</a>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="http://www.calpolycorporation.org/">Cal Poly Corporation</a>
+        </li>
+        <li class="basesite">
+          <a href="http://www.calpolydining.com/">Campus Dining</a>
+        </li>
+        <li>
+          <a href="http://calpolystore.com/home.aspx">University Store</a>
+        </li>
+        <li>
+          <a href="http://www.calpolyprintcopy.com/">Print &amp; Copy</a>
+        </li>
+        <li>
+          <a href="http://www.calpolyconferences.org/">Cal Poly Conference &amp; Event Planing</a>
+        </li>
+      </ul>
+	</div> 
+	<div class="header-primary">  
+		<div class="left-nav">
+			<button class="hamburger hamburger--3dx" type="button"
+				aria-label="Menu" aria-controls="navigation">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</button>
+			
+			{% include nav-breadcrumbs.html %}
+		</div>
+		<div class="right-nav">
+	   		<ul>
+				<li><a href="{{ site.baseurl }}/search/"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+				<li><a href="{{ site.baseurl }}/">Header Nav Item</a></li>
+				<li><a href="{{ site.baseurl }}/">Header Nav Item</a></li>
+				<li><a href="{{ site.baseurl }}/">Header Nav Item</a></li>
+
+			</ul>
+		</div>
+
+	    <div id="cplogo">
+	      <a href="{{ site.baseurl }}/">
+	        <img title="Go to Cal Poly Corporation Home" alt="Cal Poly Corporation" src="{{ site.baseurl }}/img/logos/CD_Logo_Green.svg">
+	      </a>
+	    </div>
+	</div>
+	<div class="top-banner"></div>
+</header>
+{% if site.environment == "staging" %}
+	
+  <div class="admin">
+  	<a href="https://webapps.calpolycorporation.org/jobid/" class="button"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Back to Admin</a>
+  </div>
+
+{% endif %}
+

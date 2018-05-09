@@ -1,0 +1,460 @@
+/* HELPERS */
+.clearfix {
+	@include clearfix;
+}
+
+/* remember to define focus styles! */
+:focus {
+    outline: 0;
+}
+
+.pull-right {
+	float:right;
+}
+
+
+
+.pull-left {
+	float:left;
+}
+/* MOLECULES */
+
+/* HERO - STANDARD */
+.hero {
+	text-align: center; 
+	position:relative;
+	padding:3em 3%;
+	@include media($large-screen){
+		font-size:$large-font-size;
+		zoom: 100%;
+		display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+	    align-items: center;
+	    min-height: 40vh;
+	}
+
+	.hero-content {
+		text-align: center;
+		max-width:100%;
+		h1 {
+			font-size:2.5em;
+		}
+
+		@include media ($large-screen) {
+			h2 {
+				font-size:$h2-font-size-large;
+				font-weight: $thin-font-weight;
+
+			}
+			
+		}
+	
+	}
+
+}
+
+.hero-two {
+	display: table;
+	width: 100%;
+	height: auto;
+	min-height:50VH;
+	padding: $base-spacing;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	overflow-y:hidden;
+	&.half {
+		@include media($medium-screen) {
+			height: 50%;
+			min-height:50%;
+			padding: $base-spacing;
+		}
+	}
+	&.full {
+		
+		@include media($medium-screen) {
+			height: 100%;
+			min-height:100%;
+			padding: $base-spacing;
+		}
+	}
+	.hero-content {
+		display: table-cell;
+    vertical-align: middle;
+    overflow-y:hidden;
+
+    &.center {
+    	text-align: center;
+
+		
+    }
+  	@include media($large-screen) {
+		 h1, h2 {
+				font-size:72px;
+			}
+			.button {
+				font-size:21.6px;
+				letter-spacing:.81px;
+				padding:19.44px;
+			}
+			
+		}
+
+	}
+	.hero-center {
+		display: table-cell;
+    vertical-align: middle;
+    overflow-y:hidden;
+	}
+
+	.header, .footer {
+		width:100%;
+		clear:both;
+	}
+
+	.header {
+		padding-top:$base-spacing;
+		text-align:center;
+		h2 {
+			font-size: $h1-font-size;
+		}
+	}
+
+
+	@media screen and (min-width:1318px) {
+
+		.left{
+			float:left;
+			width:49%;
+		
+		}
+		.right{
+			float:right;
+			width:49%;
+		
+
+		}
+	}
+
+}
+
+
+/* Horizontal and Vertically Center */
+.center-content {
+	position:relative;
+	> div {
+		@include media ($medium-screen){
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			min-width:500px;
+			max-width:500px;
+		}
+		@include media ($large-screen){
+			min-width:650px!important;
+			max-width:650px!important;
+		}
+
+		
+	
+	}
+
+}
+
+
+
+/* ADMIN TAB */
+
+.admin {
+	position:fixed;
+	top:20%;
+	left:0%;
+	@include media(small) {
+		display:none;
+	}
+	a.button {
+		background: #496e3b;
+	    color: #fff;
+	    text-decoration: none;
+	    width: 80px;
+	    white-space: normal;
+	    line-height: 20px;
+	    border-top-left-radius: 0;
+	    border-bottom-left-radius: 0;
+	    padding: 2px;
+	    line-height: 16px;
+	    &:hover {
+	    	background: lighten(#496e3b,10%);
+	    }
+
+	}
+}
+
+
+/**
+ * PANEL GRID:
+ * set in js to matchHeight by row so that everything lines up properly 
+ */
+
+.panel_grid {
+	
+	margin-left: -1%;
+	margin-right: -1%;
+
+	>div {
+		display: inline-block;
+		margin-left: 1%;
+		margin-right: 1%;
+
+		a {
+			display: block;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+			display: block;
+			border: 0!important;
+			padding:0!important;
+			margin:0!important;
+			max-height:100%;
+			max-width:100%;
+		}
+
+
+		width: 100%;
+
+		@include media($small-screen) {
+			width: 47%;
+		}
+
+		@include media ($medium-screen) {
+			width: 30.5%;
+		}
+	}
+
+	&.basic_display {
+		>div {
+			text-align: center;
+			margin-bottom: .75em;
+
+			padding: .25em 0 0 0;
+			border: 2px solid #58a618;
+			img {
+				margin-top: .25em;	
+			}
+		}
+	}
+}
+
+
+/**
+ * COLUMN GRID:
+ * Building columns for content
+ */
+.column_grid {
+	@include outer-container;
+	@include media($medium-screen){
+		&.two{
+			>div {
+				@include span-columns(6);
+				@include omega(2);
+				
+			}
+		}
+		&.three{
+			>div {
+				@include span-columns(4);
+				@include omega(3);
+			}
+		}
+		&.four{
+			>div {
+				@include span-columns(3);
+				@include omega(4);
+			}
+		}
+		&.two-thirds {
+			> div {
+				@include span-columns(3);
+				@include omega(3);
+			}
+			> div:first-child {
+				@include span-columns(4);
+				@include omega(3);
+			}
+		}
+	}
+}
+
+.column_count {
+	column-count: 2;
+	@include  media($medium-screen){
+		column-count: 3;
+	}
+
+}
+/**
+ * LISTS BLOCK:
+ * Group of lists displaying info. Example: /nutrition/religiousbeliefs/
+ */
+
+.lists-block {
+	img {
+		float:right;
+		padding:1em 0 1em 1em;
+		&.logo {
+			width:25%;
+
+			@include media($medium-screen) {
+				width:15%;
+			}
+		}
+	}
+	ul {
+		list-style:circle;
+		margin-left:1em;
+	}
+}
+
+
+
+
+
+
+.venue_information_block {
+	
+	.button {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+}
+
+
+
+
+.responsiveVideoWrapper {
+	
+	margin: 0 0 0.75em;
+
+	&.youtube-responsive {
+		position: relative;
+		padding-bottom: 56.25%; /* 16:9 */
+		padding-top: 25px;
+		height: 0;
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+
+
+
+.panel_stack_wrap {
+	>.active {
+		display: block;
+	}
+	>:not(.active) {
+		display: none;
+	}
+}
+
+
+.text-wrap {
+	@include outer-container;
+	margin-top: 3em;
+	img {
+		@include span-columns(2);
+	}
+	.text {
+		@include span-columns(10);
+	}
+}
+
+
+
+
+.header_with_sidepocket {
+	width: 100%;
+	@include media($small-screen) {
+		display: table;
+		>* {
+			display: table-cell;
+			vertical-align: top;
+		}
+	}
+
+	&.size_small {
+		>*:not(:last-child) {
+			padding-right: 50px;
+		}
+		>:last-child {
+			width: 100%;
+			@include media($small-screen) {
+				width: 200px;
+			}
+		}
+	}
+
+	h1 span {
+		color:$sage;
+		font-size:$extra-small-font-size;
+	}
+}
+
+.expander {
+  $base-font-size: 1em !default;
+  $base-line-height: 1.5em !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $light-gray: #DDD !default;
+  $base-font-color: $dark-gray !default;
+  $expander-arrow-width: 0.7em;
+  $expander-toggle-size: 1em;
+  $expander-toggle-arrow-size: $expander-toggle-size;
+  $expander-toggle-margin: 1em;
+
+  .expander-trigger {
+    border-bottom: 2px solid #035642;
+    color: $action-color;
+    cursor: pointer;
+    display: block;
+    font-size: $expander-toggle-size;
+    margin-bottom: $expander-toggle-size;
+    padding-bottom: $expander-toggle-size / 4;
+    text-decoration: none;
+    user-select: none;
+
+    &::before {
+      content: "\25BC";
+      font-size: $expander-arrow-width;
+      margin-right: 0.5em;
+    }
+  }
+
+  .expander-content p {
+    color: $base-font-color;
+    line-height: $base-line-height;
+  }
+
+  .expander-hidden {
+    &::before {
+      content: "\25BA";
+      font-size: $expander-arrow-width;
+    }
+  }
+
+  .expander-hidden + .expander-content {
+    display: none;
+  }
+}
+

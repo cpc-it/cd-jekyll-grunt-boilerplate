@@ -1,0 +1,49 @@
+
+
+.gallery-masonry {
+	padding:4em 0;
+	/* ---- grid ---- */
+	.container {
+		@include outer-container;
+		padding-left:$gutter;
+		padding-right:$gutter;
+		width:100%;
+	}
+	header {
+		@include span-columns(12);
+
+	}
+	.grid {
+	 width:100%;
+	  
+	}
+
+	/* clear fix */
+	.grid:after {
+	  content: '';
+	  display: block;
+	  clear: both;
+	}
+
+	/* ---- .grid-item ---- */
+
+	.grid-sizer,
+	.grid-item {
+	  width: 25%;
+	}
+
+	.grid-item--width2 {
+		width:50%;
+	}
+
+	.grid-item {
+	  float: left;
+	  padding:1%;
+	}
+
+	.grid-item img {
+	  display: block;
+	  max-width: 100%;
+	}
+
+}

@@ -1,0 +1,557 @@
+/*------------------------------------*\
+   CARD COMPONENT
+\*------------------------------------*/
+.card {
+	background: #fff;
+	border-radius: 3px;
+	border: solid 1px #e0e0e0;
+	box-shadow: 0 3px 7px -3px rgba(0, 0, 0, 0.3);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	max-width:700px;
+	margin: $base-spacing;
+	img {
+  	 	width:100%;
+	}
+	.description {
+		padding: $base-spacing;
+		//position:relative;
+		h2 {
+			//margin-bottom:$base-spacing;
+		}
+		
+		p {
+			margin: $base-spacing 0;
+			position: relative;
+			padding-top:$small-spacing;
+			font-size: 1em;
+			&:after {
+				content: "";
+				background:  $mustard;
+				height: 6px;
+				width: 40px;
+				/*POSITION*/
+				position: absolute;
+				top: -$small-spacing;
+				left: 0;
+			}
+		}
+		ul {
+			margin: $base-spacing 0;
+			position: relative;
+			padding-top:$small-spacing;
+			font-size: 1em;
+			&:after {
+				content: "";
+				background:  $mustard;
+				height: 6px;
+				width: 40px;
+				/*POSITION*/
+				position: absolute;
+				top: -$small-spacing;
+				left: 0;
+			}
+			li {
+				i {
+					width: 29px;
+					margin: auto;
+					text-align: center;
+				}
+			}
+		}
+		.button {
+			@include media(max-width 600px) {
+				//width:100%;
+			}
+			font-size:$small-font-size;
+			margin-left:0;
+		}
+
+	}
+}
+
+/*------------------------------------*\
+    TWO CARD LAYOUT
+\*------------------------------------*/
+.two-card-grid {
+	margin: 4em 0 0em;
+	.card {
+		position:relative;
+		.description {
+			padding-bottom:50px;
+			.button-group {
+				position:absolute;
+				bottom: $base-spacing;
+				left: $base-spacing;
+				right: $base-spacing;
+				.button {
+					position: relative;
+					float:left;
+					bottom:0;
+				}
+			}
+		}
+		.button {
+			position:absolute;
+			bottom: $base-spacing;
+			left: $base-spacing;
+		}
+		
+	}
+	
+}
+
+
+/*------------------------------------*\
+    THREE CARD LAYOUT
+\*------------------------------------*/
+.three-card-grid {
+	margin: 4em 0;
+	.card {
+		margin:0;
+		position:relative;
+
+		.button {
+			position:absolute;
+			bottom: $base-spacing;
+			left: $base-spacing;
+			right: $base-spacing;
+
+		}
+
+		.description {
+			padding-bottom:50px;
+			
+
+		}
+		
+	}
+	
+}
+
+
+/*------------------------------------*\
+    FOUR CARD LAYOUT
+\*------------------------------------*/
+.four-card-grid {
+		margin: 4em 0;
+
+	.card {
+		position:relative;
+
+		.button {
+			position:absolute;
+			bottom: $base-spacing;
+			left: $base-spacing;
+			right: $base-spacing;
+
+		}
+
+		.description {
+			padding-bottom:50px;
+			
+
+		}
+		
+	}
+	
+}
+/*------------------------------------*\
+    FIVE CARD LAYOUT
+\*------------------------------------*/
+.five-card-grid  {
+display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    -ms-grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    -ms-grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "card1 card1 card1 card2 card2 card2" "card3 card3 card4 card4 card5 card5";
+    .card:first-child {
+    	position: relative;
+    	grid-area: card1;
+    }
+    .card:nth-child(2){
+    	position: relative;
+    	grid-area: card2;
+    }
+    .card:nth-child(3){
+    	position: relative;
+    	grid-area: card3;
+    }
+    .card:nth-child(4){
+    	position: relative;
+    	grid-area: card4;
+    }
+    .card:nth-child(5){
+    	position: relative;
+    	grid-area: card5;
+    }
+}
+
+
+/*------------------------------------*\
+    CARD LAYOUT
+\*------------------------------------*/
+.card-grid {
+	margin: $base-spacing 0;
+}
+
+
+
+/*------------------------------------*\
+    Horizontal CARD LAYOUT
+\*------------------------------------*/
+.horizontal-card-grid {
+	margin: $base-spacing auto;
+	
+	.card {
+		max-width:100%;
+		img {
+		 	object-fit: cover;
+   		 	width: 100%;
+   		 	@include media($large-screen) {
+   		 		min-height: 100%;
+   		 	}
+		}
+		
+	}
+	
+}
+
+/*------------------------------------*\
+    NEWS CARD LAYOUT
+\*------------------------------------*/
+.news-card-grid {
+	margin: $base-spacing auto;
+	
+	.news {
+	
+		img {
+			object-fit: cover;
+   			width: 100%;
+   			@include media($large-screen) {
+   	 			min-height: 100%;
+   	 		}
+		}
+		
+	}
+	
+}
+
+
+/*------------------------------------*\
+    DEALS CARD LAYOUT
+\*------------------------------------*/
+.deals-card-grid {
+	margin: $base-spacing auto;
+ 
+
+}
+
+
+
+/*------------------------------------*\
+    VENUE CARD
+\*------------------------------------*/
+.venue-card-grid {
+	margin: $base-spacing auto;
+	
+	
+	.venue {
+		h3 {
+			font-size: $h2-font-size;
+
+		}
+		background:darken($white, 2%);
+		
+		img {
+			object-fit: inherit;
+			min-width: 100px;
+
+			height:100px;
+			max-width:80%;
+			margin:1em  10%;
+		}
+		
+		
+		
+	}
+	
+
+}
+
+.news, .deals {
+	 h3 {
+			font-size: $h2-font-size;
+
+		}
+}
+
+@supports not (display: grid) {
+
+	.two-card-grid, .three-card-grid, .four-card-grid, .card-grid {
+
+		@include media($large-screen) {
+			display: flex;
+			justify-content:center;
+		}
+		.card {
+			margin: $base-spacing;
+
+		}
+	}
+
+	.horizontal-card-grid {
+		@include media($large-screen) {
+			display: flex;
+			justify-content:center;
+		}
+		.card {
+			margin: 0;
+
+		}
+	}
+	.news-card-grid {
+		@include media($large-screen) {
+			display: flex;
+			justify-content:center;
+		}
+		.news {
+			margin: $base-spacing;
+
+		}
+	}
+
+
+	.deals-card-grid {
+		@include media($large-screen) {
+			display: flex;
+			justify-content:center;
+		}
+		.card {
+			margin: $base-spacing;
+
+		}
+	}
+
+	.venue-card-grid {
+		@include media($large-screen) {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content:center;
+		}
+		.venue {
+			margin: $base-spacing;
+
+			img {
+				margin-left:10%;
+				margin-top:10%;
+			}
+
+		}
+	}
+}
+
+
+@supports (display: grid) {
+	/*------------------------------------*\
+    TWO COLUMN CARD LAYOUT CSS GRID LAYOUT
+	\*------------------------------------*/
+	.two-card-grid {
+		display: grid;
+		grid-gap: 3em;	
+		grid-template-columns: 1fr; 
+		@include media($large-screen) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		.card {
+			margin:0;
+		}
+		
+	}
+
+	/*------------------------------------*\
+    THREE COLUMN CARD LAYOUT CSS GRID LAYOUT
+	\*------------------------------------*/
+	.three-card-grid {
+		display: grid;
+		grid-gap: 3em;	
+		grid-template-columns: 1fr; 
+
+		@include media($small-screen) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include media($max-width) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		.card {
+			margin:0;
+		}
+	}
+
+	/*------------------------------------*\
+    FOUR CARD LAYOUT
+	\*------------------------------------*/
+	.four-card-grid {
+		display: grid;
+		grid-gap: $base-spacing;	
+		grid-template-columns: 1fr; 
+		@include media($small-screen) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include media($max-width) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+		.card {
+			margin:0;
+		}
+		
+	}
+
+
+	/*------------------------------------*\
+  DEALS CARD CSS GRID LAYOUT
+	\*------------------------------------*/
+	.card-grid {
+
+		display: grid;
+		grid-gap: $base-spacing;	
+		grid-template-columns: 1fr; 
+		@include media($large-screen) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		&.three {
+			@include media($max-width) {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+		.card {
+			margin:0;
+		}
+	}
+
+
+	/*------------------------------------*\
+    HORIZIONTAL CARD LAYOUT CSS GRID LAYOUT
+	\*------------------------------------*/
+	.horizontal-card-grid {
+		display: grid;
+		grid-gap: $base-spacing;	
+		grid-template-columns: 1fr;
+
+		.card {
+			margin:0;
+			/* CSS grid for browsers that support display:grid */
+			display: grid;
+			grid-template-columns: 1fr;
+			@include media($medium-screen) {
+			  grid-template-columns: 2fr 3fr;
+			  align-items:center;
+			}	
+			
+	
+		}
+	}
+
+
+	/*------------------------------------*\
+    NEWS CARD LAYOUT CSS GRID LAYOUT
+	\*------------------------------------*/
+	.news-card-grid {
+		display: grid;
+		grid-gap: $base-spacing;	
+		grid-template-columns: 1fr; 
+		@include media($small-screen) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include media($medium-screen) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+		@include media($max-width) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.news {
+			/* CSS grid for browsers that support display:grid */
+			display: grid;
+			grid-template-columns: 1fr;
+			@include media($medium-screen) {
+			  grid-template-columns: 2fr 2fr;
+			  align-items:center;
+			}	
+			@include media($max-width) {
+				&:nth-child(1n) {
+			  	margin-right:0;
+			  }
+			  &:nth-child(2n) {
+			  	margin-left:0;
+			  }
+			}
+		
+	
+		}
+	}
+
+
+	
+
+	/*------------------------------------*\
+  DEALS CARD CSS GRID LAYOUT
+	\*------------------------------------*/
+	.deals-card-grid {
+
+		display: grid;
+		grid-gap: $base-spacing;	
+		grid-template-columns: 1fr; 
+		@include media($small-screen) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include media($max-width) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	/*------------------------------------*\
+    VENUE CARD CSS GRID LAYOUT
+	\*------------------------------------*/
+
+	.venue-card-grid {
+	
+	  display: grid;
+		grid-template-columns: 1fr; 
+		grid-gap: $base-spacing;	
+		
+		@include media($small-screen) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include media($max-width) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.venue {
+			
+			display: grid;
+			grid-template-columns: 1fr;
+			margin-left:auto;
+			margin-right:auto;
+			
+			@include media($medium-screen) {
+			  grid-template-columns: 2fr 5fr;
+			  align-items:center;
+
+			}	
+			@include media($max-width) {
+
+				&:nth-child(1n) {
+			  	margin-right:0;
+			  }
+			  &:nth-child(2n) {
+			  	margin-left:0;
+			  }
+
+			}
+			
+		}
+	}
+
+}

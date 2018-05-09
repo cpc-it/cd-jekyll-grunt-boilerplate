@@ -1,0 +1,260 @@
+
+/* We can later build some global classes based of what we have here */
+.bio-series, main.standard-info {
+	img {
+		
+		padding:.5em;
+		display:block;
+		margin:0 auto;
+		@include media($medium-screen){
+			float:right;
+			
+			margin:0 0 1em 1em;
+		}
+	}
+	ul {
+		list-style:circle;
+		padding-left:1em;
+		li {
+			img {
+				float: left;
+    border: none;
+    margin: 0px;
+    padding: 0;
+    padding-right: 10px;
+    height: 1.5em;
+    background: #fff;
+    position: relative;
+			}
+		}
+	}
+	
+}
+
+.list-block {
+	img {
+		border:none;
+		width:auto;
+		max-width:150px;
+		max-height:150px;
+		padding:.5em;
+		display:block;
+		margin:0 auto;
+		@include media($medium-screen){
+			float:right;
+			margin:0 0 1em 1em;
+		}
+
+	}
+	ul {
+		list-style:circle;
+		padding-left:1em;
+	}
+
+}
+.bio-series img {
+	@include media($medium-screen) {
+		max-width: 300px;
+	}
+}
+
+.catering {
+	img, iframe {
+	}
+	.catering-image-link {
+		img {
+			padding:0;
+			height:100px;
+			width:auto;
+		}
+	}
+}
+
+.legal {
+	ol {
+		list-style: decimal;
+		
+		 li {
+			margin-left:$small-font-size;
+			margin-bottom:$small-spacing;
+			
+			ol {
+				list-style-type: lower-alpha;
+				font-size: $small-font-size;
+			}
+			
+		}
+
+	}
+}
+.staff-catering {
+	width:100%;
+	float:left;
+	display:block;
+	img.profile {
+		max-width:300px;
+	}
+}
+
+
+
+
+@mixin grid-item-columns($columns) {
+  width: (100% / 12) * $columns;
+}
+
+/* Plu$ Dollars Landing Page*/
+/* Counter */
+#countdown {
+	@include outer-container;
+	font-weight:$heavy-font-weight;
+
+	.lead {
+		font-family: $heading-font-family;
+		margin-bottom:4em;
+		margin-top:-1em;
+		span {
+			color:$dingley;
+		}
+	}
+	.column_grid {
+		div {	
+			/* Padding to prevent the starting balance from running into the current balance at the start of the term */
+			padding-bottom: $base-spacing;
+			@include media(max-width 480px){						
+    			width:50%;
+    			float:left;
+    	    }
+			h4 {
+				font-size:1em;
+				color:$dingley;
+				margin-bottom:.25em;
+				@include media($medium-screen){						
+    			font-size:$large-font-size;
+    		}
+			}
+			p {
+				font-family:$heading-font-family;
+
+			}
+		}
+		div:last-child {
+			text-align:right;
+			h4 {
+				color:$orange;
+			}
+		}
+	}
+
+	.meter {
+		@include span-columns(12);
+   	 	height: 200px;
+    	@include media($medium-screen) {						
+			 height: 450px;
+		}
+	    position: relative;
+	    float:left;
+	    z-index:1;
+	    font-family:$heading-font-family;
+	    margin-bottom:$base-spacing;
+
+		> span {
+	    display: block;
+	    position: absolute;
+	    bottom:0;
+	    
+	    overflow: hidden;
+	    z-index:-1;
+		height: 200px;
+		@include media($medium-screen) {						
+		 	height: 450px;
+		}
+	    &.plus-dollars {
+	    	width:100%;
+	    	left:0;
+	    	min-height: 70px;
+	    	height:110%; /* Start at 110% so that on plus dollar day 0, it doesn't animate up from 100 -> 110% */
+	    	p {
+		    	@include span-columns(6);
+		    	text-align:left;
+		    	> span {
+		    		color:$dingley;
+		    		@include media($medium-screen){						
+		    			font-size:$large-font-size;
+		    		}
+					}
+		    	&:nth-child(2){
+		    		text-align:right;
+		    		> span {
+			    		color:$orange;
+					}
+		    	}
+	    		
+	    	}
+	    }
+	    &.top-line {
+	    	width: 30%;
+    		left: 19%;
+    		@include media($medium-screen) {
+	    		border-top:solid 4px $black;
+	    	}
+	    	z-index:15;
+	    }
+	    
+	    &.top-line-right{
+	    	width: 30%;
+    		right: 18%;
+    		@include media($medium-screen) {
+	    		border-top:solid 4px $black;
+	    	}
+	    	z-index:15;
+	    }
+	    
+	    &.meter-overlay-white {
+	    	width:80%;
+	    	left:6%;
+	    	z-index:13;
+
+	    	@include media($medium-screen) {						
+			 	height: 450px;
+
+			}
+	    	img {
+				width:100%;
+				z-index:100;
+		   	 	height: 200px;
+				@include media($medium-screen) {						
+				 	height: 450px;
+
+				}
+		   	 	position:absolute;
+		   	 	bottom:0;
+				}
+   	 		}
+   	 	}
+	    
+
+		.vegetables {
+		 	z-index:-2;
+			position:absolute;
+			width:80%;
+	    	left:6%;
+	   		height: 200px;
+			@include media($medium-screen) {						
+			 	height: 450px;
+			}
+			img {
+				width:100%;
+				z-index:100;
+	   	 		height: 200px;
+				@include media($medium-screen) {						
+				 	height: 450px;
+
+				}
+
+			}
+		}
+	}
+}
+
+

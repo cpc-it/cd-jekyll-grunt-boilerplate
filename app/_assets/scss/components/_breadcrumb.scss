@@ -1,0 +1,117 @@
+/* from Twitter Bootstrap */
+
+.breadcrumb {
+  padding: 0;
+  margin-bottom: 0rem;
+  list-style: none;
+}
+
+.breadcrumb::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.breadcrumb-item {
+  float: left;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  display: inline-block;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  color: #818a91;
+  content: "/";
+}
+
+.breadcrumb-item + .breadcrumb-item:hover::before {
+  text-decoration: underline;
+}
+
+.breadcrumb-item + .breadcrumb-item:hover::before {
+  text-decoration: none;
+}
+
+.breadcrumb-item.active {
+  color: lighten($sage,10%);
+}
+/*if you already use Twitter, you do not need these css lines above, cause they already in Twitter Bootstrap */
+
+
+.ada-compliance-label {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
+}
+
+
+/* Additions: imgage integration */
+
+.breadcrumbs {
+	font-size: 11px;
+	float: left;
+	margin-left:40px;
+	padding-left: 0.5rem;
+	@include clearfix;
+	display:none;
+	@include media($medium-screen){
+		display:block;
+	}
+	ol {
+		margin-left:0;
+	}
+    a {
+        text-align: left;
+        text-decoration: none;
+				color: $parsley;
+        &:link,
+        &:visited {
+					color: $parsley;
+
+        }
+        &:focus,
+        &:hover,
+        &:active {
+            text-decoration: none;
+            color:$parsley;
+        }
+    }
+}
+
+
+
+.breadcrumbs .breadcrumb {
+  padding: 0;
+  margin-bottom: 0;
+  border: none;
+  display: inline-block;
+}
+
+
+.breadcrumbs a.breadcrumb-item:after {
+  display: inline-block;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  content: "/";
+  text-decoration: none;
+}
+
+.breadcrumbs .icon:after {
+  display: inline-block;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  color: $sage;
+  content: "/";
+}
+
+.breadcrumbs .icon {
+  display: inline-block;
+}
+
+.breadcrumbs .icon svg {
+  height: 0.7rem;
+  width: 0.7rem;
+}
+

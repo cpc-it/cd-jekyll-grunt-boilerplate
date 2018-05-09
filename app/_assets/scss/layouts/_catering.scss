@@ -1,0 +1,107 @@
+#catering-hero {
+	
+	header {
+		min-height:300px;
+		position:relative;
+		img {
+    		width:250px;
+    		position: absolute;
+    		right:0;
+    		top:0px;
+		}
+
+
+		a.button {
+			width:250px;
+    		position: absolute;
+    		right:0;
+    		top:220px;
+			@include media($large-screen) {
+				  
+					
+
+			}
+		 
+		}
+	}
+	@include media($large-screen) { 
+
+	}
+}
+
+#catering-specials {
+	padding-bottom:0em;
+	font-size:$small-font-size;
+	.container {
+		background:#fff;
+		border:solid 2px $mustard;
+	
+
+		h2 {
+			line-height: 2em;
+			color: $white;
+			background:$mustard;
+			text-transform: uppercase;
+			text-align: center;
+		}
+		div {
+			width: 100%;
+			padding:1.5%;
+			text-align: center;
+			height:25vh;
+			h3 {
+				text-transform: uppercase;
+			}
+		}
+	}
+	@include media($medium-screen) {
+		padding:7% 2% 0%;
+		margin-bottom:-5%;
+		min-height: 100px;
+		font-size:$base-font-size;
+		.container {
+			
+			div {
+				width:33.333%;
+				float:left;
+				height:auto;
+			}
+		}
+				
+	}
+}
+
+.catering-specials-banner {
+	background:#fff;
+	border:solid 2px $mustard;
+	display:inline-block;
+	width:100%;
+	h2 {
+		line-height: 2em;
+		color: $white;
+		background:$mustard;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	div {
+		width: 100%;
+		padding:1.5%;
+		text-align: center;
+		height:25vh;
+		h3 {
+			text-transform: uppercase;
+		}
+	}
+
+	@include media($medium-screen) {
+		
+		font-size:$base-font-size;
+			
+		div {
+			width:33.333%;
+			float:left;
+			height:auto;
+		}	
+	}		
+}
+

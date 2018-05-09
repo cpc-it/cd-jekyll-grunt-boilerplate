@@ -1,0 +1,97 @@
+
+// 
+/*------------------------------------*\
+   ALL HERO BLOCKS RESIDE WITHIN <section> ELEMENT
+\*------------------------------------*/
+
+/*------------------------------------*\
+    CPC HERO
+    50VH + content devider
+    referenced from https://codepen.io/ettrics/pen/WRbGRN?q=hero+section&limit=all&type=type-pens
+\*------------------------------------*/
+.cpc-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+	text-align: center;
+	padding: 4em 10% 4em;
+	@include media($large-screen) {
+		min-height:50vh;
+		padding: 4em 6% 4em;
+	}
+    h1 {
+  		color:$dingley;
+  		 text-shadow: 1px 0px 0px $white;
+
+  	}
+  
+    .hero-img {
+    	max-height:30vh;
+    	margin-top:100px;
+    }
+    h1, h2 {
+    }
+    p {
+    	 text-shadow: 1px 0px 0px $white;
+
+    	@include media($large-screen) {
+  			max-width:60%;
+  			font-size: $large-font-size;
+  		}
+  	}
+
+}
+
+
+.cpc-slide, .gallery-masonry {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 7em 3%;
+	min-height:50vh;
+	
+	&.full {
+		min-height:100vh;
+	}
+	&.header {
+		padding-top:70px;
+		
+		min-height:40vh;
+		@include media($medium-screen) {
+			padding-top:140px;
+			padding: 7em 0 0 0;
+		}
+
+	}
+	.container {
+		@include outer-container;
+		width:100%;
+	}
+	img + header, iframe + header {
+  		margin-top:2em;
+ 	}
+	header {
+		text-align: center;
+		z-index:1;
+		width: 100%;
+		
+	  	p {
+	    	width:70%;
+			margin-left:15%;
+			text-align: center;
+	    }
+  		&.white {
+  			color:$white;
+  			h2, h1 {
+  				&:before, &:after {
+	     		 	border-top: 1px solid $white;
+
+	    		}
+  			}
+ 		}
+	}
+  
+}

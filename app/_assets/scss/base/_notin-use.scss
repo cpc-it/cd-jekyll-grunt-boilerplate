@@ -1,0 +1,150 @@
+
+#home-page-slider {
+	margin-top:-10px;
+	float:right;
+
+	.slider-static-content {
+		position:relative;
+		float:right;
+		width:100%;
+		@include media($medium-screen){
+			height:50VH;
+			min-height:600px;
+
+		}
+		@include media($large-screen){
+		}
+		.welcome-headline {
+			margin:$header-height-medium 1em 1em 1em;	
+			right:3%;
+			text-align: right;
+			width:80%;
+			float:right;
+			padding:1em;
+			background:rgba(0,0,0,.5);
+			border:solid 2px $black;
+			h1 {
+				color:$white;
+				font-weight: $heavy-font-weight;
+			}
+			p {
+				color:$white;
+		
+			}
+
+			a {
+				font-size:$large-font-size;
+				@include media ($max-width) {
+					font-size:$base-font-size;
+	
+				}
+			}
+			@include media($medium-screen){
+				position: absolute;
+				transform: translateY(-59%);
+				width:400px;
+				top: 41%;
+			}
+			@include media($max-width){
+				position: absolute;
+				transform: translateY(-59%);
+				width:610px;
+				top: 41%;
+			}
+			
+		}
+	}
+	.slider-gradient-overlay {
+		height:100%;
+		top:0;
+		left: 0;
+		position: absolute;
+		width:100%;
+		z-index:-1;
+		background:rgba(0,0,0,.3);
+		@include media($medium-screen){
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+1,000000+99&0+16,0.9+78 */
+			background: -moz-linear-gradient(45deg,  rgba(0,0,0,0) 1%, rgba(0,0,0,0) 16%, rgba(0,0,0,0.9) 78%, rgba(0,0,0,0.9) 99%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(45deg,  rgba(0,0,0,0) 1%,rgba(0,0,0,0) 16%,rgba(0,0,0,0.9) 78%,rgba(0,0,0,0.9) 99%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(45deg,  rgba(0,0,0,0) 1%,rgba(0,0,0,0) 16%,rgba(0,0,0,0.9) 78%,rgba(0,0,0,0.9) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#e6000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+		}
+
+	}
+	.cb-slideshow {
+		position:absolute;
+		top:0;
+		bottom:0;
+		li:nth-child(1) span { 
+	    	background-image: url(#{$image-path}/homepage-img/Curbside_koreantacos-small.jpg);
+	    	@include media($medium-screen){
+	    		background-image: url(#{$image-path}/homepage-img/Curbside_koreantacos-medium.jpg);
+	    	}
+	    	@include media($large-screen){
+	    		background-image: url(#{$image-path}/homepage-img/Curbside_koreantacos-large.jpg);
+	    	}
+		}
+		li:nth-child(2) span { 
+		    background-image: url(#{$image-path}/homepage-img/MustangStation-small.jpg);
+		    @include media($medium-screen){
+	    		background-image: url(#{$image-path}/homepage-img/MustangStation-medium.jpg);
+	    	}
+	    	@include media($large-screen){
+	    		background-image: url(#{$image-path}/homepage-img/MustangStation-large.jpg);
+	    	}
+	    	@include media($max-width){
+	    		background-image: url(#{$image-path}/homepage-img/MustangStation-xlarge.jpg);
+	    	}
+		}
+		li:nth-child(3) span { 
+		    background-image: url(#{$image-path}/homepage-img/Picos-small.jpg);
+		    @include media($medium-screen){
+	    		background-image: url(#{$image-path}/homepage-img/Picos-medium.jpg);
+	    	}
+	    	@include media($large-screen){
+	    		background-image: url(#{$image-path}/homepage-img/Picos-large.jpg);
+	    	}
+	    	@include media($max-width){
+	    		background-image: url(#{$image-path}/homepage-img/Picos-xlarge.jpg);
+	    	}
+		}
+		li:nth-child(4) span { 
+		    background-image: url(#{$image-path}/homepage-img/SandFact-small.jpg);
+		    @include media($medium-screen){
+	    		background-image: url(#{$image-path}/homepage-img/SandFact-medium.jpg);
+	    	}
+	    	@include media($large-screen){
+	    		background-image: url(#{$image-path}/homepage-img/SandFact-large.jpg);
+	    	}
+	    	@include media($max-width){
+	    		background-image: url(#{$image-path}/homepage-img/SandFact-xlarge.jpg);
+	    	}
+		}
+		li:nth-child(5) span { 
+		    background-image: url(#{$image-path}/homepage-img/ZenBowl-small.jpg);
+		    @include media($medium-screen){
+	    		background-image: url(#{$image-path}/homepage-img/ZenBowl-medium.jpg);
+	    	}
+	    	@include media($large-screen){
+	    		background-image: url(#{$image-path}/homepage-img/ZenBowl-large.jpg);
+	    	}
+	    	@include media($max-width){
+	    		background-image: url(#{$image-path}/homepage-img/ZenBowl-xlarge.jpg);
+	    	}
+		}
+		li:nth-child(6) span { 
+		    background-image: url(#{$image-path}/homepage-img/BishopsBurger.jpg);
+		    @include media($medium-screen){
+	    		background-image: url(#{$image-path}/homepage-img/BishopsBurger-medium.jpg);
+	    	}
+	    	@include media($large-screen){
+	    		background-image: url(#{$image-path}/homepage-img/BishopsBurger-large.jpg);
+	    	}
+	    	@include media($max-width){
+	    		background-image: url(#{$image-path}/homepage-img/BishopsBurger-xlarge.jpg);
+	    	}
+		}
+	}
+
+
+}

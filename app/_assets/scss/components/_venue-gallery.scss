@@ -1,0 +1,10 @@
+.venue-gallery {
+	@include outer-container;
+	
+	a {
+		@include span-columns(4);
+		@include omega(3n);
+		margin-bottom:2.3576520234%;
+	}
+		
+}

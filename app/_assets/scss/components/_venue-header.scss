@@ -1,0 +1,69 @@
+.venue-header {
+	position:relative;
+	width:100%;
+	float:left;
+	z-index:1;
+	margin-bottom:$base-spacing;
+	.venue-assets {
+		z-index:1;
+		margin-bottom:$base-spacing;
+
+		img.venue-image {
+			float:left;
+			height:200px;
+			@include media($medium-screen){
+				height:300px;
+			}
+			@include media($large-screen){
+				height:400px;
+			}
+			margin-right:10%;
+		}
+		img.logo{
+			position: absolute;
+			bottom: 50%;
+			right:0;
+			max-height:75px;
+			max-width:125px;
+			@include media($medium-screen){
+				max-height:100px;
+				max-width:150px;
+			}
+			@include media($large-screen){
+				max-width:200px;
+				max-height:150px;
+			}
+		}
+	}
+
+	hr{
+		position:absolute;
+		top:50%;
+		z-index:-1;
+		width:100%;
+		display:block;
+		margin-top:$small-spacing;
+	}
+}
+
+.venue-header-no-image {
+	img {
+		float:right;
+		max-height:75px;
+		max-width:125px;
+		margin-bottom:$base-spacing;
+		@include media($medium-screen){
+			max-height:100px;
+			max-width:150px;
+		}
+		@include media($large-screen){
+			max-width:200px;
+			max-height:150px;
+		}
+	}
+	hr{
+		
+		width:100%;
+		display:block;
+	}
+}

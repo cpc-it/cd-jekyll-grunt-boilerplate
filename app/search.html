@@ -1,0 +1,69 @@
+---
+title: Search
+layout: home
+---
+
+<section id="search" class="hero">
+	<div class="hero-content">
+		<h1>What are you looking for?</h1>
+	  {% include searchbar.html %}
+	</div>
+</section>
+
+<section id="sitemap" class="hero"> 
+
+		<h2>Pages</h2>
+
+	  <div class="input_grouping_wrap three">
+	  
+
+	    {% assign sorted_pages = site.pages | sort: 'title' %}
+	   
+	    <div >
+	      <ul>
+
+	        {% for page in sorted_pages %}
+	          {% unless page.search_exclude or page.url contains '.asp' or page.url contains '.js' %}
+	            {% assign mod = forloop.index | modulo: 3 %}
+	            {% if mod == 0 %}
+
+	              <li><h5><a href="{{ page.url }}">{{ page.title }}</a></h5></li>
+
+	            {% endif %}
+	          {% endunless %}
+	        {% endfor %}
+
+	      </ul>
+	    </div>
+
+	    <div>
+	      <ul>
+
+	        {% for page in sorted_pages %}
+	          {% unless page.search_exclude or page.url contains '.asp' or page.url contains '.js' %}
+	            {% assign mod = forloop.index | modulo: 3 %}
+	            {% if mod == 1 %}
+	            <li><h5><a href="{{ page.url }}">{{ page.title }}</a></h5></li>
+	            {% endif %}
+	          {% endunless %}
+	        {% endfor %}
+
+	      </ul>
+	    </div>
+
+	     <div>
+	      <ul>
+
+	        {% for page in sorted_pages %}
+	          {% unless page.search_exclude or page.url contains '.asp' or page.url contains '.js' %}
+	            {% assign mod = forloop.index | modulo: 3 %}
+	            {% if mod == 2 %}
+	            <li><h5><a href="{{ page.url }}">{{ page.title }}</a></h5></li>
+	            {% endif %}
+	          {% endunless %}
+	        {% endfor %}
+
+	      </ul>
+	    </div>
+</section>
+

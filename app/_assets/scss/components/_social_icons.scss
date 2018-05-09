@@ -1,0 +1,124 @@
+
+// variables
+$transition: all 0.35s cubic-bezier(0.310, -0.105, 0.430, 1.590);
+$size: 35px;
+$colors: (
+	"facebook": "#3B5998",
+	"twitter": "#00a9f1",
+	"google": "#DC4A38",
+	"dribbble": "#F26798",
+	"youtube": "#ff3333",
+	"instagram": "#396d9a",
+	"pinterest": "#ce1a19",
+	"box": "#1277bc",
+	"linkedin": "#006db3",
+	"apple": "#737373",
+	"google_plus": "#e0452c",
+	"vimeo": "#48b6ed",
+	"yelp": "#c30f00",
+	"amazon": "#ff9700",
+	"ebay": "#083790",
+	"skype": "#00acf4",
+	"dropbox": "#0d84de",
+	"flickr": "#ea0066",
+	"github": "#2f2f2f",
+	"basecamp": "#6bbd6d",
+	"tumblr": "#304c68",
+	"foursquare": "#207dc5"
+
+);
+
+.social-buttons {
+	height: $size;
+	margin: auto;
+	font-size: 0;
+	float:left;
+}
+
+.social-button {	
+	display: inline-block;
+	background-color: #fff;
+	width: $size;
+	height: $size;
+	line-height: 30px;
+	margin: 0 6px;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	//overflow bug fix
+	opacity: .99;
+	border-radius: 8%;
+	box-shadow: 0 0 30px 0 rgba(0,0,0,.05);
+	transition: $transition;
+	
+	&:before {
+		content: '';
+		background-color: #000;
+		width: 140%;
+		height: 140%;
+		position: absolute;
+		top: 90%;
+		left: -120%;
+		transform: rotate(45deg);
+		transition: $transition;
+	}
+
+	.fa {
+		font-size: 24px;
+		vertical-align: middle;
+		transform: scale(.8);
+		transition: $transition;
+	}
+	
+	@each $class,$color in $colors {
+		
+		&.#{$class} {
+			background-color: #{$color};
+			&:before {
+			 	background-color: rgba(0,0,0,.3);
+			}
+			
+			.fa {
+				color: #fff;
+			}
+		}
+	}
+	
+	&:focus,
+	&:hover {
+		
+		&:before {
+			top: -20%;
+			left: -20%;
+		}
+		
+		.fa {
+			color: #fff;
+			transform: scale(1);
+		}
+	}
+
+
+}
+
+
+.round-green {
+	.social-button {
+		border-radius: 50%;
+		background-color:$dingley!important;
+	}
+}
+
+.round-black {
+	.social-button {
+		border-radius: 50%;
+		background-color:$dark-gray!important;
+		margin: 0 3px;
+		&:before {
+			background-color: $dingley;
+	
+		}
+		
+	}
+
+}

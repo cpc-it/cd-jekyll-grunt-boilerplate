@@ -1,0 +1,30 @@
+.bg-mint {
+	background:$mint;
+}
+
+.bg-white {
+	background:$white;
+}
+
+.bg-dingley {
+	background:$dingley;
+}
+.bg-gray {
+	$texture-top-background: $white;
+	$texture-bottom-background: darken($white, 1%);
+	@include texture(180deg, $texture-top-background, $texture-bottom-background, 67, 1);
+}
+
+.bg-black {
+	width: 100%;
+	$texture-top-background: $black;
+	$texture-bottom-background: lighten($black, 5%);
+	@include texture(180deg, $texture-top-background, $texture-bottom-background, 67, 1);
+	color:$white;
+}
+
+.bg-infographic {
+	background:$infographic;
+	color:$white;
+}
+// For some reason this isn't working

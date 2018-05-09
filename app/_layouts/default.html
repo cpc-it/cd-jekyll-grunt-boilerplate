@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body>
+    {% include header.html %}
+    
+    {% include nav.html %}
+    
+    <div class="wrapper" id="backtotop">
+   	 	{% if page.class %}
+   	 		<main class="{{ page.class }}">
+   	 	{% else %}
+	    	<main class="standard-info">
+	    {% endif %}		
+    		
+    		<a id="topH1"></a>
+    	{% if page.hero-image-link %}
+	    	<a href="{{page.hero-image-link}}">
+		    	<img src="{{ site.baseurl }}/{{ page.hero-image }}" alt="{{ page.hero-image }}" class="responsive"/>
+		    </a>
+	    {% elsif page.hero-image %}
+
+			<img src="{{ site.baseurl }}/{{ page.hero-image }}" alt="{{ page.hero-image }}" class="responsive"/>
+		
+		{% endif %}		
+
+		{% if page.slider-one %}
+			
+			<div class="slick-slider">
+				<img alt="{{ page.slider-one-description }}" src="{{ site.baseurl }}/{{ page.slider-one }}" />
+				<img alt="{{ page.slider-two-description }}" src="{{ site.baseurl }}/{{ page.slider-two }}" />
+				{% if page.slider-three %}
+				<img alt="{{ page.slider-three-description }}" src="{{ site.baseurl }}/{{ page.slider-three }}" />
+				{% endif %}		
+			</div> 	
+		{% endif %}		
+
+		{% if page.legal %}
+			<section class="legal">
+			{{ content }}
+			</section>
+		{% else %}
+			{{ content }}
+		{% endif %}	
+
+		
+		
+		{% if page.class == 'diningprograms'  %}
+		<hr/>
+		<div class="subpage-navigation">
+            {% include sidebar_dining.html %}
+        </div>
+        {% endif %}
+		
+		<hr/>
+			<p class="backtotop"><a href="#backtotop">Back to top <i class="fa fa-angle-double-up" aria-hidden="true"></i></a></p>
+	    </main>
+	</div>
+	{% include footer.html %}
+</body>
+
+</html>

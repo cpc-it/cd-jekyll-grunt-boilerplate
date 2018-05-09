@@ -1,0 +1,220 @@
+.pricing-table {
+	display:flex;
+  	justify-content: center;
+  	flex-flow:column;
+  	background: #fff;
+	border-radius: 3px;
+	border: solid 1px #e0e0e0;
+	box-shadow: 0 3px 7px -3px rgba(0, 0, 0, 0.3);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	@include media($medium-screen) {
+		width:60%;
+		margin-left:20%;
+	}
+	margin: 2em 0 2em;
+	padding:2em 2em 0em 2em;
+	.tables {
+		margin-bottom: $base-spacing;
+		font-size:1em;
+		td {
+	      	font-size:1.15em;
+		}
+	}
+}
+
+.pricing {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+	margin: 0 auto 3em;
+}
+
+.pricing__item {
+	position: relative;
+	//display: flex;
+	//flex-direction: column;
+	//align-items: stretch;
+	text-align: center;
+	width:100%;
+}
+
+.pricing__feature-list {
+	text-align: left;
+}
+
+.pricing__action {
+	color: inherit;
+	border: none;
+	background: none;
+}
+
+.pricing__action:focus {
+	outline: none;
+}
+
+.pricing--pema {
+	position:relative;
+
+  .pricing__item {
+    font-family: $base-font-family;
+    color: $base-font-color;
+    padding:1em;
+   	$texture-top-background: $white;
+	$texture-bottom-background: darken($white, 1%);
+	@include texture(180deg, $texture-top-background, $texture-bottom-background, 67, 1);
+    cursor: default;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    border:solid 4px $parsley;
+
+  }
+  .pricing__title {
+    font-size: 3em;
+    margin: 0.5em 0 0;
+    color: $dingley;
+    font-family: $heading-font-family;
+  }
+  .icon {
+    display: inline-block;
+    min-width: 2em;
+    color: #8A9790;
+    vertical-align: middle;
+  }
+  .pricing__price {
+    font-size: 2.5em;
+    font-weight: 800;
+    color: $dingley;
+    position: relative;
+    z-index: 100;
+    font-family: $heading-font-family;
+
+  }
+  .pricing__currency {
+    font-size: 0.5em;
+    vertical-align: super;
+  }
+  .pricing__period {
+    font-size: 0.25em;
+    display: inline-block;
+    padding: 0 0 0 0.5em;
+    color: #CEDED6;
+  }
+  .pricing__sentence {
+  	font-size: 0.95em;
+    margin: 0 0 1em 0;
+    padding: 0 0 1em;
+   	font-weight:bold;
+   
+  }
+  .devider {
+  	width:40px;
+  	height:6px;
+  	background:$mustard;
+  	margin:0 auto;
+  	display:block;
+  }
+  .pricing__feature-list {
+  	font-size: 1.15em;
+    margin: 0;
+    padding: 1em 0.5em 2.5em;
+    //list-style: unset;
+    text-align: center;
+  }
+  .pricing__feature {
+    padding: 0.25em 0;
+  }
+  .pricing__action {
+    font-weight: bold;
+    margin-top: auto;
+    padding: 1em 2em;
+    color: #fff;
+    border-radius: 5px;
+    background: #6ed19c;
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+    &:hover, &:focus {
+      background-color: #4F5F56;
+    }
+  }
+
+  	.pricing__ribbon {
+  		z-index:1;
+		position: absolute;
+		overflow: hidden;
+		top: -10px;
+		left: -10px;
+		width: 114px;
+		height: 112px;
+		@media screen and (min-width: 66.25em) {
+	    	//top: 15px;
+	    }
+		span {
+		    position: absolute;
+		    display: block;
+		    width: 160px;
+		    padding: 10px 0;
+		    background-color:$mustard;
+		    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+		    color: #fff;
+		    font-size: 12px;
+		    font-weight:bold;
+		    letter-spacing:1px;
+		    text-transform: uppercase;
+		    text-align: center;
+		    left: -35px;
+		    top: 25px;
+		    transform: rotate(-45deg);
+		}
+		&::before,
+		&::after {
+		    position: absolute;
+		    z-index: -1;
+		    content: '';
+		    display: block;
+		    border: 5px solid $dingley;
+		    border-top-color: transparent;
+		    border-left-color: transparent;
+		}
+		&::before {
+		    top: 0;
+		    right: 0; 
+		}
+		&::after {
+		    bottom: 0;
+		    left: 0;
+		}
+	}
+
+}
+
+
+
+
+@media screen and (min-width: 66.25em) {
+	.pricing {
+		width:560px;
+
+
+	}
+
+  .pricing--pema {
+    .pricing__item {
+      	margin: 1.5em 0;
+     	width:560px;
+
+    }
+    
+  }
+
+  .pricing--featured {
+  	width: 600px;
+  	.pricing__item{
+  		width:600px;
+      	//z-index: 10;
+      	margin: 0;
+      	font-size: 1.25em;
+    }
+  }
+}

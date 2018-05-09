@@ -1,0 +1,55 @@
+#sitemap {
+	header {
+		width:auto;
+	}
+	min-height:50vh;
+	ul {
+		 @include media ($medium-screen) {
+ 	 		column-count: 3;
+  			column-gap: 20px;
+  	}
+	  @include media ($max-width) {
+	 	 	column-count: 4;
+			column-gap: 20px;
+		}
+	}
+
+	li {
+		margin: $small-spacing 0;
+		text-align: center;
+		a {
+			font-weight: bold;
+			text-align: center;
+			text-align:left;
+			
+		}
+	}
+}
+
+#search {
+	color: $white;
+	justify-content: start;
+	a {
+		margin:0 1em;
+	}
+	h1 {
+		padding-top:3em;
+
+	}
+	text-align: center;
+}
+
+#search-container {
+ 	text-align: center;
+ 	input {
+ 		font-size:1.5em;
+ 		min-width:50%;
+ 	}
+}
+
+#results-container {
+	a {
+		color:$white;
+		font-weight: bold;
+	}
+}

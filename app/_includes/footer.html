@@ -1,0 +1,21 @@
+<script src="{{ site.baseurl }}/js/lib.min.js?{{ site.version }}"></script>
+<script src="{{ site.baseurl }}/js/calpoly.min.js?{{ site.version }}"></script>
+{% if page.title == "Search" or page.title == "404 - File Not Found" or page.title == "403 - Unauthorized" or page.title == "403 - Unauthorized" or page.title == "401 - Unauthorized" or page.title == "500 - Internal Server Error" %}
+
+<script type="text/javascript">
+/* I might be using the exclude variable incorrectly. */
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '{{ site.baseurl }}/{{ site.data.search }}search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: 'No results found',
+    limit: 10,
+    fuzzy: false,
+    exclude: ['.asp','.js']
+  });
+
+  
+</script>
+
+{% endif %}

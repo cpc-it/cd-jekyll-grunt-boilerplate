@@ -1,0 +1,123 @@
+#doorsign {
+	.container {
+		border: solid 4px $dingley;
+		padding:2em;
+		.primary-venue {
+			> div {
+				width:100%;
+				display:block;
+				
+			}
+			img.logo {
+				width:50%;
+				margin-left:25%;
+				margin-bottom:2em;
+				max-height:175px;
+			}
+			.hours {
+				&.children {
+					font-size:$small-font-size;
+					.fa {
+						color:$mustard;
+					}
+				}
+			}
+		}
+		h4 {
+			text-align:center;
+			span {
+				color:$dingley;
+				font-weight: bold;
+			}
+		}
+	}
+}
+.hours {
+	@include outer-container;
+	.fa {
+
+		@include span-columns(1);
+		color:$dingley;
+		font-size:$h1-font-size;
+		font-weight:bold;
+		&:last-child{
+			margin-right: 2.3576520234%;
+		}
+		
+
+	}
+	ul {
+
+		vertical-align: middle;
+		
+			@include span-columns(11);
+			@include omega;
+		
+		
+	}
+	p {
+
+		font-size: $small-font-size;
+		@include span-columns(12);
+	}
+
+	.column_grid {
+			div {
+				margin-bottom:$base-spacing;
+			}
+			&.two{
+				>div {
+					@include span-columns(6);
+					@include omega(2);
+				}
+			}
+			&.three{
+				>div {
+					@include span-columns(6);
+					@include omega(2);
+				}
+			}
+	
+		h5 {
+			@include span-columns(9);
+			@include shift(3);
+			font-weight: $heavy-font-weight;
+		}
+
+			font-size:$small-font-size;
+
+			h5 {
+				@include span-columns(10);
+				@include shift(2);
+			}
+			.fa {
+				@include span-columns(2);
+				
+				&:last-child{
+					margin-right: 2.3576520234%;
+				}
+			}
+			ul {
+				@include span-columns(10);
+				@include omega;
+
+
+			}
+		.logo {
+			max-height:75px;
+			max-width:200px;
+			margin:0 auto;
+			clear:both;
+		}
+		
+
+		
+	}	
+
+	.float_lists_right {
+		ul {
+			float:right;
+		}
+	}
+
+}

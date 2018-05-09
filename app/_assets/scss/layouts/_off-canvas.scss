@@ -1,0 +1,149 @@
+// Off Canvas Nav Based on code by Diego Eis
+// Off-Canvas Settings
+$sliding-panel-width-mobile: 50%;
+$sliding-subnav-width-mobile: 100%;
+
+$sliding-panel-width-medium: 50%;
+$sliding-subnav-width-medium: 64%;
+
+$sliding-panel-width: 50%;
+$sliding-subnav-width: 50%;
+
+$sliding-panel-width-max: 50%;
+$sliding-subnav-width-max: 660px;
+
+$sliding-panel-margin-top-small: 70px;
+$sliding-panel-margin-top-large: 104px;
+.no-scroll {
+	overflow-y:hidden;
+}
+.sliding-panel-content {  
+ 	 @include position(absolute, 0 auto 0 0);
+ 	 width:$sliding-subnav-width-mobile;
+	-ms-transform: translateX(-$sliding-subnav-width-mobile); /* IE 9 */
+	-webkit-transform: translateX(-$sliding-subnav-width-mobile); /* Chrome, Safari, Opera */
+	transform: translateX(-$sliding-subnav-width-mobile);
+	@include media($medium-screen) {
+		width:$sliding-subnav-width-medium;
+		-ms-transform: translateX(-100%); /* IE 9 */
+		-webkit-transform: translateX(-100%); /* Chrome, Safari, Opera */
+		transform: translateX(-100%);
+	}
+	@include media($large-screen) {
+		width:$sliding-subnav-width;
+		-ms-transform: translateX(-100%); /* IE 9 */
+		-webkit-transform: translateX(-100%); /* Chrome, Safari, Opera */
+		transform: translateX(-100%);
+	}
+	@include media(1200px) {
+		width:$sliding-subnav-width-max;
+		-ms-transform: translateX(-100%); /* IE 9 */
+		-webkit-transform: translateX(-100%); /* Chrome, Safari, Opera */
+		transform: translateX(-100%);
+	}
+  @include transition(all 0.25s linear);
+  background: transparent;
+  //-webkit-overflow-scrolling: touch;
+  z-index: 999999;
+
+  &.is-visible {
+    -ms-transform: translateX(0); /* IE 9 */
+	-webkit-transform: translateX(0); /* Chrome, Safari, Opera */
+	transform: translateX(0);
+  }
+  .nav-content {
+  	background:transparent;
+  	width:100%;
+  	margin-top:$sliding-panel-margin-top-small;
+  	@include media($medium-screen){
+  		margin-top:$sliding-panel-margin-top-large;
+  	}
+  	@include position(absolute, 0 auto 0 0);
+  	z-index:10;
+  	padding:0;
+  	overflow-x:hidden;
+
+  }
+
+}
+
+.sliding-panel-fade-screen {
+  @include position(absolute, 0 0 0 0);
+  @include transition;
+  background: $dingley;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 9999;
+
+  &.is-visible {
+    opacity: 0.75;
+    visibility: visible;
+  }
+}
+
+.sliding-panel-close {
+  cursor: pointer;
+}
+
+
+#cpUl-primary {
+    z-index: 10;
+    width: 50%;
+    background:#fff;
+    height:100%;
+    padding:$base-spacing $small-spacing;
+    overflow-y: auto;
+	@include media(1200px){
+		padding:35px;
+
+	}
+	li {
+		.sliding-panel-subnav {
+			@include position(absolute, 0 auto 0 0);
+  			width:50%;
+			-ms-transform: translateX(0); /* IE 9 */
+			-webkit-transform: translateX(0); /* Chrome, Safari, Opera */
+			transform: translateX(0);
+			@include transition(all 0.25s linear);
+			background: $mint;
+			//-webkit-overflow-scrolling: touch;
+			overflow-y: auto;
+			padding:$base-spacing $small-spacing;
+			z-index:-10;
+  			margin-top:0;
+  			@include media(1200px){
+				padding:35px;
+
+			}
+  			
+		}	
+	}
+	li.current {
+		
+		.sliding-panel-subnav {
+			
+			ms-transform: translateX(100%); /* IE 9 */
+			-webkit-transform: translateX(100%); /* Chrome, Safari, Opera */
+			transform: translateX(100%);
+		}	
+		
+	}
+	
+}
+
+
+#navigation.fixed {
+	&.sliding-panel-content {
+		.nav-content {
+			margin-top:$sliding-panel-margin-top-small;
+			.sliding-panel-subnav{
+				margin-top:$sliding-panel-margin-top-small;
+				@include media($medium-screen){
+					margin-top:$sliding-panel-margin-top-small;
+				}
+			}
+		}
+	}
+	
+	
+}

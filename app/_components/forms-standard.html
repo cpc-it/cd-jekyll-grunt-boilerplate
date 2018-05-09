@@ -1,0 +1,53 @@
+---
+title: Standard Form
+type: forms
+scss: app/_assets/base/_forms.scss
+usage: Standard Form
+---
+
+<fieldset>
+		<legend>Basic Informaton</legend>
+	<label for="first_name">First Name</label>
+	<input class="expand" type="text" name="first_name" id="first_name" />
+	<label for="last_name">Last Name</label>
+	<input class="expand" type="text" name="last_name" id="last_name" />
+	<label for="email">Email Address (Cal Poly email if possible)</label>
+	<input class="expand" type="text" name="email" id="email" />
+	<label for="phone">Phone Number</label>
+	<input class="expand" type="text" name="phone" id="phone" />
+	<p><strong>Hours of operation can range from 6 am to 2 am, Mon-Sun, depending on the unit.</strong></p>
+	<label for="availability">Availability from now till September 22, 2016</label>
+	<input class="expand" type="text" name="availability" id="availability" />
+	<label for="availability-datenow">Availability for Fall quarter 2016</label><input class="expand" type="text" name="availability-datenow" id="availability-datenow" />
+	<label for="class-standing">If a student, will you be a Freshman, Sophmore, Junior, or Senior for Fall quarter 2016?</label><br/>
+	<input class="expand" type="text" name="class-standing" id="class-standing" />
+	<label for="major">Major</label>
+	<input class="expand" type="text" name="major" id="major" />
+	<label for="eligible">Federal work Study eligible?</label>
+	<input class="expand" type="text" name="eligible" id="eligible" />
+</fieldset>
+
+<fieldset>
+
+	<legend>Positions</legend>
+
+	<p class="fieldset_description">Job duties vary by unit.  See the information for specific units to see what jobs might be available at the unit and the job duties.</p>
+	
+	<p><strong>Interested in the following position(s): (click all that apply)</strong></p>
+
+	<div class="label_input_grouping">
+		<label><input type="checkbox" name="position" value="servers">Servers</label>
+		<label><input type="checkbox" name="position" value="retail-assistant">Retail Assistant</label>
+		<label><input type="checkbox" name="position" value="catering-server">Catering Server</label>
+		<label><input type="checkbox" name="position" value="food-preparation">Food Preparation</label>
+		<label><input type="checkbox" name="position" value="warehouse">Warehouse/Delivery Assistant</label>
+		<label><input type="checkbox" name="position" value="housekeeping">Housekeeping</label>
+		<label><input type="checkbox" name="position" value="dishwasher">Dishwashers</label>
+		<label><input type="checkbox" name="position" value="office">Office/Administrative Assistants</label>
+	</div>
+
+	<label for="crew-leader">Let us know if you want to be also considered as a Crew Leader as well as other positions.  Crew Leaders oversee other students and tasks, and may have responsibilities to open or close the restaurant? Crew Leader duties vary between units and come with a jump in responsibilities and in pay. If you have the interest and experience in leadership, possibly in a food service job or other job-related experience, to be a Crew Leader, tell us about it.</label>
+
+	<textarea name="crew-leader" id="crew-leader" rows="10"></textarea>
+	<button type="submit">Submit</button>
+</fieldset>

@@ -1,0 +1,188 @@
+
+
+
+.google_business_hours_by_day,.special_hours_target {
+	>[class*="gb_hours_"] {
+		display: none;
+	}
+	&.monday_only>.gb_hours_monday,
+	&.tuesday_only>.gb_hours_tuesday,
+	&.wednesday_only>.gb_hours_wednesday,
+	&.thursday_only>.gb_hours_thursday,
+	&.friday_only>.gb_hours_friday,
+	&.saturday_only>.gb_hours_saturday,
+	&.sunday_only>.gb_hours_sunday {
+		display: block;
+		/*color:$mustard;*/
+	}
+}
+
+.hours-note {
+	position:relative;
+	
+	ul {
+		position:absolute;
+		@include shift(1);
+		
+		background:#fff;
+		z-index:1;
+		padding-bottom:30px;
+		min-width:100%;
+		@include media($large-screen){
+			min-width:50%;
+		}
+		li {
+			strong {
+				color:$parsley;
+				font-weight: bold!important;
+			}
+		}
+		li:first-child {
+			strong {
+				color:$base-font-color;
+				font-weight: bold!important;
+			}
+		}
+	}
+
+}
+
+.special_hours_target {
+	.open{
+		color:$parsley;
+		font-weight:bold;
+	}
+	&.special_hours_found {
+		
+		
+  		position:relative;
+  		.open{
+  			color:$dingley;
+				font-weight:bold;
+			
+  			&:after {
+			    content: "\f017"; 
+			    font-family: FontAwesome;
+			    margin-left:$small-spacing;
+			    transition: all $base-duration $base-timing;
+			    position:absolute;
+			    right:$small-spacing;
+			    top:$small-spacing;
+			    color:$dingley;
+			 }
+  		}
+  		.closed{
+  			//color:$tamarillo;
+			
+  			&:after {
+			    content: "\f017"; 
+			    font-family: FontAwesome;
+			    margin-left:$small-spacing;
+			    transition: all $base-duration $base-timing;
+			    position:absolute;
+			    right:$small-spacing;
+			    top:$small-spacing;
+			    color:$tamarillo;
+			    opacity:.2;
+			 }
+  		}
+	}
+}
+
+
+
+.google_lookup_started {
+	&:not(.google_lookup_maximum_timeout) {
+		@extend .cp-loading-spinner;
+	}
+}
+
+
+.mobile-xml {
+	
+	background-color: rgb(206, 206, 206)!important;
+
+	color: rgb(55, 60, 58)!important;
+
+	font-family: monospace!important;
+	font-size:13px!important;
+
+}
+
+
+/* source: http://www.designcouch.com/home/why/2013/05/23/dead-simple-pure-css-loading-spinner/ */
+.cp-loading-spinner {
+	position: relative;
+	&.google_info_loaded_successfully {
+		&:after {
+			display: none;
+		}
+	}
+}
+.cp-loading-spinner:after {
+	content: '';
+	display: block;
+	top: calc(50% - 10px);
+	right: 5px;
+	height: 20px;
+	width: 20px;
+	margin: 0 auto 0 auto;
+	position: absolute;
+	-webkit-animation: cp-loading-rotation 1.2s infinite linear;
+	-moz-animation: cp-loading-rotation 1.2s infinite linear;
+	-o-animation: cp-loading-rotation 1.2s infinite linear;
+	animation: cp-loading-rotation 1.2s infinite linear;
+
+
+	/* information blue */
+	border-left: 2px solid rgba(23,71,111,.4);
+	border-right: 2px solid rgba(23,71,111,.4);
+	border-bottom: 2px solid rgba(23,71,111,.4);
+	border-top: 2px solid rgba(23,71,111,.8);
+	/* cal poly green */
+	border-left: 2px solid rgba(3,86,66,.4);
+	border-right: 2px solid rgba(3,86,66,.4);
+	border-bottom: 2px solid rgba(3,86,66,.4);
+	border-top: 2px solid rgba(3,86,66,.8);
+	
+	
+	
+
+	border-radius: 100%;
+}
+
+@-webkit-keyframes cp-loading-rotation {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(359deg);
+	}
+}
+
+@-moz-keyframes cp-loading-rotation {
+	from {
+		-moz-transform: rotate(0deg);
+	}
+	to {
+		-moz-transform: rotate(359deg);
+	}
+}
+
+@-o-keyframes cp-loading-rotation {
+	from {
+		-o-transform: rotate(0deg);
+	}
+	to {
+		-o-transform: rotate(359deg);
+	}
+}
+
+@keyframes cp-loading-rotation {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(359deg);
+	}
+}

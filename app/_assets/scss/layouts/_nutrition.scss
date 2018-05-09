@@ -1,0 +1,77 @@
+#nutrition-section {
+	background-image:url(#{$image-path}/nutrition/hero/hero-600.jpg);
+	background-size: cover;
+	background-position:top;
+	background-repeat: no-repeat;
+	margin-top:70px;
+	min-height:450px;
+	@include media($medium-screen) {
+		background-image:url(#{$image-path}/nutrition/hero/hero-1920.jpg);
+  		margin-top:100px;
+		background-position:right;
+ 	 }
+
+
+  @include media($max-width) {
+  		min-height:50vh;
+ 		max-height:900px;
+  }
+	header {
+		img {
+		    width: 150px;
+  		    margin-top: -169px;
+ 		 	margin-left: -20px;
+			@include media($large-screen) {
+				width:400px;
+				margin-right:58%;
+		  }
+		  @include media($max-width) {
+				width:500px;
+		  }
+		}
+	}
+}
+#meet-megan {
+header {
+	margin-top:2em;
+}
+}
+#ask-rd {
+	background: $dingley;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  box-sizing: border-box;
+  z-index:-1;
+  h3{
+  	color:$white;
+  	font-size: $large-font-size;
+  	margin-bottom:0;
+  	@include media($large-screen){
+	  	font-size:96px;
+	  }
+  }
+  p {
+  	
+  	color:$white;
+  	@include media($large-screen) {
+	  font-size: $large-font-size;
+	  font-weight: bold;
+	}
+  	
+  }
+
+  .button {
+  	margin:1em;
+  }
+}
+
+.dietary_restrictions {
+	.two-card-grid {
+		@include media($small-screen) {
+			
+		}
+		
+	}
+
+}

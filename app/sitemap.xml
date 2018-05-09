@@ -1,0 +1,24 @@
+---
+title: Sitemap
+sitemap_exclude: y
+search_exclude: true
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for post in site.posts %}
+    <url>
+        <loc>{{site.url}}{{ post.url | remove: 'index.html' }}</loc>
+    </url>
+    {% endfor %}
+
+    {% for page in site.pages %}
+	    {% if page.layout != nil or page.title != nil %}
+		    {% if page.sitemap_exclude != 'y' or page.url contains '.js'%}
+		    <url>
+		        <loc>{{site.url}}{{ page.url }}</loc>
+		    </url>
+		    {% endif %}
+		 	{% endif %}
+	  {% endfor %}
+</urlset>

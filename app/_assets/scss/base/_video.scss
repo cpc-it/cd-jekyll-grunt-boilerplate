@@ -1,0 +1,93 @@
+
+.half-background-video {
+	position:relative;
+	width:100%;
+	min-height:350px;
+	@include media($large-screen) {
+		min-height:600px;
+		display:block;
+		height:50vh;
+	  	margin-top:0px;
+	}
+	@include media($max-width) {
+		display:block;
+		height:55vh;
+		 margin-top:0px;
+	}
+
+	video { 
+		position: fixed;
+    /* top: 0%; */
+    /* left: 50%; */
+    height:350px;
+    z-index: -100;
+    /* -webkit-transform: translate(-50%, -50%); */
+    /*-ms-transform: translate(-50%, -50%); */
+    /* transform: translate(-50%, -50%); */
+    @include media($medium-screen){
+    	width:110%;
+    	height:auto;
+    	top:-100px;
+		}
+		@include media ($large-screen) {
+			position:absolute;
+			min-height:700px;
+			height: 100%;
+    		width: auto;
+    		top:0;
+		}
+		@include media ($max-width) {
+    		bottom:-10%;
+    		top:auto;
+    		height:auto;
+    		width:100%;
+    		
+		}
+	}
+	button { 
+		position:absolute;
+		bottom:3%;
+		left:3%;
+		cursor: pointer;
+		background:transparent;
+		font-size:$large-font-size;
+		opacity:.6;
+		transition: .3s background;
+		
+	}
+	button:hover { 
+	   color: rgba(0,0,0,0.8);
+	}
+	.stopfade { 
+		opacity: .5;
+	}
+
+
+}
+
+// Forcing change to css 
+// Hide video controls on iOS devices 
+/* This used to work for parent element of button divs */
+
+/* But it is not enough now, below dont hide play button parent div */
+
+*::-webkit-media-controls-panel {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
+/* Old shadow dom for play button */
+
+*::--webkit-media-controls-play-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
+/* New shadow dom for play button */
+
+/* This one works */
+
+*::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none;
+}

@@ -1,0 +1,91 @@
+.hours {
+	display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  .fa, ul {
+  	display: flex;   
+  	justify-content: center;
+  	flex-direction: column;
+  }
+	.fa {
+		flex-basis: calc(12%);
+		color:$dingley;
+		font-size:2em;
+	}
+
+
+	ul {
+		flex-basis: calc(88%);
+		li {
+			strong {
+				color:$parsley;
+			}
+			&.special-hours-title {
+				margin-top:.75em;
+				strong {
+					color:$tamarillo;
+				}
+			}
+		}
+		li:first-child {
+			strong {
+				color:$base-font-color;
+
+			}
+		}
+		&:after{
+			clear:both;
+		}
+		> ul {
+			margin-top: .75em;
+			margin-bottom: .75em;
+			li:first-child {
+				strong {
+					color:$tamarillo;
+				}
+			}
+		}
+		
+		
+	}
+
+	iframe {
+		margin:$base-spacing auto 0;
+	}
+
+	@include media($medium-screen) { 
+		.fa {
+			flex-basis: calc(8%);
+		}
+		ul {
+			flex-basis: calc(92%);
+		}
+	}
+
+}
+
+.hours-child {
+	font-size: .8em;
+	display:flex;
+	margin: $base-spacing 0px;
+  flex-basis: calc(50%);
+
+	img {
+		width:100px;
+		padding-right:$base-spacing;
+	}
+
+	.fa-clock-o {
+		display:none;
+	}
+
+	.fa-cutlery {
+		margin-right: calc(100px - 2em)
+	}
+
+	> div {
+		width:100%;
+	}
+
+}

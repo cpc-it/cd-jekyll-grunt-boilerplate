@@ -1,0 +1,25 @@
+.hours-disclaimer {
+	width:100%;
+	background: $dingley;
+	min-height:72px;
+	border:solid 1px $parsley;
+	p {
+		margin:0 0 0 1em;
+		font-weight: bold;
+		color:$white;
+	}
+	.button {
+		float:right;
+	}
+	@include media($large-screen) {
+		p {
+			float:left;
+			line-height:72px;
+		}
+		.button {
+			float:right;
+		}
+	}
+
+	
+}

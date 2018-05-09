@@ -1,0 +1,213 @@
+
+body {
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  @include media($medium-screen) {
+  	font-size: $base-font-size;
+  }
+  font-weight:300;
+  line-height: $base-line-height;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font-family;
+  line-height: $heading-line-height;
+  font-weight:$thin-font-weight;
+  margin:0 0 .65em;
+}
+
+/* Backpage has heavy font weight */
+.wrapper main {
+	h1 {
+  		font-weight:$heavy-font-weight;
+  		color:$black;
+  	}
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+  		font-weight:$normal-font-weight;
+
+  	}
+}
+
+h1 {
+	font-size: $h1-font-size * .8;
+	@include media($large-screen) {
+  	font-size: $h1-font-size;
+  }
+}
+
+h2 {
+	font-size: $h2-font-size;
+}
+
+h3 {
+	font-size: $h3-font-size;
+}
+
+h4 {
+	font-size: $h4-font-size;
+}
+
+h5 {
+	font-size: $h5-font-size;
+
+}
+
+h6 {
+	font-size: $h6-font-size;
+}
+
+p + h1 ,p + h2 ,p + h3 ,p + h4 ,p + h5 ,p + h6, ul + h1 ,ul + h2 ,ul + h3 ,ul + h4 ,ul + h5 ,ul + h6, ol + h1 ,ol + h2 ,ol + h3 ,ol + h4 ,ol + h5 ,ol + h6, table + h1 ,table + h2 ,table + h3 ,table + h4 ,table + h5 ,table + h6 {
+	margin-top:1.75em;
+}
+
+p + h1 ,p + h2 {
+	margin-top:1.5em;
+}
+
+
+p {
+  font-size: $paragraph-font-size;
+  margin: 0 0 $small-spacing;
+  strong {
+  	font-weight: 600;
+  }
+}
+
+p.subtitle, h1 + h4 {
+	margin-top:-.75em;
+	margin-bottom:1.5em;
+	line-height:0;
+	font-weight:bold;
+	font-size:1.25em;
+	font-family: "Oswald", sans-serif;
+}
+
+p.small {
+	font-size: $small-font-size;
+}
+
+p.intro {
+	font-size: $large-font-size;
+}
+a {
+  color: $dingley;
+  text-decoration: none;
+  transition: color $base-duration $base-timing;
+  &:active,
+  &:focus,
+  &:hover {
+    color: shade($dingley, 25%);
+  }
+}
+
+#topH1 {
+	color:transparent;
+	transition: none;
+
+}
+hr {
+  border-bottom: $base-border;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: $base-spacing 0;
+  width:100%;
+}
+.disclaimer {
+	padding:1em;
+	border:solid 1px $light-gray;
+	background:lighten($light-gray,10%);
+	margin:1em 0;
+	&.error, &#errormessage {
+	border:solid 1px $tamarillo;
+	background:lighten($tamarillo,50%);
+	}
+	&.warning {
+	border:solid 1px $cpgold;
+	background:lighten($cpgold,43%);
+	}
+	&.success {
+		border:solid 1px $dingley;
+		background:lighten($dingley,50%);
+	}
+	&.disclaimer-small {
+		font-size:$small-font-size;
+	}
+	&.special-hours {
+		position:relative;
+
+		img{
+			position:absolute;
+			left:0;
+			top:0;
+			bottom:0;
+			max-height:100%;
+
+		}
+		h3, a {
+			margin-left:140px;
+		}
+
+
+	}
+}
+
+
+
+
+
+blockquote {
+	padding:2em 0em;
+	text-align: center;
+	span {
+	 	display:block;
+  	font-weight: bold;
+  	margin-top:2em;
+  	font-family: $heading-font-family;
+  	letter-spacing: 0.1em
+  }
+}
+
+
+
+
+
+
+.panel_grid {
+	font-size: 1.25em;
+	line-height: 1.2;
+	font-weight: 500;
+}
+
+
+
+
+.hour_information_block {
+	strong {
+		font-weight: 600;
+	}
+}
+
+
+.photo-credit {
+	font-size: $small-font-size;
+	color:lighten($base-font-color,10%);
+	font-style: italic;
+}
+
+.menu {
+	p {
+		font-size: $small-font-size
+	}
+}

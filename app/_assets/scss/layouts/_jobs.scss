@@ -1,0 +1,53 @@
+
+#jobs-hero {
+	background-position: center;
+}
+.jobs {
+	ul {
+		 @include media ($medium-screen) {
+ 	 		column-count: 3;
+  			column-gap: 20px;
+  			list-style-position: inside;
+
+
+	  	}
+		
+		li {
+			font-family: $heading-font-family;
+			font-weight: bold;
+			text-align:left;
+			color:$dingley;
+			margin:$small-spacing 0;
+
+		}
+	}
+
+	.card {
+		background: transparent;
+    	border-radius: 0;
+    	border: solid 0px #e0e0e0;
+    	box-shadow: none;
+    	-webkit-font-smoothing: antialiased;
+    	-moz-osx-font-smoothing: grayscale;
+    	max-width: 700px;
+    	margin: 1em;
+    	.description {
+    		@media screen and (max-width: 600px) {
+    			padding:0;
+    		}
+
+    		h3 {
+    			color: $dingley;
+    		}
+    		p {
+    			padding-top:0;
+    			margin:0;
+    			color:$black;
+    			font-weight: 400;
+    		}
+    		p:after {
+    			display:none;
+    		}
+    	}
+	}
+}

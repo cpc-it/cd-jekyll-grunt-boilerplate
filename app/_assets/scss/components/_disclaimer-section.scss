@@ -1,0 +1,16 @@
+.disclaimer-section {
+	padding:7em 3%;
+	background-image: linear-gradient(41deg,#002b33 8%,#035642 100%)!important;
+	text-align:center;
+	font-size:.8em;
+	h2, h3 {
+		text-transform: uppercase;
+		letter-spacing: $letter-spacing-header;
+		color:$white;
+
+	}
+	p {
+	 	//font-style: italic;
+	 	color: $white;
+	}
+}
