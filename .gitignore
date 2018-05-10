@@ -1,0 +1,52 @@
+# .gitignore for Yeoman-Jekyll projects
+# Ignore Staging -> lives in marcomprojectmanager
+staging
+# Ignore Production -> lives in marcomprojectmanager
+dist
+# Ignore Extranet 
+extranet
+
+dist/web.config
+
+# Ignore hidden folders #
+# This takes care of .tmp, .sass-cache, and many others #
+.*/
+
+# Ignore OS generated files #
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Always-ignore files and folders #
+*.diff
+*.err
+*.log
+*.orig
+*.rej
+*.swn
+*.swo
+*.swp
+._*
+*~
+
+# Ignore Speicifc Folders
+# Ignore packages #
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Ignore for Jekyll Grunt projects #
+bower_components
+node_modules
+.tmp
+Gemfile.lock
+staging/
+dist/_mobiledata
+
+
