@@ -15,7 +15,7 @@
     "theme": {
         "border_color": "#E0E6ED",
         "highlight_color": "#F9FAFC",
-        "brand_color": "#00585C",
+        "brand_color": "#035642",
         "background_color": "#FFFFFF",
         "code_highlight_theme": "github",
         "override_code_highlight_bg": "#F9FAFC",
@@ -52,6 +52,41 @@
         ]
     },
     "groups": [
+        {
+            "name": "branding",
+            "title": "Colors",
+            "components": [
+                {
+                    "group": "branding",
+                    "name": "color-palette",
+                    "title": "Neutral Colors",
+                    "type": "colors",
+                    "colors": [
+                        "#FFFFFF",
+                        "#000000",
+                        "#373c3a"
+                      ]
+                },
+                {
+                    "group": "branding",
+                    "name": "color-palette",
+                    "title": "Secondary Colors",
+                    "type": "colors",
+                    "colors": [
+                        "#035642",
+                        "#55b045",
+                        "#ffdd00",
+                        "#ffdd00",
+                        "#a31f19",
+                        "#17476f",
+                        "#a9975d"
+                      ]
+                }
+
+
+
+            ]
+        },
         {
             "name": "buttons",
             "title": "Buttons",
