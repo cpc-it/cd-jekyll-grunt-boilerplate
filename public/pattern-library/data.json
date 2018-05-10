@@ -24,13 +24,15 @@
         "show_version": true,
         "max_width": null,
         "titles": {
-            "library_title": "Pattern Library",
-            "pages_title": "Overview",
+            "library_title": "The Cookbook",
+            "pages_title": "Read me",
             "components_title": "Components"
         }
     },
     "assets": {
-        "css": ["https://www.calpolydining.com/css/production.css?5.2.12"],
+        "css": [
+            "https://www.calpolydining.com/css/production.css?5.2.12"
+        ],
         "js": []
     },
     "font_libraries": {
@@ -58,6 +60,21 @@
                     "group": "buttons",
                     "name": "default",
                     "title": "Default Button"
+                },
+                {
+                    "group": "buttons",
+                    "name": "parsley",
+                    "title": "Parsley Button"
+                },
+                {
+                    "group": "buttons",
+                    "name": "warning",
+                    "title": "Warning Button"
+                },
+                {
+                    "group": "buttons",
+                    "name": "danger",
+                    "title": "Danger Button"
                 }
             ]
         }
