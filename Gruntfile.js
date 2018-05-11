@@ -500,6 +500,13 @@ module.exports = function(grunt) {
                         cwd: 'app/_assets/video',
                         src: '**/*',
                         dest: '.tmp/video'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'public',
+                        src: '**/*',
+                        dest: '.jekyll'
+
                     }
 
                     

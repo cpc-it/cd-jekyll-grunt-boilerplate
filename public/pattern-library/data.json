@@ -65,7 +65,7 @@
                         "#FFFFFF",
                         "#000000",
                         "#373c3a"
-                      ]
+                    ]
                 },
                 {
                     "group": "branding",
@@ -80,11 +80,63 @@
                         "#a31f19",
                         "#17476f",
                         "#a9975d"
-                      ]
+                    ]
                 }
-
-
-
+            ]
+        },
+        {
+            "name": "typography",
+            "title": "Typography",
+            "components": [
+                {
+                    "group": "typography",
+                    "name": "h1",
+                    "title": "H1",
+                    "width": "half"
+                },
+                {
+                    "group": "typography",
+                    "name": "h2",
+                    "title": "H2",
+                    "width": "half"
+                },
+                {
+                    "group": "typography",
+                    "name": "h3",
+                    "title": "H3",
+                    "width": "half"
+                },
+                {
+                    "group": "typography",
+                    "name": "h4",
+                    "title": "H4",
+                    "width": "half"
+                },
+                {
+                    "group": "typography",
+                    "name": "body",
+                    "title": "Body Text"
+                },
+                {
+                    "group": "typography",
+                    "name": "intro-body-copy",
+                    "title": "Intro body copy"
+                },
+                {
+                    "group": "typography",
+                    "name": "disclaimer-body-copy",
+                    "title": "Disclaimer body copy"
+                },
+                {
+                    "group": "typography",
+                    "name": "small-body-copy",
+                    "title": "Small body copy"
+                },
+                {
+                    "group": "typography",
+                    "name": "blockquotes",
+                    "title": "Block quotes"
+                }
             ]
         },
         {
@@ -92,24 +144,28 @@
             "title": "Buttons",
             "components": [
                 {
-                    "group": "buttons",
                     "name": "default",
-                    "title": "Default Button"
+                    "title": "Default Button",
+                    "width": "half",
+                    "group": "buttons"
                 },
                 {
                     "group": "buttons",
                     "name": "parsley",
-                    "title": "Parsley Button"
+                    "title": "Parsley Button",
+                    "width": "half"
                 },
                 {
                     "group": "buttons",
                     "name": "warning",
-                    "title": "Warning Button"
+                    "title": "Warning Button",
+                    "width": "half"
                 },
                 {
                     "group": "buttons",
                     "name": "danger",
-                    "title": "Danger Button"
+                    "title": "Danger Button",
+                    "width": "half"
                 }
             ]
         }
