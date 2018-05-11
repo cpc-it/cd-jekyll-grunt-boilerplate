@@ -89,28 +89,9 @@
             "title": "Typography",
             "components": [
                 {
-                    "group": "typography",
-                    "name": "h1",
-                    "title": "H1",
-                    "width": "half"
-                },
-                {
-                    "group": "typography",
-                    "name": "h2",
-                    "title": "H2",
-                    "width": "half"
-                },
-                {
-                    "group": "typography",
-                    "name": "h3",
-                    "title": "H3",
-                    "width": "half"
-                },
-                {
-                    "group": "typography",
-                    "name": "h4",
-                    "title": "H4",
-                    "width": "half"
+                    "name": "headings",
+                    "title": "Headings",
+                    "group": "typography"
                 },
                 {
                     "group": "typography",
@@ -119,13 +100,8 @@
                 },
                 {
                     "group": "typography",
-                    "name": "intro-body-copy",
-                    "title": "Intro body copy"
-                },
-                {
-                    "group": "typography",
-                    "name": "disclaimer-body-copy",
-                    "title": "Disclaimer body copy"
+                    "name": "intro-body-text",
+                    "title": "Intro Body Copy"
                 },
                 {
                     "group": "typography",
@@ -136,6 +112,21 @@
                     "group": "typography",
                     "name": "blockquotes",
                     "title": "Block quotes"
+                },
+                {
+                    "group": "typography",
+                    "name": "ordered-list",
+                    "title": "Ordered List"
+                },
+                {
+                    "group": "typography",
+                    "name": "unordered-lists",
+                    "title": "Main Content Unordered Lists"
+                },
+                {
+                    "group": "typography",
+                    "name": "main-content-tables",
+                    "title": "Tables"
                 }
             ]
         },
@@ -146,26 +137,77 @@
                 {
                     "name": "default",
                     "title": "Default Button",
-                    "width": "half",
                     "group": "buttons"
                 },
                 {
                     "group": "buttons",
                     "name": "parsley",
-                    "title": "Parsley Button",
-                    "width": "half"
+                    "title": "Parsley Button"
                 },
                 {
                     "group": "buttons",
                     "name": "warning",
-                    "title": "Warning Button",
-                    "width": "half"
+                    "title": "Warning Button"
                 },
                 {
                     "group": "buttons",
                     "name": "danger",
-                    "title": "Danger Button",
-                    "width": "half"
+                    "title": "Danger Button"
+                },
+                {
+                    "name": "inverse",
+                    "title": "Inverse Button",
+                    "options": {
+                        "sample_dark_background": true
+                    },
+                    "group": "buttons"
+                },
+                {
+                    "group": "buttons",
+                    "name": "social-media-green",
+                    "title": "Round Green Social Media Buttons"
+                },
+                {
+                    "group": "buttons",
+                    "name": "social-media-buttons",
+                    "title": "Social Media Buttons"
+                }
+            ]
+        },
+        {
+            "name": "notices",
+            "title": "Notices",
+            "components": [
+                {
+                    "group": "notices",
+                    "name": "danger-notice",
+                    "title": "Danger Notice"
+                },
+                {
+                    "group": "notices",
+                    "name": "disclaimer",
+                    "title": "Disclaimer Notice"
+                },
+                {
+                    "group": "notices",
+                    "name": "success-notice",
+                    "title": "Sucess Notice"
+                }
+            ]
+        },
+        {
+            "name": "venue",
+            "title": "Venue",
+            "components": [
+                {
+                    "group": "venue",
+                    "name": "gallery",
+                    "title": "Gallery Component"
+                },
+                {
+                    "group": "venue",
+                    "name": "hours",
+                    "title": "Hours Component"
                 }
             ]
         }
