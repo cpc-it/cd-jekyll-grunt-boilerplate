@@ -1,6 +1,6 @@
 {
     "project_logo": "assets/logo.svg",
-    "project_favicon": "favicon.png",
+    "project_favicon": "favicon.ico",
     "project_name": "The Cookbook",
     "project_url": null,
     "copyright_start_year": "2016",
@@ -8,8 +8,13 @@
     "client_url": null,
     "creators": [
         {
-            "name": null,
-            "url": null
+            "name": "Lauren Barker",
+            "url": "https://github.com/lbarker"
+        },
+        {
+            "name": "Javier Garcia",
+            "url": "https://github.com/javag97"
+
         }
     ],
     "theme": {
@@ -171,6 +176,17 @@
                     "group": "buttons",
                     "name": "social-media-buttons",
                     "title": "Social Media Buttons"
+                }
+            ]
+        },
+        {
+            "name": "divider",
+            "title": "Dividers",
+            "components": [
+                {
+                    "group": "divider",
+                    "name": "standard",
+                    "title": "Standard Divider"
                 }
             ]
         },
