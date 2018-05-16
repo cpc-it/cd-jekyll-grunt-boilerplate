@@ -26,6 +26,10 @@ module.exports = function(grunt) {
                 files: ['<%= app.source %>/**/*.{html,yml,md,mkd,markdown}'],
                 tasks: ['jekyll:server']
             },
+             astrum: {
+                files: ['public/pattern-library/**/*.{html,yml,md,mkd,markdown}'],
+                tasks: ['copy:astrum']
+            },
             //images: {
              //   files: ['<%= app.source %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}'],
              //   tasks: ['copy:server']
@@ -500,17 +504,19 @@ module.exports = function(grunt) {
                         cwd: 'app/_assets/video',
                         src: '**/*',
                         dest: '.tmp/video'
-                    },
+                    }   
+                ]
+            },
+            astrum: {
+                files: [
                     {
                         expand: true,
                         cwd: 'public',
                         src: '**/*',
                         dest: '.jekyll'
-
                     }
-
-                    
                 ]
+
             },
             dist: {
                 files: [
@@ -622,9 +628,10 @@ module.exports = function(grunt) {
             'jekyll:server',
             'sass:server',
             'copy:server',
+            'copy:astrum',
             'uglify:server',
             'connect:livereload',
-            'watch'
+            'watch',
         ]);
     });
 
