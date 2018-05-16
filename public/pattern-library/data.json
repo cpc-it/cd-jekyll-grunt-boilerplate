@@ -31,7 +31,7 @@
     },
     "assets": {
         "css": [
-            "../../.tmp/css/production.css"
+            "/css/staging.css?"
         ],
         "js": []
     },
