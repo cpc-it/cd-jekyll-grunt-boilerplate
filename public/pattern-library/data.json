@@ -31,7 +31,7 @@
     },
     "assets": {
         "css": [
-            "https://www.calpolydining.com/css/production.css?5.2.12"
+            "../../.tmp/css/production.css"
         ],
         "js": []
     },
