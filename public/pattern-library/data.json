@@ -2,19 +2,14 @@
     "project_logo": "assets/logo.svg",
     "project_favicon": "favicon.ico",
     "project_name": "The Cookbook",
-    "project_url": null,
+    "project_url": "https://www.calpolydining.com/",
     "copyright_start_year": "2016",
     "client_name": null,
     "client_url": null,
     "creators": [
         {
-            "name": "Lauren Barker",
-            "url": "https://github.com/lbarker"
-        },
-        {
-            "name": "Javier Garcia",
-            "url": "https://github.com/javag97"
-
+            "name": "The Cal Poly Corporation",
+            "url": "https://github.com/cpc-it"
         }
     ],
     "theme": {
@@ -26,10 +21,10 @@
         "override_code_highlight_bg": "#F9FAFC",
         "sample_dark_background": "#333333",
         "show_project_name": true,
-        "show_version": true,
-        "max_width": null,
+        "show_version": false,
+        "max_width": "1200",
         "titles": {
-            "library_title": null,
+            "library_title": "An internal pattern library for Campus Dining.",
             "pages_title": "Read me",
             "components_title": "Components"
         }
