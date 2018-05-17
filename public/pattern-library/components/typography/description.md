@@ -1,0 +1,1 @@
+**Color for all typography** #373c3a
