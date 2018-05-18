@@ -90,6 +90,105 @@
                     "options": {
                         "disable_code_sample": true
                     }
+                },
+                {
+                    "group": "branding",
+                    "name": "805-cafe",
+                    "title": "805 Cafe logo",
+                    "width": "half",
+                    "options": {
+                        "disable_code_sample": true
+                    }
+                },
+                {
+                    "group": "branding",
+                    "name": "mustang-station",
+                    "title": "Mustang Station logo",
+                    "width": "half",
+                    "options": {
+                        "disable_code_sample": true
+                    }
+                },
+                {
+                    "group": "branding",
+                    "name": "red-radish",
+                    "title": "Red Radish",
+                    "width": "half",
+                    "options": {
+                        "disable_code_sample": true
+                    }
+                },
+                {
+                    "group": "branding",
+                    "name": "chick-fil-a",
+                    "title": "Chick Fil A logo",
+                    "width": "half",
+                    "options": {
+                        "disable_code_sample": true
+                    }
+                },
+                {
+                    "group": "branding",
+                    "name": "tu-taco",
+                    "title": "Tu Taco logo",
+                    "width": "half",
+                    "options": {
+                        "disable_code_sample": true
+                    }
+                },
+                {
+                    "group": "branding",
+                    "name": "student-choice",
+                    "title": "Student Choice logo",
+                    "width": "half",
+                    "options": {
+                        "disable_code_sample": true
+                    }
+                },
+                {
+                    "group": "branding",
+                    "name": "poly-deli",
+                    "title": "Poly Dely logo",
+                    "width": "half",
+                    "options": {
+                        "disable_code_sample": true
+                    }
+                },
+                {
+                    "group": "branding",
+                    "name": "lucys-juice",
+                    "title": "Lucy's Juice logo",
+                    "width": "half",
+                    "options": {
+                        "disable_code_sample": true
+                    }
+                },
+                {
+                    "group": "branding",
+                    "name": "starbucks",
+                    "title": "Starbucks logo",
+                    "width": "half",
+                    "options": {
+                        "disable_code_sample": true
+                    }
+                },
+                {
+                    "group": "branding",
+                    "name": "yogurt-creations",
+                    "title": "Yogurt Creations logo",
+                    "width": "half",
+                    "options": {
+                        "disable_code_sample": true
+                    }
+                },
+                {
+                    "group": "branding",
+                    "name": "myrons",
+                    "title": "Myrons logo",
+                    "width": "half",
+                    "options": {
+                        "disable_code_sample": true
+                    }
                 }
             ]
         },
@@ -205,9 +304,9 @@
                     "title": "Standard Divider"
                 },
                 {
-                    "group": "divider",
-                    "name": "white-green",
-                    "title": "White Green Divider"
+                    "name": "green-complex",
+                    "title": "Complex Green Divider",
+                    "group": "divider"
                 }
             ]
         },
