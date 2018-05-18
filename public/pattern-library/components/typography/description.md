@@ -1,1 +1,1 @@
-**Color for all typography** #373c3a
+*SCSS partial:*  app/_assets/base/_typography.scss

@@ -1,0 +1,1 @@
+Standard Image Size for Venues displays 400 x 400, but you may want a larger resolution photo for retina displays (800 x 800)

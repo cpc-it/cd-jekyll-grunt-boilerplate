@@ -54,7 +54,7 @@
     "groups": [
         {
             "name": "branding",
-            "title": "Colors",
+            "title": "Branding",
             "components": [
                 {
                     "group": "branding",
@@ -81,6 +81,15 @@
                         "#17476f",
                         "#a9975d"
                     ]
+                },
+                {
+                    "group": "branding",
+                    "name": "805-kitchen",
+                    "title": "805 Kitchen logo",
+                    "width": "half",
+                    "options": {
+                        "disable_code_sample": true
+                    }
                 }
             ]
         },
@@ -127,6 +136,18 @@
                     "group": "typography",
                     "name": "main-content-tables",
                     "title": "Tables"
+                }
+            ]
+        },
+        {
+            "name": "images",
+            "title": "Images",
+            "components": [
+                {
+                    "group": "images",
+                    "name": "805-kitchen",
+                    "title": "805 Kitchen Image",
+                    "width": "half"
                 }
             ]
         },
@@ -182,6 +203,11 @@
                     "group": "divider",
                     "name": "standard",
                     "title": "Standard Divider"
+                },
+                {
+                    "group": "divider",
+                    "name": "white-green",
+                    "title": "White Green Divider"
                 }
             ]
         },
