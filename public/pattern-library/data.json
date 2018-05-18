@@ -304,9 +304,24 @@
                     "title": "Standard Divider"
                 },
                 {
+                    "group": "divider",
+                    "name": "divider-green",
+                    "title": "Green Divider"
+                },
+                {
+                    "name": "divider-white",
+                    "title": "Simple White",
+                    "group": "divider"
+                },
+                {
                     "name": "green-complex",
                     "title": "Complex Green Divider",
                     "group": "divider"
+                },
+                {
+                    "group": "divider",
+                    "name": "complex-mint",
+                    "title": "Complex Mint Divider"
                 }
             ]
         },
