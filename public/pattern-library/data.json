@@ -258,6 +258,17 @@
                     "title": "Hero Image 600"
                 },
                 {
+                    "group": "images",
+                    "name": "section-heading",
+                    "title": "Section Heading Image"
+                },
+                {
+                    "group": "images",
+                    "name": "gallery",
+                    "title": "Gallery Image",
+                    "width": "half"
+                },
+                {
                     "name": "venue",
                     "title": "Venue Image",
                     "width": "half",
