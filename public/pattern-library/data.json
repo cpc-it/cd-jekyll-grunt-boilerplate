@@ -243,9 +243,30 @@
             "title": "Images",
             "components": [
                 {
+                    "name": "hero-image-1920",
+                    "title": "Hero Image 1920",
+                    "group": "images"
+                },
+                {
                     "group": "images",
-                    "name": "805-kitchen",
-                    "title": "805 Kitchen Image",
+                    "name": "hero-image-1280",
+                    "title": "Hero Image 1280"
+                },
+                {
+                    "group": "images",
+                    "name": "hero-image-600",
+                    "title": "Hero Image 600"
+                },
+                {
+                    "name": "venue",
+                    "title": "Venue Image",
+                    "width": "half",
+                    "group": "images"
+                },
+                {
+                    "group": "images",
+                    "name": "card-image",
+                    "title": "Card Image",
                     "width": "half"
                 }
             ]
