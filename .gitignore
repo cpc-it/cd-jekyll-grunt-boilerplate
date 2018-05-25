@@ -44,7 +44,7 @@ Thumbs.db
 # Ignore for Jekyll Grunt projects #
 bower_components
 node_modules
-.tmp
+.tmp/
 Gemfile.lock
 staging/
 dist/_mobiledata
