@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 module.exports = function(grunt) {
     // Show elapsed time after tasks run
