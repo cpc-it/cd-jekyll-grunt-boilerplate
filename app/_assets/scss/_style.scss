@@ -28,6 +28,7 @@
 @import 'base/syntax-highlighting';
 @import 'base/google-business';
 @import 'base/video';
+@import 'base/media-print';
 
 
 /*------------------------------------*\
@@ -81,5 +82,6 @@
 @import "layouts/backpages";
 @import "layouts/default-2017";
 @import "layouts/webnutrition";
-@import 'base/media-print';
+@import "layouts/maintenance-content"
+
 
