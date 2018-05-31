@@ -22,7 +22,7 @@
         "sample_dark_background": "#333333",
         "show_project_name": true,
         "show_version": false,
-        "max_width": "1200",
+        "max_width": "1400",
         "titles": {
             "library_title": "An internal pattern library for Campus Dining.",
             "pages_title": "Read me",
@@ -245,40 +245,61 @@
                 {
                     "name": "hero-image-1920",
                     "title": "Hero Image 1920",
-                    "group": "images"
+                    "group": "images",
+                    "options": {
+                        "disable_code_sample": true
+                    }
                 },
                 {
                     "group": "images",
                     "name": "hero-image-1280",
-                    "title": "Hero Image 1280"
+                    "title": "Hero Image 1280",
+                    "options": {
+                        "disable_code_sample": true
+                    }
                 },
                 {
                     "group": "images",
                     "name": "hero-image-600",
-                    "title": "Hero Image 600"
+                    "title": "Hero Image 600",
+                    "options": {
+                        "disable_code_sample": true
+                    }
                 },
                 {
                     "group": "images",
                     "name": "section-heading",
-                    "title": "Section Heading Image"
+                    "title": "Section Heading Image",
+                    "options": {
+                        "disable_code_sample": true
+                    }
                 },
                 {
                     "group": "images",
                     "name": "gallery",
                     "title": "Gallery Image",
-                    "width": "half"
+                    "width": "half",
+                    "options": {
+                        "disable_code_sample": true
+                    }
                 },
                 {
                     "name": "venue",
                     "title": "Venue Image",
                     "width": "half",
-                    "group": "images"
+                    "group": "images",
+                    "options": {
+                        "disable_code_sample": true
+                    }
                 },
                 {
                     "group": "images",
                     "name": "card-image",
                     "title": "Card Image",
-                    "width": "half"
+                    "width": "half",
+                    "options": {
+                        "disable_code_sample": true
+                    }
                 }
             ]
         },
@@ -289,26 +310,31 @@
                 {
                     "name": "default",
                     "title": "Default Button",
-                    "group": "buttons"
+                    "group": "buttons",
+                    "width": "half"
                 },
                 {
                     "group": "buttons",
                     "name": "parsley",
-                    "title": "Parsley Button"
+                    "title": "Parsley Button",
+                    "width": "half"
                 },
                 {
                     "group": "buttons",
                     "name": "warning",
-                    "title": "Warning Button"
+                    "title": "Warning Button",
+                    "width": "half"
                 },
                 {
                     "group": "buttons",
                     "name": "danger",
-                    "title": "Danger Button"
+                    "title": "Danger Button",
+                    "width": "half"
                 },
                 {
                     "name": "inverse",
                     "title": "Inverse Button",
+                    "width": "half",
                     "options": {
                         "sample_dark_background": true
                     },
@@ -317,12 +343,14 @@
                 {
                     "group": "buttons",
                     "name": "social-media-green",
-                    "title": "Round Green Social Media Buttons"
+                    "title": "Round Green Social Media Buttons",
+                    "width": "half"
                 },
                 {
                     "group": "buttons",
                     "name": "social-media-buttons",
-                    "title": "Social Media Buttons"
+                    "title": "Social Media Buttons",
+                    "width": "half"
                 }
             ]
         },
@@ -364,17 +392,20 @@
                 {
                     "group": "notices",
                     "name": "danger-notice",
-                    "title": "Danger Notice"
+                    "title": "Danger Notice",
+                    "width": "half"
                 },
                 {
                     "group": "notices",
                     "name": "disclaimer",
-                    "title": "Disclaimer Notice"
+                    "title": "Disclaimer Notice",
+                    "width": "half"
                 },
                 {
                     "group": "notices",
                     "name": "success-notice",
-                    "title": "Sucess Notice"
+                    "title": "Sucess Notice",
+                    "width": "half"
                 }
             ]
         },

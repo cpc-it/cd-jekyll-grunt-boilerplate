@@ -1,1 +1,1 @@
-Standard Image Size for Venues displays 400 x 400, but you may want a larger resolution photo for retina displays (800 x 800)
+Images are to be JPEG at 72 PPI. If images are retina, they will need to be twice their effective resolution (400 x 400 retina image will be 800 x 800, 600 x 600 retina image will be 1200 x 1200, etc).
