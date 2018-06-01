@@ -47,7 +47,7 @@
             {
                 "name": "introduction",
                 "title": "Introduction",
-                "file": "./pages/intro.md"
+                "file": "./pages/README.md"
             }
         ]
     },
