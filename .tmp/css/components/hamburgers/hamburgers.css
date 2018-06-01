@@ -92,5 +92,3 @@
     transform: translate3d(0, 10px, 0) rotate(45deg); }
   .hamburger--3dx.is-active .hamburger-inner::after {
     transform: translate3d(0, -10px, 0) rotate(-45deg); }
-
-/*# sourceMappingURL=hamburgers.css.map */
