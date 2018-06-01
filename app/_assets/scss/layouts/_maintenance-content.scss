@@ -27,6 +27,18 @@ $mobile-width: "only screen and (max-width: 600px)";
 		width: 285px;
 		position: relative;
 		margin-top: -35vh;
+
+		h1{
+			margin-bottom: 4px;
+			text-transform: uppercase;
+			color: #55B045;
+		}
+
+		hr{
+			margin-top: 0px;
+		}
+
+
 		@media #{$desktop-width}{
 			margin-left: 14%;
 		}

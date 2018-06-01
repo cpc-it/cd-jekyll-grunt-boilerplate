@@ -5,8 +5,13 @@
     <description>Boilerplate template for Cal Poly Corporation Jekyll projects</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+<<<<<<< HEAD
     <pubDate>Fri, 01 Jun 2018 09:07:46 -0700</pubDate>
     <lastBuildDate>Fri, 01 Jun 2018 09:07:46 -0700</lastBuildDate>
+=======
+    <pubDate>Fri, 01 Jun 2018 10:14:43 -0700</pubDate>
+    <lastBuildDate>Fri, 01 Jun 2018 10:14:43 -0700</lastBuildDate>
+>>>>>>> a683de37c23ac4a81c488a58859952409712fb38
     <generator>Jekyll v3.8.2</generator>
     
   </channel>
