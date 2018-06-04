@@ -220,21 +220,27 @@
                     "group": "typography",
                     "name": "blockquotes",
                     "title": "Block quotes"
+                }
+            ]
+        },
+        {
+            "name": "content-typography",
+            "title": "Content Typography",
+            "components": [
+                {
+                    "name": "table",
+                    "title": "Main Content Table",
+                    "group": "content-typography"
                 },
                 {
-                    "group": "typography",
+                    "name": "unordered-list",
+                    "title": "Main Content Unordered Lists",
+                    "group": "content-typography"
+                },
+                {
                     "name": "ordered-list",
-                    "title": "Ordered List"
-                },
-                {
-                    "group": "typography",
-                    "name": "unordered-lists",
-                    "title": "Main Content Unordered Lists"
-                },
-                {
-                    "group": "typography",
-                    "name": "main-content-tables",
-                    "title": "Tables"
+                    "title": "Ordered List",
+                    "group": "content-typography"
                 }
             ]
         },
@@ -359,14 +365,14 @@
             "title": "Dividers",
             "components": [
                 {
-                    "group": "divider",
-                    "name": "standard",
-                    "title": "Standard Divider"
+                    "name": "simple-sage",
+                    "title": "Simple Sage Divider",
+                    "group": "divider"
                 },
                 {
-                    "group": "divider",
-                    "name": "divider-green",
-                    "title": "Green Divider"
+                    "name": "simple-green",
+                    "title": "Simple Green Divider",
+                    "group": "divider"
                 },
                 {
                     "name": "divider-white",
@@ -374,7 +380,7 @@
                     "group": "divider"
                 },
                 {
-                    "name": "green-complex",
+                    "name": "complex-green",
                     "title": "Complex Green Divider",
                     "group": "divider"
                 },
@@ -382,6 +388,22 @@
                     "group": "divider",
                     "name": "complex-mint",
                     "title": "Complex Mint Divider"
+                }
+            ]
+        },
+        {
+            "name": "form",
+            "title": "Forms",
+            "components": [
+                {
+                    "group": "form",
+                    "name": "standard",
+                    "title": "Standard Form"
+                },
+                {
+                    "group": "form",
+                    "name": "positions",
+                    "title": "Positions Form"
                 }
             ]
         },
@@ -422,6 +444,11 @@
                     "group": "venue",
                     "name": "hours",
                     "title": "Hours Component"
+                },
+                {
+                    "group": "venue",
+                    "name": "header",
+                    "title": "Header Component"
                 }
             ]
         }
