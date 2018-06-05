@@ -394,6 +394,11 @@
                     "name": "pricing-card",
                     "title": "Pricing Card",
                     "width": "half"
+                },
+                {
+                    "group": "cards",
+                    "name": "numbered-list",
+                    "title": "Numbered List Card"
                 }
             ]
         },
