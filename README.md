@@ -1,5 +1,7 @@
-Cal Poly Corporation Jekyll Boilerplate
+# Cal Poly Corporation Jekyll Boilerplate
 =============
+
+This is a lightweight boilerplate of [Cal Poly Dining's site](https://www.calpolydining.com/) including error pages and pattern library. The pattern library was created with [Astrum](https://github.com/NoDivide/astrum). The site is build with [Jekyll](https://jekyllrb.com/) using [grunt](https://gruntjs.com/) as the task runner.  
 
 ## Get Started
 1.  Install [Node.js](www.nodejs.org) and [Ruby](https://www.ruby-lang.org/)
@@ -12,30 +14,10 @@ Cal Poly Corporation Jekyll Boilerplate
 > Built using the [Optimized Jekyll Site With Grunt project](https://github.com/ozasadnyy/optimized-jekyll-grunt) by [Oleh Zasadnyy](https://github.com/ozasadnyy)
 > You can find more information about the project in [this article](http://o.zasadnyy.com/blog/optimized-jekyll-site-with-grunt).
 
-## Environment Variables
-1. Each _config.yml.(env) has a environment variable set. Only switch exist in app/layouts/footer_calculator.html at this point in time.
-2. $image-path sets a sass variable for the root image directory. We needed this to stage the website within the admin. Our yml variables are not accessible via scss.
 
-## Staging Server Development
-#### To prepare your script for staging deployment (https://webapps.calpolycorporation.org/jobid/staging/)
-1. `cd staging`
-2. `git init` - we have to initialize a blank git repo in the staging folder. This allows us to set git-ftp credentials that allow us to push to our staging server, https://webapps.calpolycorporation.org/jobid/
-3. set git-ftp credentials in staging/.git/config (You will be given deployment FTP credentials if authorized for staging deployment)
-4. Review /staging.sh bash script. Update 'cd path-to-your-repo/repo` is correct
-5. Manually test script first
+## Astrum 
 
-#### Deploying to Staging
-1. `./staging.sh`
-
-## Deploying to Production
-
-#### To prepare your script for production deployment (https://www.calpolydining.com/)
-1. set git-ftp credentials in /.git/config (You will be given deployment FTP credentials if authorized for production deployment)
-4. Review /deploy.sh bash script. Up date 'cd path-to-your-repo/repo` is correct
-5. Manually test script first and check to see if your updates were push to production.
-#### Deploying to Production
-1. `./deploy.sh branch-or-hotfix-name`
-
+Astrum was used for the pattern library meant to update the current pattern library. This updated library includes added documentation for new components. 
 
 ## Changelog is auto generated [with this repo](https://github.com/github-changelog-generator/github-changelog-generator#installation.) 
 
@@ -52,10 +34,17 @@ To use the generator, use this. If the repository is not private, omit the --tok
 ```
 CPC-MC$ github_changelog_generator github_username/github_project --token "api_key"
 ```
-Example.
+For example, 
 
 ```
 CPC-MC$ github_changelog_generator cpc-it/cd-jekyll-grunt-boilerplate --token "125f644db4b4f59acf7d5fceadb0714e1bbc11b1"
 ```
 
+## Authors
 
+* **[Lauren Barker](https://github.com/lbarker)** - *grunt and Jekyll file structure* 
+* **[Javier Garcia](https://github.com/javag97)** - *Astrum*
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
