@@ -380,6 +380,24 @@
             ]
         },
         {
+            "name": "cards",
+            "title": "Cards",
+            "components": [
+                {
+                    "group": "cards",
+                    "name": "web-card",
+                    "title": "Web Card",
+                    "width": "half"
+                },
+                {
+                    "group": "cards",
+                    "name": "pricing-card",
+                    "title": "Pricing Card",
+                    "width": "half"
+                }
+            ]
+        },
+        {
             "name": "divider",
             "title": "Dividers",
             "components": [
