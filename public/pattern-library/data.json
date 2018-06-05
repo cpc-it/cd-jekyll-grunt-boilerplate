@@ -83,6 +83,25 @@
                     ]
                 },
                 {
+                    "name": "logo",
+                    "title": "Green Logo",
+                    "width": "half",
+                    "options": {
+                        "disable_code_sample": true
+                    },
+                    "group": "branding"
+                },
+                {
+                    "name": "inverted-logo",
+                    "title": "Inverted Logo",
+                    "width": "half",
+                    "options": {
+                        "sample_dark_background": true,
+                        "disable_code_sample": true
+                    },
+                    "group": "branding"
+                },
+                {
                     "group": "branding",
                     "name": "805-kitchen",
                     "title": "805 Kitchen logo",
