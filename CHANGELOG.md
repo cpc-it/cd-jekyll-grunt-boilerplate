@@ -1,5 +1,17 @@
 # Change Log
 
+## [Unreleased](https://github.com/cpc-it/cd-jekyll-grunt-boilerplate/tree/HEAD)
+
+[Full Changelog](https://github.com/cpc-it/cd-jekyll-grunt-boilerplate/compare/Release Notes...HEAD)
+
+**Implemented enhancements:**
+
+- Favicon added to images and head [\#3](https://github.com/cpc-it/cd-jekyll-grunt-boilerplate/pull/3) ([lbarker](https://github.com/lbarker))
+
+**Merged pull requests:**
+
+- Hamburger Menu Dependencies [\#1](https://github.com/cpc-it/cd-jekyll-grunt-boilerplate/pull/1) ([javag97](https://github.com/javag97))
+
 ## Release Notes
 #### Phase 3.5
 1. Content pages migrated to markdown format. Siteleaf CMS integrated to allow MarCom staff to update content.
