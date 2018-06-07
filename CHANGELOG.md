@@ -1,8 +1,7 @@
 # Change Log
 
-## [Unreleased](https://github.com/cpc-it/cd-jekyll-grunt-boilerplate/tree/HEAD)
-
-[Full Changelog](https://github.com/cpc-it/cd-jekyll-grunt-boilerplate/compare/v0.8...HEAD)
+## [v0.8.1](https://github.com/cpc-it/cd-jekyll-grunt-boilerplate/tree/v0.8.1) (2018-06-07)
+[Full Changelog](https://github.com/cpc-it/cd-jekyll-grunt-boilerplate/compare/v0.8...v0.8.1)
 
 **Closed issues:**
 
