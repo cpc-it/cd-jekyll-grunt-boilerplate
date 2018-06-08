@@ -1,296 +1,309 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="ndpl-c-background">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
 
-<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0">
-		<meta name="theme-color" content="#7E03D1">
+        <title v-text="project_name ? project_name + ' | Pattern Library' : 'Pattern Library'"></title>
 
-		<meta name="author" itemprop="author" content="Cal Poly Campus Dining">
-		<meta name="keywords" itemprop="keywords" content="Built with Jekyll. Learn by doing.">
-		<meta name="description" itemprop="description" content="Cal Poly Proud, Cal Poly Dining">
-		<link rel="canonical" itemprop="url" href="/">
-		<link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
-		<title>Boilerplate || Cal Poly Campus Dining</title>
+        <!-- Astrum (https://github.com/NoDivide/astrum) -->
+        <meta name="application-name" content="Astrum {{ version }}" />
 
-		
-			<link rel="stylesheet" type="text/css" href="/css/staging.css?">
-		
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" :href="project_favicon" />
 
+        <!-- Pattern Library Stylesheets: DO NOT CHANGE -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel='stylesheet' type='text/css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+        <script>
+            WebFont.load({
+                google: {
+                    families: ['Open Sans', 'Oswald', 'Lato']
+                }
+            });
+        </script>
+        <style>
+            /* Targeted theme styles */
+            .ndpl-folding-cube .ndpl-cube:before { background-color: {{ theme.brand_color }} !important; }
+            .ndpl-component__sample--inverted    { background-color: {{ theme.sample_dark_background }} !important }
+            .ndpl-c-background                   { background-color: {{ theme.background_color }} !important; }
+            .ndpl-c-border                       { border-color: {{ theme.border_color }} !important; }
+            .ndpl-c-border-b                     { border-bottom-color: {{ theme.border_color }} !important; }
+            .ndpl-c-highlight                    { background-color: {{ theme.highlight_color }} !important; }
+            .ndpl-c-highlight-ca a.active,
+            .ndpl-c-highlight-ca a:hover         { background-color: {{ theme.highlight_color }} !important; }
+            .ndpl-c-brand-c                      { color: {{ theme.brand_color }} !important; }
+            .ndpl-c-brand-bg                     { background-color: {{ theme.brand_color }} !important; }
+            .ndpl-c-brand-b                      { border-color: {{ theme.brand_color }} !important; }
+            .ndpl-c-brand-bl-ca a.active,
+            .ndpl-c-brand-bl-ca a:hover          { border-left-color: {{ theme.brand_color }} !important; }
+            .ndpl-c-brand-a:hover                { color: {{ theme.brand_color }} !important; }
+            .ndpl-c-brand-ca a:hover             { color: {{ theme.brand_color }} !important; }
+            .ndpl-c-brand-cai a                  { color: {{ theme.brand_color }} !important; }
+        </style>
+        <link rel="stylesheet" v-if="theme.code_highlight_theme" :href="'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/' + theme.code_highlight_theme + '.min.css'">
+        <style v-if="theme.override_code_highlight_bg">.hljs { background: {{ theme.override_code_highlight_bg }}} !important; }</style>
+        <link rel="stylesheet" href="app/css/styles.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/2993a31b0c.css" media="all">
 
+        <!-- Font Libraries -->
+        <link rel="stylesheet" v-if="font_libraries.google_web_fonts" :href="font_libraries.google_web_fonts">
+        <link rel="stylesheet" v-if="font_libraries.typography_web_fonts" :href="font_libraries.typography_web_fonts">
+        <ndpl-script :script="'https://use.typekit.net/' + font_libraries.typekit_code + '.js'" v-if="font_libraries.typekit_code" inline-template>
+            <script :src="script" @load="loadTypekit"></script>
+        </ndpl-script>
 
+        <!-- Custom stylesheets are loaded from the assets.css array in data.json -->
+        <link rel="stylesheet" v-for="css in assets.css" :href="css">
+    </head>
+    <body id="top"
+          class="ndpl-body ndpl-c-background"
+          :class="{ 'ndpl-inverted': theme.invert_text, 'ndpl-desktop': !mobile_view, 'ndpl-mobile': mobile_view, 'ndpl-disable-scrolling': sidebar_scrolling }">
 
-		<link href='https://fonts.googleapis.com/css?family=Lato:300,500,700|Oswald' rel='stylesheet' type='text/css'>
-		<script src="https://use.fontawesome.com/2993a31b0c.js"></script>
-	
+    <div class="ndpl-loading" :class="{ 'in-progress': ! loaded }">
+        <div class="ndpl-folding-cube" v-if="!log.error.length && !log.info.length">
+            <div class="ndpl-cube1 ndpl-cube"></div>
+            <div class="ndpl-cube2 ndpl-cube"></div>
+            <div class="ndpl-cube4 ndpl-cube"></div>
+            <div class="ndpl-cube3 ndpl-cube"></div>
+        </div>
 
-		<link href="/css/print.css?" rel="stylesheet" type="text/css" media="print">
-		
-		<link href="/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
-		<link rel="manifest" href="/img/site.webmanifest">
-		<meta name="msapplication-TileColor" content="#da532c">
-		<meta name="theme-color" content="#ffffff">
-		  		
-</head>
+        <h3 class="ndpl-loading__title" v-if="! loaded && !log.error.length && !log.info.length">Just a moment! Baking cookies...</h3>
+        <h3 class="ndpl-loading__title" v-if="log.error.length">Hold up! We have some errors...</h3>
+        <h3 class="ndpl-loading__title" v-if="log.info.length && !log.error.length">Looks like you have some setup to do...</h3>
 
+        <ul class="ndpl-error" v-if="log.error.length">
+            <li class="ndpl-error__item" v-for="error in log.error">{{{ error }}}</li>
+        </ul>
+        <ul class="ndpl-info" v-if="log.info.length && !log.error.length">
+            <li class="ndpl-info__item" v-for="info in log.info">{{{ info }}}</li>
+        </ul>
+    </div>
 
-<body id="website">
-	
- 
-    <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<header> 
-	<div class="top-nav">
+    <div class="ndpl-container"
+         :class="{ 'loaded': loaded }">
 
+        <header class="ndpl-header">
 
-      <ul>
-        <li>
-          <a id="skip" href="#topH1" title="skip to content">Skip to Content</a>
-        </li>
-      
-        <li>
-          <a id="helpLink" href="http://www.calpoly.edu/help.html" title="help">?</a>
-        </li>
-      </ul>
+            <img class="ndpl-header__logo"
+                 :src="project_logo"
+                 :alt="project_name"
+                 v-if="project_logo"/>
 
-      <ul>
-        <li>
-          <a href="http://www.calpolycorporation.org/">Cal Poly Corporation</a>
-        </li>
-        <li class="basesite">
-          <a href="http://www.calpolydining.com/">Campus Dining</a>
-        </li>
-        <li>
-          <a href="http://calpolystore.com/home.aspx">University Store</a>
-        </li>
-        <li>
-          <a href="http://www.calpolyprintcopy.com/">Print &amp; Copy</a>
-        </li>
-        <li>
-          <a href="http://www.calpolyconferences.org/">Cal Poly Conference &amp; Event Planing</a>
-        </li>
-      </ul>
-	</div> 
-	<div class="header-primary">  
-		<div class="left-nav">
-			<button class="hamburger hamburger--3dx" type="button"
-				aria-label="Menu" aria-controls="navigation">
-				<span class="hamburger-box">
-					<span class="hamburger-inner"></span>
-				</span>
-			</button>
-			
-			
+            <h1 class="ndpl-header__title ndpl-c-brand-ca">
+                <span v-if="theme.show_project_name">{{{ project }}}</span>
+                <small v-if="theme.titles.library_title"
+                       v-text="theme.titles.library_title"></small>
+            </h1>
 
-<div class="clearfix breadcrumbs-nav"></div>
-		</div>
-		<div class="right-nav">
-	   		<ul>
-				<li><a href="/search/"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-				<li><a href="/">Header Nav Item</a></li>
-				<li><a href="/">Header Nav Item</a></li>
-				<li><a href="/">Header Nav Item</a></li>
+            <div class="ndpl-nav-handle"
+                 :class="{ 'open': open_nav }"
+                 @click="toggleNav">
+                <div class="ndpl-nav-handle__container">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </header>
 
-			</ul>
-		</div>
+        <div class="ndpl-sidebar"
+             :class="{ 'open': open_nav }">
 
-	    <div id="cplogo">
-	      <a href="/">
-	        <img title="Go to Cal Poly Corporation Home" alt="Cal Poly Corporation" src="/img/logos/CD_Logo_Green.svg">
-	      </a>
-	    </div>
-	</div>
-	<div class="top-banner"></div>
-</header>
+            <header class="ndpl-sidebar__header">
 
+                <img class="ndpl-sidebar__logo"
+                     :src="project_logo"
+                     :alt="project_name"
+                     v-if="project_logo"/>
 
+                <h1 class="ndpl-sidebar__title ndpl-c-brand-ca">
+                    <span v-if="theme.show_project_name">{{{ project }}}</span>
+                    <small v-if="theme.titles.library_title"
+                           v-text="theme.titles.library_title"></small>
+                </h1>
 
-    
-<nav id="navigation" class="sliding-panel-content">
-	<div class="nav-content">
+            </header>
 
-		
-<ul id="cpUl-primary">
-	<li class="">
-		<a href="#" class="expand">Nav Item</a>
-		<div class="sliding-panel-subnav">
-			<ul class="accordion">
-				<li>
-					<a href="javascript:void(0)" class="js-accordion-trigger">Sub Nav Item</a>
-					<ul class="submenu">
-						<li><a href="/">Submenu Nav Item</a></li>
-						<li><a href="/">Submenu Nav Item</a></li>
-						<li><a href="/">Submenu Nav Item</a></li>
-						<li><a href="/">Submenu Nav Item</a></li>
-						<li><a href="/">Submenu Nav Item</a></li>						
-						<li><a href="/">Submenu Nav Item</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="javascript:void(0)" class="js-accordion-trigger">Sub Nav Item</a>
-					<ul class="submenu">
-						<li><a href="/">Submenu Nav Item</a></li>
-						<li><a href="/">Submenu Nav Item</a></li>
-						<li><a href="/">Submenu Nav Item</a></li>
-						<li><a href="/">Submenu Nav Item</a></li>
-						<li><a href="/">Submenu Nav Item</a></li>						
-						<li><a href="/">Submenu Nav Item</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	
-	</li>
+            <nav class="ndpl-nav">
+                <template v-if="content">
+                    <h2 class="ndpl-nav__title"
+                        v-if="theme.titles.pages_title"
+                        v-text="theme.titles.pages_title"></h2>
 
-	<li class="">
-		<a href="#" class="expand">Nav Item</a>
-		<div class="sliding-panel-subnav">
-			<ul class="accordion">
-				<li>
-					<a href="javascript:void(0)" class="js-accordion-trigger">Sub Nav Item</a>
-					<ul class="submenu">
-						<li><a href="/">Submenu Nav Item</a></li>
-						<li><a href="/">Submenu Nav Item</a></li>
-						<li><a href="/">Submenu Nav Item</a></li>
-						<li><a href="/">Submenu Nav Item</a></li>
-						<li><a href="/">Submenu Nav Item</a></li>						
-						<li><a href="/">Submenu Nav Item</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="javascript:void(0)" class="js-accordion-trigger">Sub Nav Item</a>
-					<ul class="submenu">
-						<li><a href="/">Submenu Nav Item</a></li>
-						<li><a href="/">Submenu Nav Item</a></li>
-						<li><a href="/">Submenu Nav Item</a></li>
-						<li><a href="/">Submenu Nav Item</a></li>
-						<li><a href="/">Submenu Nav Item</a></li>						
-						<li><a href="/">Submenu Nav Item</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	
-	</li>
+                    <ul class="ndpl-nav__items ndpl-c-border ndpl-c-highlight-ca ndpl-c-brand-bl-ca">
+                        <li class="ndpl-nav__item" v-for="page in content.pages">
+                            <a class="ndpl-nav__page ndpl-nsc ndpl-c-border-b"
+                               :class="{ 'active': active_page && active_page.title === page.title }"
+                               v-text="page.title"
+                               @click.prevent="loadPage(page)">
+                            </a>
+                        </li>
+                    </ul>
+                </template>
 
+                <h2 class="ndpl-nav__title">
+                    <a class="ndpl-nsc"
+                       href="#top"
+                       @click.prevent="scrollToHref"
+                       v-if="theme.titles.components_title"
+                       v-text="theme.titles.components_title"></a>
+                </h2>
 
-	
-	<li class="">
-		<a href="#" class="expand">Nav Item</a>
-		<div class="sliding-panel-subnav">
-			<ul>
-				<li>
-					<a href="/">Sub Nav Item</a>
-				</li>
-				<li>
-					<a href="/">Sub Nav Item</a>
-				</li>
-				<li>
-					<a href="/">Sub Nav Item</a>
-				</li>
-				<li>
-					<a href="/">Sub Nav Item</a>
-				</li>
-				<li>
-					<a href="/">Sub Nav Item</a>
-				</li>
+                <ul class="ndpl-nav__items ndpl-c-border">
+                    <li class="ndpl-nav__item"
+                        v-for="group in groups"
+                        :class="{ 'active': active_components.length > 0 && group.id == active_components[0].group_id || group.id == open_group }">
 
-			</ul>
+                        <a :href="'#' + group.id"
+                           class="ndpl-nav__group ndpl-nsc ndpl-c-border-b"
+                           v-text="group.title"
+                           @click.prevent="toggleOpenGroups(group)">
+                        </a>
 
-			
-		</div>
-	</li>
-	
-	
-	<li>
-		<hr/>
-	</li>
-	<li class="small">
-		<a href="/" class="">Small Nav item</a>
-	</li>
-	<li class="small">
-		<a href="/" class="">Small Nav item</a>
-	</li>
-	<li class="small">
-		<a href="/" class="">Small Nav item</a>
-	</li>
-	<li class="small">
-		<a href="/" class="">Small Nav item</a>
-	</li>
-	<li class="small leading">
-		<a href="/" class="">Small Nav item</a>
-	</li>
-	
-	<li>
-		<hr/>
-	</li>
-	
-	<li class="round-black">
-	<a href="http://www.facebook.com/CPcampusdining" class="social-button facebook"><i class="fa fa-facebook"></i></a>
-	
-	<a href="http://www.twitter.com/CPcampusdining" class="social-button twitter"><i class="fa fa-twitter"></i></a>
-	
-	<a href="http://www.youtube.com/calpoly" class="social-button youtube"><i class="fa fa-youtube"></i></a>
-	
-	<a href="http://instagram.com/CPcampusdining" class="social-button instagram"><i class="fa fa-instagram"></i></a>
-	
-	<a href="http://www.pinterest.com/cpinitgirl/" class="social-button pinterest"><i class="fa fa-pinterest"></i></a>
-	</li>
-</ul>
-		<!--
-		<ul class="cpnav">
-			<li class="">
-				<a href="#">Primary Link</a>
-				<div class="sliding-panel-subnav">
-					<ul>
-						<li><a href="#">Secondary Link</a></li>
-						<li><a href="#">Secondary Link</a></li>
-					</ul>
-				</div>	
-			</li>
-			<li class="">
-			<a href="#">Primary Link</a>
-				<div class="sliding-panel-subnav" style="background:red">
-					<ul>
-						<li><a href="#">Secondary Link</a></li>
-						<li><a href="#">Secondary Link</a></li>
-					</ul>
-				</div>	
-			</li>
-		</ul>
-		<div class="sliding-panel-close">Close Panel</div>
-		-->
-		
-	</div>
-</nav>
-<div class="sliding-panel-fade-screen"></div>
-	<div class="clearfix"></div>
+                        <ul class="ndpl-nav__child-items ndpl-c-highlight"
+                            v-if="group.components.length">
 
+                            <li class="ndpl-nav__child-item ndpl-c-border-b ndpl-c-brand-bl-ca"
+                                v-for="component in group.components">
+                                <a :href="'#' + component.id"
+                                   class="ndpl-nav__component ndpl-nsc"
+                                   :class="{ 'active': active_components.indexOf(component) >= 0 }"
+                                   v-text="component.title"
+                                   @click.prevent="scrollToHref">
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
 
-    
-    <div id="google-loading">
-	<div class="loader">
-		<div class="gold"></div>
-		<div class="parsley"></div>
-	</div>
-</div>
+            </nav>
 
+            <div class="ndpl-copyright ndpl-c-brand-ca">
 
+                <p v-if="copyright_start_year && client || all_creators">
+                    <template v-if="copyright_start_year && client">
+                        &copy; {{ copyright_year }} {{{ client }}}.
+                    </template>
+                    <template v-if="all_creators">
+                        <br/>Pattern library created by {{{ all_creators }}}.
+                    </template>
+                </p>
 
-    <script src="/js/lib.min.js?"></script>
-<script src="/js/calpoly.min.js?"></script>
+                <p v-if="theme.show_version">Astrum v{{ version }}</p>
 
+            </div>
+        </div>
 
-</body>
+        <div class="ndpl-content" data-app="astrum">
+            <div class="ndpl-page ndpl-c-brand-cai" :style="library_inline_styles" v-if="active_page">{{{ active_page.markup }}}</div>
+            <div class="ndpl-library" :style="library_inline_styles" :class="{ 'ndpl-preloaded': active_page }">
 
+                <ndpl-group v-for="group in groups"
+                            :group="group"
+                            inline-template>
+
+                    <div class="ndpl-library__group"
+                         :id="group.id">
+
+                        <h2 class="ndpl-library__title">{{ group.title }}</h2>
+
+                        <div class="ndpl-group__description ndpl-c-brand-ca"
+                             v-html="group.description"
+                             v-if="group.description"></div>
+
+                        <div class="ndpl-components">
+                            <ndpl-component v-for="component in group.components"
+                                            :component="component"
+                                            inline-template>
+
+                                <div class="ndpl-component"
+                                     :id="component.id"
+                                     :group-id="component.group_id"
+                                     :class="'ndpl-component--' + component.width">
+
+                                    <h3 class="ndpl-component__title">{{ component.title }}</h3>
+
+                                    <div class="ndpl-component__description ndpl-c-brand-ca"
+                                         v-html="component.description"></div>
+
+                                    <template v-if="component.type == 'colors'">
+                                        <div v-if="component.colors.length" class="ndpl-component__colors ndpl-cf">
+
+                                            <div class="ndpl-component__color-container"
+                                                 v-for="color in component.colors">
+
+                                                <div class="ndpl-component__color"
+                                                     v-for="item in color.split(',')"
+                                                     :class="{ 'ndpl-apply-border ndpl-c-border': shouldApplyBorder(item), }"
+                                                     :style="'background-color:' + item">
+                                                    <div :class="{ 'ndpl-dark-text': shouldInvertText(item) }">{{ item }}</div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <ul v-else class="ndpl-component__sample-missing ndpl-info">
+                                            <li class="ndpl-info__item">Locate this component in your <code>data.json</code> file and add your colors to the "colors" array that has been created for you e.g.:</li>
+                                            <li><pre class="ndpl-pre">"colors": ["#4c4c4c","#7d8284","#a6b1b5","#e6eaf2","#FFFFFF"]</pre></li>
+                                        </ul>
+                                    </template>
+                                    <template v-else>
+                                        <div class="ndpl-component__container"
+                                             v-show="isCodeVisible()">
+
+                                            <div class="ndpl-component__sample ndpl-c-border"
+                                                 :class="{
+                                                    'ndpl-component__sample--inverted': component.options.sample_dark_background,
+                                                    'ndpl-component__sample--disabled-code': component.options.disable_code_sample
+                                                 }"
+                                                 :style="inline_styles"
+                                                 v-if="component.html">
+                                                {{{ component.html }}}
+                                            </div>
+
+                                            <template v-if="component.html">
+                                                <div class="ndpl-component__code ndpl-c-border"
+                                                     v-show="component.code_show">
+                                                    <pre class="ndpl-pre"><code class="ndpl-code html" v-text="component.html"></code></pre>
+                                                </div>
+                                                <a v-if="!component.options.disable_code_sample"
+                                                   class="ndpl-component__code-toggle ndpl-c-highlight ndpl-c-border"
+                                                   @click.prevent="component.code_show = ! component.code_show"
+                                                   v-text="component.code_show ? 'Hide code sample' : 'Show code sample'"></a>
+                                            </template>
+                                            <ul v-else class="ndpl-component__sample-missing ndpl-info">
+                                                <li class="ndpl-info__item">Add your component markup to <code>/components/{{ component.group }}/{{ component.name }}/markup.html</code></li>
+                                            </ul>
+
+                                        </div>
+
+                                        <div class="ndpl-component__sample-hidden ndpl-info"
+                                             v-show="!isCodeVisible()">
+                                            This component is hidden at this resolution.
+                                        </div>
+                                    </template>
+                                </div>
+                            </ndpl-component>
+                        </div>
+                    </div>
+                </ndpl-group>
+            </div>
+        </div>
+    </div>
+
+    <ndpl-script v-for="script in assets.js"
+                 :script="script"
+                 v-if="loaded"
+                 inline-template>
+        <script :src="script"></script>
+    </ndpl-script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.8.0/vue-resource.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/10.0.0/js/smooth-scroll.min.js"></script>
+    <script src="app/js/main.min.js"></script>
+    </body>
 </html>

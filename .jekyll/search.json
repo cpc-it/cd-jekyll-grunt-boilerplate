@@ -11,18 +11,6 @@
     {
       
         
-      
-    } ,
-  
-    {
-      
-        
-      
-    } ,
-  
-    {
-      
-        
 
 
         "title"    : "404 - File Not Found",
@@ -44,28 +32,6 @@
   
     {
       
-        
-      
-    } ,
-  
-    {
-      
-    } ,
-  
-    {
-      
-        
-
-
-        "title"    : "Bishops",
-        "category" : "",
-        "tags"     : "",
-        "url"      : "/bishops/",
-        "date"     : ""      
-
-        
-      
-      
     } ,
   
     {
@@ -76,7 +42,7 @@
         "title"    : "Boilerplate",
         "category" : "",
         "tags"     : "",
-        "url"      : "/",
+        "url"      : "/boilerplate/",
         "date"     : ""      
 
         
