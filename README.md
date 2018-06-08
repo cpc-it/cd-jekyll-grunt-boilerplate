@@ -17,7 +17,7 @@ This is a lightweight boilerplate of [Cal Poly Dining's site](https://www.calpol
 
 ## Astrum 
 
-Astrum was used for the pattern library meant to update the current pattern library. This updated library includes added documentation for new components. 
+Astrum was used for the creation of the pattern library meant to update the current pattern library, Cookbook. The purpose of doing so was to have a git repository boilerplate that makes easier for projects to be started more quickly. This saves time when setting up a project in the future. Additionally, this updated library includes added documentation for new components that have not been accounted for in the past. For more information, reference the [Astrum repository](https://github.com/NoDivide/astrum)
 
 ## Changelog is auto generated [with this repo](https://github.com/github-changelog-generator/github-changelog-generator#installation.) 
 
