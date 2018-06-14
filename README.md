@@ -37,9 +37,7 @@ CPC-MC$ github_changelog_generator github_username/github_project --token "api_k
 For example, 
 
 ```
-CPC-MC$ github_changelog_generator cpc-it/cd-jekyll-grunt-boilerplate --token "125f644db4b4f59acf7d5fceadb0714e1bbc11b1"
-
-CPC-MC$ github_changelog_generator cpc-it/calpolydining.com --token "125f644db4b4f59acf7d5fceadb0714e1bbc11b1"
+CPC-MC$ github_changelog_generator cpc-it/cd-jekyll-grunt-boilerplate --token "TOKENKEY"
 ```
 
 ## Authors
