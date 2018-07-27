@@ -48,3 +48,8 @@ CPC-MC$ github_changelog_generator cpc-it/cd-jekyll-grunt-boilerplate --token "T
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Getting a `gifsicle@0.1.7 postinstall: node index.js` error?
+Try these things
+1. `jekyll -v` to check if error is related to Node Sass. If it is, try `npm rebuild node-sass`.
+2. You can temporarily get around this by using a local directory version of Jekyll. This can be done by using  `bundle exec grunt` to run the server.
