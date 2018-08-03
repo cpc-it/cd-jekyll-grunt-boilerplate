@@ -42,7 +42,6 @@ Thumbs.db
 *.zip
 
 # Ignore for Jekyll Grunt projects #
-bower_components
 node_modules
 .tmp/
 Gemfile.lock

@@ -422,17 +422,6 @@ module.exports = function(grunt) {
                     }
                     
                 ]
-            },
-            bower: {
-            	files: [
-                    {
-                    	expand: true,
-                        cwd: 'bower_components/css-hamburgers/_sass/hamburgers',
-                        src: '**/*.scss+',
-                        dest: 'app/_assets/scss/base/hamburgers'
-                    }
-                    
-                ]
             }
         
         },
@@ -473,9 +462,6 @@ module.exports = function(grunt) {
         grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
         grunt.task.run(['serve']);
     });
-    grunt.registerTask('bower_update', [
-    	'copy:bower',
-    ]);
     grunt.registerTask('build', [
         'clean:dist',
         'jekyll:dist',
