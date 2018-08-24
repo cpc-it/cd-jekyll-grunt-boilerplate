@@ -81,7 +81,7 @@
         </ul>
     </div>
 
-    <div class="ndpl-container"
+    <div id="particles-js" class="ndpl-container"
          :class="{ 'loaded': loaded }">
 
         <header class="ndpl-header">
@@ -299,12 +299,18 @@
                  inline-template>
         <script :src="script"></script>
     </ndpl-script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.8.0/vue-resource.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/10.0.0/js/smooth-scroll.min.js"></script>
     <script src="app/js/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"> </script>
+<script>
+    particlesJS.load('particles-js', 'particles.json', function(){
+        console.log('particles.json loaded...')
+    });
+</script>
+
     </body>
 </html>
