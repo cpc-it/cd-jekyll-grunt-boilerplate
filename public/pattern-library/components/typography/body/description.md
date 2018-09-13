@@ -1,0 +1,1 @@
+Body text in library use the Google font [Lato](https://fonts.google.com/specimen/Lato)

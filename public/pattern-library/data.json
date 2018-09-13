@@ -1,15 +1,19 @@
 {
     "project_logo": "assets/logo.svg",
-    "project_favicon": "favicon.ico",
+    "project_favicon": "/img/favicon-32x32.png",
     "project_name": "The Cookbook",
-    "project_url": "https://www.calpolydining.com/",
-    "copyright_start_year": "2016",
+    "project_url": "https://www.calpolydining.com/cookbook",
+    "copyright_start_year": "2018",
     "client_name": null,
     "client_url": null,
     "creators": [
         {
-            "name": "The Cal Poly Corporation",
-            "url": "https://github.com/cpc-it"
+            "name": "Javier Garcia",
+            "url": "https://github.com/javag97"
+        },
+        {
+            "name": "Lauren Barker",
+            "url": "https://github.com/lbarker"
         }
     ],
     "theme": {
@@ -31,7 +35,7 @@
     },
     "assets": {
         "css": [
-            "/css/staging.css?"
+            "/css/production.css?"
         ],
         "js": []
     },
@@ -47,7 +51,7 @@
             {
                 "name": "introduction",
                 "title": "Introduction",
-                "file": "./pages/intro.md"
+                "file": "./pages/README.md"
             }
         ]
     },
@@ -81,6 +85,25 @@
                         "#17476f",
                         "#a9975d"
                     ]
+                },
+                {
+                    "name": "logo",
+                    "title": "Green Logo",
+                    "width": "half",
+                    "options": {
+                        "disable_code_sample": true
+                    },
+                    "group": "branding"
+                },
+                {
+                    "name": "inverted-logo",
+                    "title": "Inverted Logo",
+                    "width": "half",
+                    "options": {
+                        "sample_dark_background": true,
+                        "disable_code_sample": true
+                    },
+                    "group": "branding"
                 },
                 {
                     "group": "branding",
@@ -220,21 +243,38 @@
                     "group": "typography",
                     "name": "blockquotes",
                     "title": "Block quotes"
+                }
+            ]
+        },
+        {
+            "name": "content-typography",
+            "title": "Content Typography",
+            "components": [
+                {
+                    "name": "table",
+                    "title": "Main Content Table",
+                    "group": "content-typography"
                 },
                 {
-                    "group": "typography",
+                    "group": "content-typography",
+                    "name": "table-hours",
+                    "title": "Hours Table",
+                    "width": "half"
+                },
+                {
+                    "name": "unordered-list",
+                    "title": "Main Content Unordered Lists",
+                    "group": "content-typography"
+                },
+                {
                     "name": "ordered-list",
-                    "title": "Ordered List"
+                    "title": "Ordered List",
+                    "group": "content-typography"
                 },
                 {
-                    "group": "typography",
-                    "name": "unordered-lists",
-                    "title": "Main Content Unordered Lists"
-                },
-                {
-                    "group": "typography",
-                    "name": "main-content-tables",
-                    "title": "Tables"
+                    "group": "content-typography",
+                    "name": "calendar",
+                    "title": "Calendar List"
                 }
             ]
         },
@@ -355,18 +395,52 @@
             ]
         },
         {
+            "name": "cards",
+            "title": "Cards",
+            "components": [
+                {
+                    "group": "cards",
+                    "name": "web-card",
+                    "title": "Web Card",
+                    "width": "half"
+                },
+                {
+                    "group": "cards",
+                    "name": "pricing-card",
+                    "title": "Pricing Card",
+                    "width": "half"
+                },
+                {
+                    "group": "cards",
+                    "name": "numbered-list",
+                    "title": "Numbered List Card"
+                }
+            ]
+        },
+        {
+            "name": "tabs",
+            "title": "Tabs",
+            "components": [
+                {
+                    "group": "tabs",
+                    "name": "vertical",
+                    "title": "Vertical Tabs"
+                }
+            ]
+        },
+        {
             "name": "divider",
             "title": "Dividers",
             "components": [
                 {
-                    "group": "divider",
-                    "name": "standard",
-                    "title": "Standard Divider"
+                    "name": "simple-sage",
+                    "title": "Simple Sage Divider",
+                    "group": "divider"
                 },
                 {
-                    "group": "divider",
-                    "name": "divider-green",
-                    "title": "Green Divider"
+                    "name": "simple-green",
+                    "title": "Simple Green Divider",
+                    "group": "divider"
                 },
                 {
                     "name": "divider-white",
@@ -374,7 +448,7 @@
                     "group": "divider"
                 },
                 {
-                    "name": "green-complex",
+                    "name": "complex-green",
                     "title": "Complex Green Divider",
                     "group": "divider"
                 },
@@ -382,6 +456,22 @@
                     "group": "divider",
                     "name": "complex-mint",
                     "title": "Complex Mint Divider"
+                }
+            ]
+        },
+        {
+            "name": "form",
+            "title": "Forms",
+            "components": [
+                {
+                    "group": "form",
+                    "name": "standard",
+                    "title": "Standard Form"
+                },
+                {
+                    "group": "form",
+                    "name": "positions",
+                    "title": "Positions Form"
                 }
             ]
         },
@@ -422,6 +512,11 @@
                     "group": "venue",
                     "name": "hours",
                     "title": "Hours Component"
+                },
+                {
+                    "group": "venue",
+                    "name": "header",
+                    "title": "Header Component"
                 }
             ]
         }
