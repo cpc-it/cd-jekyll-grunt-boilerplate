@@ -3763,6 +3763,83 @@ button, [type='button'], [type='reset'], [type='submit'], .button, button {
   .disclaimer-section p {
     color: #fff; }
 
+.head {
+  margin-top: 2.2em;
+  margin-bottom: -2.2em; }
+
+.top-line {
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  font-size: 3.5em;
+  text-transform: capitalize;
+  color: #373c3a; }
+
+.spacer {
+  border-bottom: 1px solid #e5e5e5; }
+
+.event {
+  text-decoration: none; }
+  .event-calendar {
+    width: 100%;
+    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: -4em; }
+  .event-list {
+    display: block;
+    border-right: 1px solid #e5e5e5; }
+  .event-container {
+    color: #373c3a;
+    transition: all 0.2s ease;
+    border-left: 3px solid;
+    padding-top: 10px;
+    padding-bottom: 15px; }
+  .event-container:hover {
+    border-left-width: 7px;
+    background: #f3f8f1; }
+  .event:nth-child(3n+1) .event-container {
+    border-left-color: #035642; }
+  .event:nth-child(3n) .event-container {
+    border-left-color: #a9975d; }
+  .event:nth-child(3n-1) .event-container {
+    border-left-color: #17476f; }
+
+.date {
+  font-size: 2.5em; }
+  .date-container {
+    display: inline-block;
+    width: 2.3em;
+    padding-left: 12px;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    margin-right: 18px;
+    font-family: Oswald;
+    font-weight: 700;
+    color: #373c3a; }
+
+.month {
+  display: block;
+  font-size: .4em;
+  font-weight: 400;
+  margin-top: -.8em;
+  text-transform: uppercase; }
+
+.detail-container {
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 3px; }
+
+.title {
+  text-transform: uppercase;
+  font-family: Oswald;
+  font-weight: 400;
+  font-size: 1.5em;
+  color: #373c3a; }
+
+.description {
+  display: block;
+  color: #373c3a; }
+
 .standard-devider {
   position: relative;
   /* Devider SVG */
