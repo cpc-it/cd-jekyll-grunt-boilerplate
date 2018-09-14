@@ -256,10 +256,14 @@
                     "group": "content-typography"
                 },
                 {
-                    "group": "content-typography",
                     "name": "table-hours",
-                    "title": "Hours Table",
-                    "width": "half"
+                    "title": "Regular Hours Table",
+                    "group": "content-typography"
+                },
+                {
+                    "group": "content-typography",
+                    "name": "special-hours",
+                    "title": "Special Hours Table"
                 },
                 {
                     "name": "unordered-list",
@@ -414,6 +418,11 @@
                     "group": "cards",
                     "name": "numbered-list",
                     "title": "Numbered List Card"
+                },
+                {
+                    "group": "cards",
+                    "name": "horizontal-card",
+                    "title": "Horizontal Card"
                 }
             ]
         },

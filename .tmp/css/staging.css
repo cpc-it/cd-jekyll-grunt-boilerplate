@@ -950,7 +950,7 @@ table {
 th {
   border-bottom: 1px solid #757b78;
   font-weight: 400;
-  padding: 0.75em;
+  padding: 0.75em 1em;
   text-align: left;
   font-family: "Oswald", sans-serif;
   letter-spacing: 0.0375em; }
@@ -969,8 +969,8 @@ table {
   border-left: 0;
   border-collapse: separate;
   /* why?
-	border-left: 0;
-	*/
+	  border-left: 0;
+	  */
   border-radius: 3px;
   border-spacing: 0;
   width: 100%;
@@ -1019,10 +1019,10 @@ table {
       border-top: 1px solid #9ba4a0;
       padding: 0.75em 1em;
       /* Not sure why Bitters has this . . . removing
-			&:first-child {
-				border-left: 0;
-			}
-			*/ }
+			  &:first-child {
+				  border-left: 0;
+			  }
+			  */ }
       table tbody td .menu-item-title {
         font-weight: 700; }
       table tbody td button {
@@ -1049,69 +1049,133 @@ table {
   display: block; }
   .scroll-table table {
     min-width: 900px; }
+    @media only screen and (max-width: 600px) {
+      .scroll-table table {
+        min-width: 100%; } }
 
 /* Hours Table /aboutus/hours */
-table.hours-table {
-  font-size: .7em; }
-  table.hours-table .short {
-    width: 5em;
-    padding: .5em; }
-    @media screen and (min-width: 900px) {
-      table.hours-table .short {
-        width: 10em; } }
-  table.hours-table.contact-list td:nth-child(2), table.hours-table.contact-list td:last-child {
-    font-size: 1.5em; }
-  table.hours-table thead th {
-    font-size: 1.5em;
-    text-align: left;
-    background-color: #000; }
-  table.hours-table.thead-basic thead th {
-    font-size: 1em;
-    text-align: left; }
-  table.hours-table tbody tr.even {
-    background-color: white; }
-  table.hours-table tbody tr.odd {
-    background-color: whitesmoke; }
-  table.hours-table tbody tr th {
-    padding: 2px;
-    text-align: center;
-    background-color: #035642;
-    color: #fff; }
-    @media screen and (min-width: 600px) {
-      table.hours-table tbody tr th {
-        padding: 1em;
-        text-align: left; } }
-  table.hours-table tbody tr td {
-    height: 6em;
-    padding: 2px;
-    text-align: center; }
-    @media screen and (min-width: 600px) {
-      table.hours-table tbody tr td {
-        padding: 1em;
-        text-align: left; } }
-    table.hours-table tbody tr td:first-child img {
-      max-height: 4em;
-      max-width: 100%; }
-      table.hours-table tbody tr td:first-child img.small {
-        width: 30%;
-        float: right; }
-    table.hours-table tbody tr td:first-child span {
-      display: none; }
+.hours-table .short {
+  width: 5em;
+  padding: .5em; }
+  @media screen and (min-width: 900px) {
+    .hours-table .short {
+      width: 10em; } }
+
+.hours-table.contact-list td:nth-child(2), .hours-table.contact-list td:last-child {
+  font-size: 1.5em; }
+
+.hours-table thead th {
+  font-size: 1.5em;
+  text-align: left;
+  background-color: #000; }
+  @media only screen and (max-width: 600px) {
+    .hours-table thead th {
+      min-width: 100%; } }
+
+.hours-table.thead-basic thead th {
+  font-size: 1em;
+  text-align: left; }
+
+.hours-table tbody {
+  width: 100%; }
+  .hours-table tbody tr {
+    width: 100%; }
+    .hours-table tbody tr.even {
+      background-color: white; }
+    .hours-table tbody tr.odd {
+      background-color: whitesmoke; }
+    .hours-table tbody tr th {
+      width: 100%;
+      padding: 2px;
+      text-align: center;
+      background-color: #035642;
+      color: #fff; }
       @media screen and (min-width: 600px) {
-        table.hours-table tbody tr td:first-child span {
-          display: inline-block; } }
-  table.hours-table.venue {
-    margin-top: 0px; }
-    table.hours-table.venue tr th:first-child {
+        .hours-table tbody tr th {
+          padding: 1em;
+          text-align: left; } }
+    .hours-table tbody tr td {
+      height: 6em;
+      width: 94vw;
+      min-height: 6em;
+      padding: 0 20px;
       text-align: left; }
-    table.hours-table.venue tr th:last-child {
-      text-align: right; }
-    table.hours-table.venue tr td {
-      font-size: 1.3em; }
+      @media screen and (min-width: 600px) {
+        .hours-table tbody tr td {
+          padding: 1em;
+          text-align: left; } }
+      .hours-table tbody tr td:first-child img {
+        display: block;
+        margin: 0 auto;
+        max-height: 100%;
+        max-width: 100%; }
+        .hours-table tbody tr td:first-child img.small {
+          width: 30%;
+          float: right; }
+      .hours-table tbody tr td:first-child span {
+        display: none; }
+        @media screen and (min-width: 600px) {
+          .hours-table tbody tr td:first-child span {
+            display: inline-block; } }
+  .hours-table tbody tr.closed {
+    opacity: .8; }
+    .hours-table tbody tr.closed:hover {
+      opacity: 1; }
+  @media only screen and (max-width: 600px) {
+    .hours-table tbody {
+      display: none;
+      margin: 0;
+      border: none; } }
+
+.hours-table.venue {
+  margin-top: 0px; }
+  .hours-table.venue tr th:first-child {
+    text-align: left; }
+  .hours-table.venue tr th:last-child {
+    text-align: right; }
+  .hours-table.venue tr td {
+    font-size: 1.3em; }
+
+@media only screen and (max-width: 600px) {
+  .hours-table {
+    display: block; }
+    .hours-table__venue {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+          align-items: center;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+      width: 93.6vw; }
+    .hours-table a, .hours-table i {
+      -ms-flex-item-align: center;
+          align-self: center; }
+    .hours-table i::-moz-selection {
+      transform: rotate(180deg); }
+    .hours-table i::selection {
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg); }
+    .hours-table-hidden {
+      display: none;
+      position: absolute;
+      z-index: -1;
+      max-width: 0;
+      max-height: 0;
+      color: #fff; }
+      .hours-table-hidden td {
+        border: 0; } }
+
+@media only screen and (max-width: 600px) {
+  .hours-table.hours-special-table tbody {
+    display: block; } }
 
 .hidden-table-header {
   opacity: 0;
   font-size: 1px; }
+
+.google_business_hours_by_day {
+  -ms-flex-direction: column;
+      flex-direction: column; }
 
 .tables.deals p {
   font-size: 0.8em;
@@ -1120,15 +1184,59 @@ table.hours-table {
     .tables.deals p {
       font-size: 1em; } }
 
-.tables.deals h4 {
+.tables.deals h3 {
   text-align: center; }
-  .tables.deals h4 img {
-    max-height: 40px;
-    max-width: 60px; }
-    @media screen and (min-width: 480px) {
-      .tables.deals h4 img {
-        max-height: 80px;
-        max-width: 120px; } }
+
+.tables.deals img {
+  max-height: 70px;
+  max-width: 70px; }
+  @media screen and (min-width: 480px) {
+    .tables.deals img {
+      max-height: 120px;
+      max-width: 120px; } }
+
+.tables.deals td ul {
+  list-style: disc;
+  margin-left: 1em;
+  margin-bottom: 0; }
+  .tables.deals td ul li {
+    margin: .5em 0; }
+
+.tables.deals table.sub-table {
+  border: none; }
+  .tables.deals table.sub-table tbody {
+    background: transparent; }
+  .tables.deals table.sub-table tr {
+    background: transparent; }
+    .tables.deals table.sub-table tr td {
+      border: none; }
+    .tables.deals table.sub-table tr td:last-child {
+      width: 50px; }
+
+.table-dropdown {
+  display: none; }
+  @media only screen and (max-width: 600px) {
+    .table-dropdown {
+      display: block;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+      .table-dropdown tbody {
+        display: block;
+        width: 93.6vw; }
+        .table-dropdown tbody tr {
+          overflow: hidden; }
+          .table-dropdown tbody tr td.hours-table__venue {
+            height: 8em; }
+          .table-dropdown tbody tr td {
+            height: 5em;
+            font-size: 0.8em; }
+            .table-dropdown tbody tr td p {
+              font-weight: bold; }
+            .table-dropdown tbody tr td a {
+              font-size: 1.25em; }
+              .table-dropdown tbody tr td a img {
+                width: 5em;
+                height: 4em; } }
 
 /* Preload images */
 body:after {
