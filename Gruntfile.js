@@ -10,7 +10,6 @@ module.exports = function(grunt) {
         app: {
             source: 'app',
             dist: 'dist',
-            staging: 'staging',
             baseurl: ''
         },
         watch: {
@@ -75,17 +74,6 @@ module.exports = function(grunt) {
                         '.tmp'
                     ]
                 }
-            },
-            staging: {
-                options: {
-                    open: {
-                        target: 'http://localhost:9000/<%= app.baseurl %>'
-                    },
-                    base: [
-                        '<%= app.staging %>',
-                        '.tmp'
-                    ]
-                }
             }
         },
         clean: {
@@ -101,22 +89,6 @@ module.exports = function(grunt) {
                         '<%= app.dist %>/*'
                     ]
                 }]
-            },
-            staging: {
-                files: [{
-                    dot: true,
-                    src: [
-                        '.tmp',
-                        '<%= app.staging %>/*',
-                        '!<%= app.staging %>/.git',
-                        '!<%= app.staging %>/.git/*',
-                        '!<%= app.staging %>/.git/*/**',
-                        '!<%= app.staging %>/.gitignore',
-                        '!<%= app.staging %>/.git-ftp-ignore',
-                        '!<%= app.staging %>/staging.sh',
-                        
-                    ]
-                }]
             }
         },
         jekyll: {
@@ -128,12 +100,6 @@ module.exports = function(grunt) {
                 options: {
                     config: '_config.prod.yml',
                     dest: '<%= app.dist %>/<%= app.baseurl %>',
-                }
-            },
-            staging: {
-                options: {
-                    config: '_config.staging.yml',
-                    dest: '<%= app.staging %>/<%= app.baseurl %>',
                 }
             },
             server: {
@@ -161,24 +127,6 @@ module.exports = function(grunt) {
                     src: '**/*.html',
                     dest: '<%= app.dist %>/<%= app.baseurl %>'
                 }]
-            },
-            staging: {
-                options: {
-                    removeComments: true,
-                    collapseWhitespace: true,
-                    collapseBooleanAttributes: true,
-                    removeAttributeQuotes: true,
-                    removeRedundantAttributes: true,
-                    removeEmptyAttributes: true,
-                    minifyJS: true,
-                    minifyCSS: true
-                },
-                files: [{
-                    expand: true,
-                    cwd: '<%= app.staging %>/<%= app.baseurl %>',
-                    src: '**/*.html',
-                    dest: '<%= app.staging %>/<%= app.baseurl %>'
-                }]
             }
         },
         xmlmin: {                                       // Task
@@ -191,17 +139,6 @@ module.exports = function(grunt) {
                     cwd: '<%= app.dist %>/<%= app.baseurl %>',
                     src: '_mobiledata/locations.xml',
                     dest: '<%= app.dist %>/<%= app.baseurl %>'
-                }]
-	        },
-	        staging: {                                     // Target
-	            options: {                              // Target options
-	                preserveComments: true
-	            },
-	            files: [{
-                    expand: true,
-                    cwd: '<%= app.staging %>/<%= app.baseurl %>',
-                    src: '_mobiledata/locations.xml',
-                    dest: '<%= app.staging %>/<%= app.baseurl %>'
                 }]
 	        }
 	    },
@@ -227,17 +164,6 @@ module.exports = function(grunt) {
                 files: {
                     '<%= app.dist %>/<%= app.baseurl %>/js/calpoly.min.js': ['<%= app.source %>/_assets/js/**.js'],
                     '<%= app.dist %>/<%= app.baseurl %>/js/lib.min.js': ['bower_components/jquery/dist/jquery.js', 'bower_components/jquery-ui/jquery-ui.js','bower_components/slick-carousel/slick/slick.js' ,'bower_components/lightbox2/dist/js/lightbox.js','bower_components/jquery-modal/jquery.modal.js']
-                }
-            },
-            staging: {
-                options: {
-                    mangle: false,
-                    preserveComments: false,
-                    report: 'min'
-                },
-                files: {
-                    '<%= app.staging %>/<%= app.baseurl %>/js/calpoly.min.js': ['<%= app.source %>/_assets/js/**.js'],
-                    '<%= app.staging %>/<%= app.baseurl %>/js/lib.min.js': ['bower_components/jquery/dist/jquery.js', 'bower_components/jquery-ui/jquery-ui.js','bower_components/slick-carousel/slick/slick.js' ,'bower_components/lightbox2/dist/js/lightbox.js','bower_components/jquery-modal/jquery.modal.js']
                 }
             }
         },
@@ -267,18 +193,6 @@ module.exports = function(grunt) {
                     cwd: '<%= app.source %>/_assets/scss',
                     src: '**/*.{scss,sass,css}',
                     dest: '<%= app.dist %>/<%= app.baseurl %>/css',
-                    ext: '.css'
-                }]
-            },
-            staging: {
-                options: {
-                   // outputStyle: 'compressed'
-                },
-                files: [{
-                    expand: true,
-                    cwd: '<%= app.source %>/_assets/scss',
-                    src: '**/*.{scss,sass,css}',
-                    dest: '<%= app.staging %>/<%= app.baseurl %>/css',
                     ext: '.css'
                 }]
             },
@@ -324,14 +238,6 @@ module.exports = function(grunt) {
                     src: '**/*.css',
                     dest: '<%= app.dist %>/<%= app.baseurl %>/css'
                 }]
-            },
-            staging: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= app.staging %>/<%= app.baseurl %>/css',
-                    src: '**/*.css',
-                    dest: '<%= app.staging %>/<%= app.baseurl %>/css'
-                }]
             }
         },
         critical: {
@@ -365,18 +271,6 @@ module.exports = function(grunt) {
                     src: ['*.css'],
                     dest: '<%= app.dist %>/<%= app.baseurl %>/css'
                 }]
-            },
-            staging: {
-                options: {
-                    keepSpecialComments: 0,
-                    check: 'gzip'
-                },
-                files: [{
-                    expand: true,
-                    cwd: '<%= app.staging %>/<%= app.baseurl %>/css',
-                    src: ['*.css'],
-                    dest: '<%= app.staging %>/<%= app.baseurl %>/css'
-                }]
             }
         },
 		imagemin: {
@@ -401,14 +295,6 @@ module.exports = function(grunt) {
                     cwd: '<%= app.dist %>/<%= app.baseurl %>/img',
                     src: '**/*.svg',
                     dest: '<%= app.dist %>/<%= app.baseurl %>/img'
-                }]
-            },
-            staging: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= app.staging %>/<%= app.baseurl %>/img',
-                    src: '**/*.svg',
-                    dest: '<%= app.staging %>/<%= app.baseurl %>/img'
                 }]
             }
         },
@@ -457,18 +343,6 @@ module.exports = function(grunt) {
                     cwd: '',
         			dest: 'test/'
 				}]
-			},
-			staging: {
-				options: {
-					baseDir: 'staging',
-					ignore: ['.ignore-svg']
-				},
-				files: [{
-					expand: true,
-					src: ['staging/**/*.html'],
-                    cwd: '',
-        			dest: ''
-				}]
 			}
 		},
     	copy: {
@@ -504,19 +378,14 @@ module.exports = function(grunt) {
                         cwd: 'app/_assets/video',
                         src: '**/*',
                         dest: '.tmp/video'
-                    }   
-                ]
-            },
-            astrum: {
-                files: [
+                    },
                     {
                         expand: true,
-                        cwd: 'public',
+                        cwd: 'public/pattern-library',
                         src: '**/*',
                         dest: '.jekyll'
-                    }
+                    } 
                 ]
-
             },
             dist: {
                 files: [
@@ -544,46 +413,12 @@ module.exports = function(grunt) {
                         cwd: 'bower_components/slick-carousel/slick',
                         src: 'fonts/*',
                         dest: '<%= app.dist %>/'
-                    }
-                    
-                ]
-            },
-            staging: {
-                files: [
-                    
-                    {
-                       expand: true,
-                       cwd: 'bower_components/font-awesome',
-                       src: '**/*',
-                       dest: '.tmp/<%= app.staging %>/<%= app.baseurl %>'
                     },
                     {
                         expand: true,
-                        cwd: 'bower_components/slick-carousel/slick',
-                        src: 'fonts/*',
-                        dest: '<%= app.staging %>/'
-                    },
-                    {
-                        expand: true,
-                        cwd: 'app/_assets/docs',
+                        cwd: 'public/pattern-library',
                         src: '**/*',
-                        dest: '<%= app.staging %>/docs'
-                    },
-                    {
-                        expand: true,
-                        cwd: 'app/_assets/video',
-                        src: '**/*',
-                        dest: '<%= app.staging %>/video'
-                    }
-                ]
-            },
-            stagingimg: {
-                files: [
-                    {
-                    	expand: true,
-                        cwd: 'staging/img',
-                        src: '**/*.{jpg,jpeg,png,gif}',
-                        dest: 'staging/jobid/staging/img'
+                        dest: '<%= app.dist %>/'
                     }
                     
                 ]
@@ -628,7 +463,6 @@ module.exports = function(grunt) {
             'jekyll:server',
             'sass:server',
             'copy:server',
-            'copy:astrum',
             'uglify:server',
             'connect:livereload',
             'watch',
@@ -641,18 +475,6 @@ module.exports = function(grunt) {
     });
     grunt.registerTask('bower_update', [
     	'copy:bower',
-    ]);
-    grunt.registerTask('build-staging', [
-       	'clean:staging',
-        'jekyll:staging',
-		'svgmin:staging',
-        'sass:staging',
-        'copy:staging',
-        'autoprefixer:staging',
-        'cssmin:staging',
-        'uglify:staging',
- 		'htmlmin:staging',
-        'xmlmin:staging',
     ]);
     grunt.registerTask('build', [
         'clean:dist',
