@@ -1,0 +1,144 @@
+.vertical-tabs-container {
+    @include clearfix;
+    margin-bottom: $base-spacing;
+    overflow: hidden;
+	@include media($medium-screen) {
+	 	border:solid 4px $dingley;
+	}
+    li {
+        list-style: none;
+    }
+    a {
+        color: $parsley;
+        text-decoration: none;
+    }
+    .vertical-tabs {
+        //display: none;
+        width: 100%;
+
+        @include media($vertical-tab-mode) {
+            background-color: $dingley;
+            display: inline;
+            float: left;
+            height: $vertical-tabs-height;
+            width: 20%;
+        }
+    }
+    .vertical-tab {
+		
+		font-weight: bold;
+		//padding: 1em;
+		line-height: 1em;
+        padding: 10px 20px 10px;
+        font-family: $heading-font-family;
+        letter-spacing: 1px;
+        font-size: .9em;
+		
+		@include media(max-width $medium-screen) {
+			width:30%;
+			display:inline-block;
+			margin-right:5px;
+			text-align: center;
+			&:last-child {
+				margin-right:0;
+			}
+			&.is-active {
+				background-color: $white;
+				color: $dingley;
+				border:solid 4px $dingley;
+				border-bottom:none;
+				position: relative;
+	    		bottom: -4px;
+			}
+			span {
+				font-size: 1.25em;
+				margin-top:5px;
+				white-space: nowrap;
+				display: block;
+			}
+		}
+        @include media($vertical-tab-mode) {
+            border-bottom: solid 1px darken($dingley, 6%);
+            border-top: solid 1px lighten($dingley, 10%);
+            margin-right: -1px;
+            padding: 1em;
+            display: block;
+            &.is-active {
+                background-color: $white;
+                margin-right: -1px;
+                color: $dingley;
+            }
+            &:first-child {
+                border-top: none;
+            }
+        }
+    }
+    a.vertical-tab-accordion-heading, a.vertical-tab {
+        color: $white;
+        background: $dingley
+    }
+    .vertical-tab:focus {
+        outline: none;
+    }
+    .vertical-tab-content-container {
+        display: block;
+        margin: 0 auto;
+        @include media(max-width $medium-screen) {
+       	 	border:solid 4px $dingley;
+       	}
+        & a:focus {
+            outline: none;
+        }
+        @include media($vertical-tab-mode) {
+            @include size(80%, $vertical-tabs-height);
+            background-color: $white;
+            display: inline-block;
+        }
+    }
+    .vertical-tab-content {
+        background-color: $white;
+        padding: 1em;
+        @include media($vertical-tab-mode) {
+            padding: 2em;
+            border: 0;
+            display: none;
+        }
+    }
+    a.vertical-tab-accordion-heading {
+        cursor: pointer;
+        display: block;
+        line-height: 1em;
+        padding: 20px 20px 10px;
+        font-size: $h4-font-size;
+        border-bottom: solid 1px darken($mint, 6%);
+        border-top: solid 1px lighten($mint, 10%);
+        color: $black;
+        background: $mint;
+        &:focus, &:hover {
+            color: $dingley;
+        }
+        &:after {
+            padding-right: 0.5rem;
+            padding-left: 0.5rem;
+            content: "\f101";
+            font-family: "FontAwesome";
+            font-size: 0.8em;
+            transition: all 150ms ease;
+        }
+        &:first-child {
+            border-top: 0;
+        }
+        &:first-child {
+            border-top: 0;
+        }
+        &.is-active {
+            color: $dingley;
+            &:after {
+                color: $mustard
+            }
+        }
+        @include media($vertical-tab-mode) {
+            display: none;
+        }
+    }
+} // Based on code by Jett Miller jettmiller.net

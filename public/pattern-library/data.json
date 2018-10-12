@@ -1,15 +1,19 @@
 {
     "project_logo": "assets/logo.svg",
-    "project_favicon": "img/favicon-32x32.png",
+    "project_favicon": "/img/favicon-32x32.png",
     "project_name": "The Cookbook",
-    "project_url": "https://www.calpolydining.com/",
-    "copyright_start_year": "2016",
+    "project_url": "https://www.calpolydining.com/cookbook",
+    "copyright_start_year": "2018",
     "client_name": null,
     "client_url": null,
     "creators": [
         {
             "name": "Javier Garcia",
             "url": "https://github.com/javag97"
+        },
+        {
+            "name": "Lauren Barker",
+            "url": "https://github.com/lbarker"
         }
     ],
     "theme": {
@@ -31,7 +35,7 @@
     },
     "assets": {
         "css": [
-            "/css/staging.css?"
+            "/css/production.css"
         ],
         "js": []
     },
@@ -243,6 +247,22 @@
             ]
         },
         {
+            "name": "table",
+            "title": "Tables",
+            "components": [
+                {
+                    "group": "table",
+                    "name": "hours-table",
+                    "title": "Hours Table"
+                },
+                {
+                    "group": "table",
+                    "name": "special-hours-table",
+                    "title": "Special Hours Table"
+                }
+            ]
+        },
+        {
             "name": "content-typography",
             "title": "Content Typography",
             "components": [
@@ -260,6 +280,11 @@
                     "name": "ordered-list",
                     "title": "Ordered List",
                     "group": "content-typography"
+                },
+                {
+                    "group": "content-typography",
+                    "name": "calendar",
+                    "title": "Calendar List"
                 }
             ]
         },
@@ -399,6 +424,22 @@
                     "group": "cards",
                     "name": "numbered-list",
                     "title": "Numbered List Card"
+                },
+                {
+                    "group": "cards",
+                    "name": "horizontal-card",
+                    "title": "Horizontal Card"
+                }
+            ]
+        },
+        {
+            "name": "tabs",
+            "title": "Tabs",
+            "components": [
+                {
+                    "group": "tabs",
+                    "name": "vertical",
+                    "title": "Vertical Tabs"
                 }
             ]
         },
