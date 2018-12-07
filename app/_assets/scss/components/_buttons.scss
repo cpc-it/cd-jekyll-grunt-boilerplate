@@ -1,3 +1,46 @@
+.button {
+  svg {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -15px 0 0 -15px;
+    fill: #fff;
+  }
+  div {
+    span {
+      background: #28e470;
+      height: 4px;
+      display: block;
+      border-radius: 2px;
+    }
+    height: 4px;
+    margin: -2px 0 0 0;
+    background: #d3d7e0;
+    display: none;
+    border-radius: 2px;
+  }
+  a {
+    span {
+      cursor: pointer;
+      display: block;
+    }
+    position: relative;
+    display: block;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+  }
+	display: block;
+  background: #fff;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+
 #{$all-buttons}, .button, button {
 	padding: 1em 1.25em;
 	margin:.5em;

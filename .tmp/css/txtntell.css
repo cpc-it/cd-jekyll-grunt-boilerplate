@@ -587,7 +587,9 @@ select {
   height: 2.6em; }
 
 [type='color'], [type='date'], [type='datetime'], [type='datetime-local'], [type='email'], [type='month'], [type='number'], [type='password'], [type='search'], [type='tel'], [type='text'], [type='time'], [type='url'], [type='week'], input:not([type]), textarea {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background-color: #fff;
   border: 1px solid #9ba4a0;
   border-radius: 3px;
@@ -608,6 +610,8 @@ select {
     cursor: not-allowed; }
     [type='color']:disabled:hover, [type='date']:disabled:hover, [type='datetime']:disabled:hover, [type='datetime-local']:disabled:hover, [type='email']:disabled:hover, [type='month']:disabled:hover, [type='number']:disabled:hover, [type='password']:disabled:hover, [type='search']:disabled:hover, [type='tel']:disabled:hover, [type='text']:disabled:hover, [type='time']:disabled:hover, [type='url']:disabled:hover, [type='week']:disabled:hover, input:not([type]):disabled:hover, textarea:disabled:hover {
       border: 1px solid #9ba4a0; }
+  [type='color']:-ms-input-placeholder, [type='date']:-ms-input-placeholder, [type='datetime']:-ms-input-placeholder, [type='datetime-local']:-ms-input-placeholder, [type='email']:-ms-input-placeholder, [type='month']:-ms-input-placeholder, [type='number']:-ms-input-placeholder, [type='password']:-ms-input-placeholder, [type='search']:-ms-input-placeholder, [type='tel']:-ms-input-placeholder, [type='text']:-ms-input-placeholder, [type='time']:-ms-input-placeholder, [type='url']:-ms-input-placeholder, [type='week']:-ms-input-placeholder, input:not([type]):-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color: #878a89; }
   [type='color']::placeholder, [type='date']::placeholder, [type='datetime']::placeholder, [type='datetime-local']::placeholder, [type='email']::placeholder, [type='month']::placeholder, [type='number']::placeholder, [type='password']::placeholder, [type='search']::placeholder, [type='tel']::placeholder, [type='text']::placeholder, [type='time']::placeholder, [type='url']::placeholder, [type='week']::placeholder, input:not([type])::placeholder, textarea::placeholder {
     color: #878a89; }
 
@@ -695,6 +699,39 @@ select {
 .space_fieldset_children fieldset > div.column_grid > div {
   margin-top: 0; }
 
+.button {
+  display: block;
+  background: #fff;
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); }
+  .button svg {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -15px 0 0 -15px;
+    fill: #fff; }
+  .button div {
+    height: 4px;
+    margin: -2px 0 0 0;
+    background: #d3d7e0;
+    display: none;
+    border-radius: 2px; }
+    .button div span {
+      background: #28e470;
+      height: 4px;
+      display: block;
+      border-radius: 2px; }
+  .button a {
+    position: relative;
+    display: block;
+    z-index: 2;
+    text-align: center;
+    color: #fff; }
+    .button a span {
+      cursor: pointer;
+      display: block; }
+
 button, [type='button'], [type='reset'], [type='submit'], .button, button {
   padding: 1em 1.25em;
   margin: .5em;
@@ -710,7 +747,6 @@ button, [type='button'], [type='reset'], [type='submit'], .button, button {
   text-decoration: none !important;
   text-align: center;
   border: 2px solid transparent;
-  -webkit-transition: .2s all ease-in-out;
   transition: .2s all ease-in-out;
   background: #55b045;
   color: #fff; }
@@ -811,12 +847,14 @@ button, [type='button'], [type='reset'], [type='submit'], .button, button {
 
 .bouncing-scroll .chevron:before {
   left: 0;
-  transform: skew(0deg, 30deg); }
+  -ms-transform: skew(0deg, 30deg);
+      transform: skew(0deg, 30deg); }
 
 .bouncing-scroll .chevron:after {
   right: 0;
   width: 50%;
-  transform: skew(0deg, -30deg); }
+  -ms-transform: skew(0deg, -30deg);
+      transform: skew(0deg, -30deg); }
 
 @keyframes move {
   25% {
@@ -922,5 +960,3 @@ body {
 #footer {
   position: inline;
   height: auto; }
-
-/*# sourceMappingURL=txtntell.css.map */
